@@ -528,6 +528,101 @@
       </tags>
   </entry>
   <entry>
+    <title>SQL优化笔记</title>
+    <url>/2021/05/31/SQL%E4%BC%98%E5%8C%96/</url>
+    <content><![CDATA[<blockquote>
+<p>最近更新时间：2021-05-31 09:41:56</p>
+</blockquote>
+<span id="more"></span>
+
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>SQL优化一般遵循五个原则：</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">减少数据访问</span><br><span class="line">返回更少的数据：只返回需要的字段和数据分页处理，减少磁盘IO和网络IO</span><br><span class="line">减少交互次数：批量DML操作，来减少与数据库的交互次数</span><br><span class="line">减少服务器CPU开销：减少数据库排序操作以及全表查询，减少CPU内存占用</span><br><span class="line">利用更多资源：使用表分区，增加并行操作，最大限度使用CPU资源</span><br></pre></td></tr></table></figure>
+
+<p>总结一下就是</p>
+<blockquote>
+<ul>
+<li>最大化利用索</li>
+<li>尽可能避免全表扫描</li>
+<li>减少无效数据的查询</li>
+</ul>
+</blockquote>
+<h1 id="SELECT语句——语法顺序"><a href="#SELECT语句——语法顺序" class="headerlink" title="SELECT语句——语法顺序"></a>SELECT语句——语法顺序</h1><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line"><span class="keyword">distinct</span> <span class="operator">&lt;</span>查询字段<span class="operator">&gt;</span></span><br><span class="line"><span class="keyword">from</span> <span class="operator">&lt;</span>表名<span class="operator">&gt;</span></span><br><span class="line"><span class="keyword">left</span><span class="operator">/</span><span class="keyword">right</span> <span class="keyword">join</span> <span class="operator">&lt;</span>表名<span class="operator">&gt;</span></span><br><span class="line"><span class="keyword">on</span> <span class="operator">&lt;</span>条件<span class="operator">&gt;</span></span><br><span class="line"><span class="keyword">where</span> <span class="operator">&lt;</span>条件<span class="operator">&gt;</span></span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> <span class="operator">&lt;</span>分组字段<span class="operator">&gt;</span></span><br><span class="line"><span class="keyword">having</span> <span class="operator">&lt;</span>分组条件<span class="operator">&gt;</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> <span class="operator">&lt;</span>排序字段<span class="operator">&gt;</span></span><br><span class="line">limit <span class="operator">&lt;</span>参数<span class="number">1</span>, 参数<span class="number">2</span><span class="operator">&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="SELECT语句——执行顺序"><a href="#SELECT语句——执行顺序" class="headerlink" title="SELECT语句——执行顺序"></a>SELECT语句——执行顺序</h1><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> <span class="operator">&lt;</span>表名<span class="operator">&gt;</span> <span class="comment">-- 选取表, 如果是多个表通过笛卡尔积形成一个表</span></span><br><span class="line"><span class="keyword">on</span> <span class="operator">&lt;</span>条件<span class="operator">&gt;</span> <span class="comment">-- 对from的表进行筛选</span></span><br><span class="line"><span class="keyword">join</span> <span class="operator">&lt;</span>表名<span class="operator">&gt;</span> <span class="comment">-- 添加字段到on之后的结果中</span></span><br><span class="line"><span class="keyword">where</span> <span class="operator">&lt;</span>条件<span class="operator">&gt;</span> <span class="comment">-- 对结果再进行筛选</span></span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> <span class="operator">&lt;</span>分组字段<span class="operator">&gt;</span> </span><br><span class="line"><span class="keyword">having</span> <span class="operator">&lt;</span>分组条件<span class="operator">&gt;</span> <span class="comment">-- 对分组之后的结果再进行筛选</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">&lt;</span>字段<span class="operator">&gt;</span> <span class="comment">-- 筛选列, 返回的单列必须在group by中</span></span><br><span class="line"><span class="keyword">distinct</span> <span class="comment">-- 数据去重</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> <span class="operator">&lt;</span>排序字段<span class="operator">&gt;</span> <span class="comment">-- 排序</span></span><br><span class="line">limit <span class="comment">-- 行数限制</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="SQL优化策略"><a href="#SQL优化策略" class="headerlink" title="SQL优化策略"></a>SQL优化策略</h1><h3 id="一、避免不走索引的场景"><a href="#一、避免不走索引的场景" class="headerlink" title="一、避免不走索引的场景"></a>一、避免不走索引的场景</h3><ol>
+<li><p>避免在<code>字段开头模糊查询</code>，会放弃索引而全表扫描</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 尽量避免</span></span><br><span class="line"><span class="keyword">select</span> id <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> name <span class="keyword">like</span> <span class="string">&#x27;%岳%&#x27;</span></span><br><span class="line"><span class="comment">-- 优化方式</span></span><br><span class="line"><span class="keyword">select</span> id <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> name <span class="keyword">like</span> <span class="string">&#x27;岳%&#x27;</span></span><br><span class="line"><span class="comment">-- 如果必须要在字段开头模糊查询, 建议使用以下策略:</span></span><br><span class="line"><span class="comment">-- 1. 使用FullText全文检索</span></span><br><span class="line"><span class="comment">-- 2. 数据量较大时使用ElasticSearch</span></span><br><span class="line"><span class="comment">-- 3. 使用MySQL内置函数INSTR(str,substr)来匹配</span></span><br><span class="line"><span class="comment">-- 4. 如果数据量少, 就不用花里胡哨的使用策略了, 直接%%</span></span><br></pre></td></tr></table></figure></li>
+<li><p>避免使用<code>or</code>，会放弃索引而全表扫描</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 不推荐</span></span><br><span class="line"><span class="keyword">select</span> id <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> name <span class="operator">=</span> <span class="string">&#x27;yueyang&#x27;</span> <span class="keyword">or</span> name <span class="operator">=</span> <span class="string">&#x27;mengwu&#x27;</span></span><br><span class="line"><span class="comment">-- 推荐</span></span><br><span class="line"><span class="keyword">select</span> id <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> name <span class="operator">=</span> <span class="string">&#x27;yueyang&#x27;</span></span><br><span class="line"><span class="keyword">union</span> <span class="keyword">all</span></span><br><span class="line"><span class="keyword">select</span> id <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> name <span class="operator">=</span> <span class="string">&#x27;mengwu&#x27;</span></span><br></pre></td></tr></table></figure></li>
+<li><p>避免<code>进行null值判断</code>，会放弃索引而全表扫描</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 不推荐</span></span><br><span class="line"><span class="keyword">select</span> id <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> score <span class="keyword">is</span> <span class="keyword">null</span></span><br><span class="line"><span class="comment">-- 优化方式:给字段设置默认值</span></span><br><span class="line"><span class="keyword">select</span> id <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> score <span class="operator">=</span> <span class="number">0</span></span><br></pre></td></tr></table></figure></li>
+<li><p>避免<code>在where条件等号左侧使用表达式</code>，会放弃索引而全表扫描</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 不推荐</span></span><br><span class="line"><span class="keyword">select</span> id <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> score<span class="operator">/</span><span class="number">10</span> <span class="operator">=</span> <span class="number">8</span></span><br><span class="line"><span class="comment">-- 优化方式:把左侧表达式的操作移到右侧</span></span><br><span class="line"><span class="keyword">select</span> id <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> score <span class="operator">=</span> <span class="number">8</span> <span class="operator">*</span> <span class="number">10</span></span><br></pre></td></tr></table></figure></li>
+<li><p>// </p>
+</li>
+</ol>
+<h3 id="二、SELECT语句优化"><a href="#二、SELECT语句优化" class="headerlink" title="二、SELECT语句优化"></a>二、SELECT语句优化</h3><ol>
+<li><p>禁止出现<code>select *</code>，需要哪些字段必须明确标明， 原因是：</p>
+<ol>
+<li>增加了查询分析器解析成本</li>
+<li>容易与resultMap配置不一致</li>
+<li>无用字段增加了网络IO</li>
+</ol>
+</li>
+<li><p>多表关联查询时，小表在前，大表在后</p>
+<p>多表关联查询会全表扫描第一张表，所以第一张表尽可能小会提升不少性能</p>
+</li>
+<li><p>使用表的别名</p>
+<p>SQL连接多个表时，使用表的别名并用表的别名来指定字段会减少解析时间</p>
+</li>
+<li><p>//</p>
+</li>
+</ol>
+<h3 id="三、DML语句优化"><a href="#三、DML语句优化" class="headerlink" title="三、DML语句优化"></a>三、DML语句优化</h3><ol>
+<li><p>批量<code>insert</code>数据使用<code>insert</code>多个值的方法</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 不推荐</span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">user</span> (id, name, age) <span class="keyword">values</span> (<span class="number">1</span>, <span class="string">&#x27;yueyang&#x27;</span>, <span class="number">18</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">user</span> (id, name, age) <span class="keyword">values</span> (<span class="number">2</span>, <span class="string">&#x27;mengwu&#x27;</span>, <span class="number">19</span>);</span><br><span class="line"><span class="comment">-- 推荐</span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">user</span> (id, name, age) <span class="keyword">values</span> (<span class="number">1</span>, <span class="string">&#x27;yueyang&#x27;</span>, <span class="number">18</span>),(<span class="number">2</span>, <span class="string">&#x27;mengwu&#x27;</span>, <span class="number">19</span>);</span><br></pre></td></tr></table></figure></li>
+<li><p>//</p>
+</li>
+</ol>
+<h3 id="四、查询条件优化"><a href="#四、查询条件优化" class="headerlink" title="四、查询条件优化"></a>四、查询条件优化</h3><ol>
+<li><p>对于复杂查询，使用中间表暂存数据</p>
+</li>
+<li><p>优化<code>group by</code>语句</p>
+<p>默认情况下, MySQL会对<code>group by</code>中所有的值进行排序，也就相当于在后面添加了一段<code>order by</code></p>
+<p>因此，查询<code>group by</code>如果你不想对分组数据进行排序，可以在最后加上<code>order by null</code></p>
+</li>
+<li><p>优化<code>join</code>语句</p>
+<p>对于逻辑顺畅的子查询来说，有时使用<code>join</code>替代会有更好的效率</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 查询没有成绩的学生ID</span></span><br><span class="line"><span class="keyword">select</span> id <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">not</span> <span class="keyword">in</span>(<span class="keyword">select</span> id <span class="keyword">from</span> grade <span class="keyword">where</span> score <span class="operator">=</span> <span class="number">0</span>);</span><br><span class="line"><span class="comment">-- 优化方式:减少了内存创建临时表的损耗 </span></span><br><span class="line"><span class="keyword">select</span> id <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">left</span> <span class="keyword">join</span> grade <span class="keyword">on</span> user.id <span class="operator">=</span> grade.id <span class="keyword">where</span> grade.socre <span class="operator">=</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure></li>
+<li><p>优化<code>union</code>语句</p>
+<p>MySQL通过创建临时表并填充临时表的方式来执行<code>union</code>查询。</p>
+<p>使用<code>union</code>时，会隐式的给临时表加<code>distinct</code>，从而对整个临时表做唯一性校验，非常损耗性能。因此如果不是非要去重，非常不建议使用<code>union</code>，建议改成<code>union all</code>。</p>
+</li>
+<li><p>合理的分页方式进行分页优化（^_^这个地方我还没学会呢，大家自己去研究深入一下，欢迎给我留言）</p>
+</li>
+<li><p>//</p>
+</li>
+</ol>
+<h3 id="五、建表优化"><a href="#五、建表优化" class="headerlink" title="五、建表优化"></a>五、建表优化</h3><ol>
+<li><p>在表中建立<code>索引</code>，优先考虑<code>where</code>、<code>order by</code>使用到的字段。</p>
+</li>
+<li><p>尽量使用数字型字段</p>
+<p>举个例子：性别男（1）女（2），就不要设计成字符型字段，会增加查询和连接性能，并增加存储开销</p>
+</li>
+</ol>
+<h3 id="六、事务优化"><a href="#六、事务优化" class="headerlink" title="六、事务优化"></a>六、事务优化</h3><ol>
+<li><pre><code class="mysql"> -- 查询事务执行的锁情况
+ select * from INFORMATION_SCHEMA.INNODB_TRX;
+</code></pre>
+</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>SQL优化</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Redis笔记</title>
     <url>/2021/05/26/Redis/</url>
     <content><![CDATA[<blockquote>
@@ -1026,101 +1121,6 @@
       </tags>
   </entry>
   <entry>
-    <title>SQL优化笔记</title>
-    <url>/2021/05/31/SQL%E4%BC%98%E5%8C%96/</url>
-    <content><![CDATA[<blockquote>
-<p>最近更新时间：2021-05-31 09:41:56</p>
-</blockquote>
-<span id="more"></span>
-
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>SQL优化一般遵循五个原则：</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line">减少数据访问</span><br><span class="line">返回更少的数据：只返回需要的字段和数据分页处理，减少磁盘IO和网络IO</span><br><span class="line">减少交互次数：批量DML操作，来减少与数据库的交互次数</span><br><span class="line">减少服务器CPU开销：减少数据库排序操作以及全表查询，减少CPU内存占用</span><br><span class="line">利用更多资源：使用表分区，增加并行操作，最大限度使用CPU资源</span><br></pre></td></tr></table></figure>
-
-<p>总结一下就是</p>
-<blockquote>
-<ul>
-<li>最大化利用索</li>
-<li>尽可能避免全表扫描</li>
-<li>减少无效数据的查询</li>
-</ul>
-</blockquote>
-<h1 id="SELECT语句——语法顺序"><a href="#SELECT语句——语法顺序" class="headerlink" title="SELECT语句——语法顺序"></a>SELECT语句——语法顺序</h1><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">select</span></span><br><span class="line"><span class="keyword">distinct</span> <span class="operator">&lt;</span>查询字段<span class="operator">&gt;</span></span><br><span class="line"><span class="keyword">from</span> <span class="operator">&lt;</span>表名<span class="operator">&gt;</span></span><br><span class="line"><span class="keyword">left</span><span class="operator">/</span><span class="keyword">right</span> <span class="keyword">join</span> <span class="operator">&lt;</span>表名<span class="operator">&gt;</span></span><br><span class="line"><span class="keyword">on</span> <span class="operator">&lt;</span>条件<span class="operator">&gt;</span></span><br><span class="line"><span class="keyword">where</span> <span class="operator">&lt;</span>条件<span class="operator">&gt;</span></span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> <span class="operator">&lt;</span>分组字段<span class="operator">&gt;</span></span><br><span class="line"><span class="keyword">having</span> <span class="operator">&lt;</span>分组条件<span class="operator">&gt;</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> <span class="operator">&lt;</span>排序字段<span class="operator">&gt;</span></span><br><span class="line">limit <span class="operator">&lt;</span>参数<span class="number">1</span>, 参数<span class="number">2</span><span class="operator">&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="SELECT语句——执行顺序"><a href="#SELECT语句——执行顺序" class="headerlink" title="SELECT语句——执行顺序"></a>SELECT语句——执行顺序</h1><figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="keyword">from</span> <span class="operator">&lt;</span>表名<span class="operator">&gt;</span> <span class="comment">-- 选取表, 如果是多个表通过笛卡尔积形成一个表</span></span><br><span class="line"><span class="keyword">on</span> <span class="operator">&lt;</span>条件<span class="operator">&gt;</span> <span class="comment">-- 对from的表进行筛选</span></span><br><span class="line"><span class="keyword">join</span> <span class="operator">&lt;</span>表名<span class="operator">&gt;</span> <span class="comment">-- 添加字段到on之后的结果中</span></span><br><span class="line"><span class="keyword">where</span> <span class="operator">&lt;</span>条件<span class="operator">&gt;</span> <span class="comment">-- 对结果再进行筛选</span></span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> <span class="operator">&lt;</span>分组字段<span class="operator">&gt;</span> </span><br><span class="line"><span class="keyword">having</span> <span class="operator">&lt;</span>分组条件<span class="operator">&gt;</span> <span class="comment">-- 对分组之后的结果再进行筛选</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">&lt;</span>字段<span class="operator">&gt;</span> <span class="comment">-- 筛选列, 返回的单列必须在group by中</span></span><br><span class="line"><span class="keyword">distinct</span> <span class="comment">-- 数据去重</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> <span class="operator">&lt;</span>排序字段<span class="operator">&gt;</span> <span class="comment">-- 排序</span></span><br><span class="line">limit <span class="comment">-- 行数限制</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="SQL优化策略"><a href="#SQL优化策略" class="headerlink" title="SQL优化策略"></a>SQL优化策略</h1><h3 id="一、避免不走索引的场景"><a href="#一、避免不走索引的场景" class="headerlink" title="一、避免不走索引的场景"></a>一、避免不走索引的场景</h3><ol>
-<li><p>避免在<code>字段开头模糊查询</code>，会放弃索引而全表扫描</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 尽量避免</span></span><br><span class="line"><span class="keyword">select</span> id <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> name <span class="keyword">like</span> <span class="string">&#x27;%岳%&#x27;</span></span><br><span class="line"><span class="comment">-- 优化方式</span></span><br><span class="line"><span class="keyword">select</span> id <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> name <span class="keyword">like</span> <span class="string">&#x27;岳%&#x27;</span></span><br><span class="line"><span class="comment">-- 如果必须要在字段开头模糊查询, 建议使用以下策略:</span></span><br><span class="line"><span class="comment">-- 1. 使用FullText全文检索</span></span><br><span class="line"><span class="comment">-- 2. 数据量较大时使用ElasticSearch</span></span><br><span class="line"><span class="comment">-- 3. 使用MySQL内置函数INSTR(str,substr)来匹配</span></span><br><span class="line"><span class="comment">-- 4. 如果数据量少, 就不用花里胡哨的使用策略了, 直接%%</span></span><br></pre></td></tr></table></figure></li>
-<li><p>避免使用<code>or</code>，会放弃索引而全表扫描</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 不推荐</span></span><br><span class="line"><span class="keyword">select</span> id <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> name <span class="operator">=</span> <span class="string">&#x27;yueyang&#x27;</span> <span class="keyword">or</span> name <span class="operator">=</span> <span class="string">&#x27;mengwu&#x27;</span></span><br><span class="line"><span class="comment">-- 推荐</span></span><br><span class="line"><span class="keyword">select</span> id <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> name <span class="operator">=</span> <span class="string">&#x27;yueyang&#x27;</span></span><br><span class="line"><span class="keyword">union</span> <span class="keyword">all</span></span><br><span class="line"><span class="keyword">select</span> id <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> name <span class="operator">=</span> <span class="string">&#x27;mengwu&#x27;</span></span><br></pre></td></tr></table></figure></li>
-<li><p>避免<code>进行null值判断</code>，会放弃索引而全表扫描</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 不推荐</span></span><br><span class="line"><span class="keyword">select</span> id <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> score <span class="keyword">is</span> <span class="keyword">null</span></span><br><span class="line"><span class="comment">-- 优化方式:给字段设置默认值</span></span><br><span class="line"><span class="keyword">select</span> id <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> score <span class="operator">=</span> <span class="number">0</span></span><br></pre></td></tr></table></figure></li>
-<li><p>避免<code>在where条件等号左侧使用表达式</code>，会放弃索引而全表扫描</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 不推荐</span></span><br><span class="line"><span class="keyword">select</span> id <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> score<span class="operator">/</span><span class="number">10</span> <span class="operator">=</span> <span class="number">8</span></span><br><span class="line"><span class="comment">-- 优化方式:把左侧表达式的操作移到右侧</span></span><br><span class="line"><span class="keyword">select</span> id <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">where</span> score <span class="operator">=</span> <span class="number">8</span> <span class="operator">*</span> <span class="number">10</span></span><br></pre></td></tr></table></figure></li>
-<li><p>// </p>
-</li>
-</ol>
-<h3 id="二、SELECT语句优化"><a href="#二、SELECT语句优化" class="headerlink" title="二、SELECT语句优化"></a>二、SELECT语句优化</h3><ol>
-<li><p>禁止出现<code>select *</code>，需要哪些字段必须明确标明， 原因是：</p>
-<ol>
-<li>增加了查询分析器解析成本</li>
-<li>容易与resultMap配置不一致</li>
-<li>无用字段增加了网络IO</li>
-</ol>
-</li>
-<li><p>多表关联查询时，小表在前，大表在后</p>
-<p>多表关联查询会全表扫描第一张表，所以第一张表尽可能小会提升不少性能</p>
-</li>
-<li><p>使用表的别名</p>
-<p>SQL连接多个表时，使用表的别名并用表的别名来指定字段会减少解析时间</p>
-</li>
-<li><p>//</p>
-</li>
-</ol>
-<h3 id="三、DML语句优化"><a href="#三、DML语句优化" class="headerlink" title="三、DML语句优化"></a>三、DML语句优化</h3><ol>
-<li><p>批量<code>insert</code>数据使用<code>insert</code>多个值的方法</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 不推荐</span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">user</span> (id, name, age) <span class="keyword">values</span> (<span class="number">1</span>, <span class="string">&#x27;yueyang&#x27;</span>, <span class="number">18</span>);</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">user</span> (id, name, age) <span class="keyword">values</span> (<span class="number">2</span>, <span class="string">&#x27;mengwu&#x27;</span>, <span class="number">19</span>);</span><br><span class="line"><span class="comment">-- 推荐</span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">user</span> (id, name, age) <span class="keyword">values</span> (<span class="number">1</span>, <span class="string">&#x27;yueyang&#x27;</span>, <span class="number">18</span>),(<span class="number">2</span>, <span class="string">&#x27;mengwu&#x27;</span>, <span class="number">19</span>);</span><br></pre></td></tr></table></figure></li>
-<li><p>//</p>
-</li>
-</ol>
-<h3 id="四、查询条件优化"><a href="#四、查询条件优化" class="headerlink" title="四、查询条件优化"></a>四、查询条件优化</h3><ol>
-<li><p>对于复杂查询，使用中间表暂存数据</p>
-</li>
-<li><p>优化<code>group by</code>语句</p>
-<p>默认情况下, MySQL会对<code>group by</code>中所有的值进行排序，也就相当于在后面添加了一段<code>order by</code></p>
-<p>因此，查询<code>group by</code>如果你不想对分组数据进行排序，可以在最后加上<code>order by null</code></p>
-</li>
-<li><p>优化<code>join</code>语句</p>
-<p>对于逻辑顺畅的子查询来说，有时使用<code>join</code>替代会有更好的效率</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="comment">-- 查询没有成绩的学生ID</span></span><br><span class="line"><span class="keyword">select</span> id <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">not</span> <span class="keyword">in</span>(<span class="keyword">select</span> id <span class="keyword">from</span> grade <span class="keyword">where</span> score <span class="operator">=</span> <span class="number">0</span>);</span><br><span class="line"><span class="comment">-- 优化方式:减少了内存创建临时表的损耗 </span></span><br><span class="line"><span class="keyword">select</span> id <span class="keyword">from</span> <span class="keyword">user</span> <span class="keyword">left</span> <span class="keyword">join</span> grade <span class="keyword">on</span> user.id <span class="operator">=</span> grade.id <span class="keyword">where</span> grade.socre <span class="operator">=</span> <span class="number">0</span>;</span><br></pre></td></tr></table></figure></li>
-<li><p>优化<code>union</code>语句</p>
-<p>MySQL通过创建临时表并填充临时表的方式来执行<code>union</code>查询。</p>
-<p>使用<code>union</code>时，会隐式的给临时表加<code>distinct</code>，从而对整个临时表做唯一性校验，非常损耗性能。因此如果不是非要去重，非常不建议使用<code>union</code>，建议改成<code>union all</code>。</p>
-</li>
-<li><p>合理的分页方式进行分页优化（^_^这个地方我还没学会呢，大家自己去研究深入一下，欢迎给我留言）</p>
-</li>
-<li><p>//</p>
-</li>
-</ol>
-<h3 id="五、建表优化"><a href="#五、建表优化" class="headerlink" title="五、建表优化"></a>五、建表优化</h3><ol>
-<li><p>在表中建立<code>索引</code>，优先考虑<code>where</code>、<code>order by</code>使用到的字段。</p>
-</li>
-<li><p>尽量使用数字型字段</p>
-<p>举个例子：性别男（1）女（2），就不要设计成字符型字段，会增加查询和连接性能，并增加存储开销</p>
-</li>
-</ol>
-<h3 id="六、事务优化"><a href="#六、事务优化" class="headerlink" title="六、事务优化"></a>六、事务优化</h3><ol>
-<li><pre><code class="mysql"> -- 查询事务执行的锁情况
- select * from INFORMATION_SCHEMA.INNODB_TRX;
-</code></pre>
-</li>
-</ol>
-]]></content>
-      <tags>
-        <tag>SQL优化</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>SpringCloud</title>
     <url>/2021/05/26/SpringCloud/</url>
     <content><![CDATA[<blockquote>
@@ -1582,11 +1582,6 @@
       <tags>
         <tag>SpringCloud</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>代码整洁之道_读书笔记</title>
-    <url>/2022/02/01/%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>学习笔记</title>
@@ -2130,6 +2125,22 @@
       </tags>
   </entry>
   <entry>
+    <title>整理备份</title>
+    <url>/2021/12/30/%E6%95%B4%E7%90%86%E5%A4%87%E4%BB%BD/</url>
+    <content><![CDATA[<h5 id="20211230"><a href="#20211230" class="headerlink" title="20211230"></a>20211230</h5><p><code>range for 拷贝问题</code></p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">study</span><span class="params">()</span></span> &#123;</span><br><span class="line">	list := []<span class="type">int</span>&#123;<span class="number">1</span>, <span class="number">2</span>&#125;</span><br><span class="line">	<span class="keyword">for</span> i := <span class="keyword">range</span> list &#123;</span><br><span class="line">		list = <span class="built_in">append</span>(list, i)</span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Println(list)</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(list); i++ &#123;</span><br><span class="line">		list = <span class="built_in">append</span>(list, i)</span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Println(list)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>切片翻转排序</code></p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">reverse</span><span class="params">(nums []<span class="type">int</span>)</span></span> []<span class="type">int</span> &#123;</span><br><span class="line">	sort.Slice(nums, <span class="function"><span class="keyword">func</span><span class="params">(i, j <span class="type">int</span>)</span></span> <span class="type">bool</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> nums[i] &gt; nums[j]</span><br><span class="line">	&#125;)</span><br><span class="line">	<span class="keyword">return</span> nums</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+  <entry>
+    <title>代码整洁之道_读书笔记</title>
+    <url>/2022/02/01/%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title>PerAuthorize注解</title>
     <url>/2020/08/14/%E6%B3%A8%E8%A7%A3PerAuthorize%E7%94%A8%E4%BD%9C%E6%8E%88%E6%9D%83%E6%97%B6%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<span id="more"></span>
@@ -2176,23 +2187,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>整理备份</title>
-    <url>/2021/12/30/%E6%95%B4%E7%90%86%E5%A4%87%E4%BB%BD/</url>
-    <content><![CDATA[<h5 id="20211230"><a href="#20211230" class="headerlink" title="20211230"></a>20211230</h5><p><code>range for 拷贝问题</code></p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">study</span><span class="params">()</span></span> &#123;</span><br><span class="line">	list := []<span class="type">int</span>&#123;<span class="number">1</span>, <span class="number">2</span>&#125;</span><br><span class="line">	<span class="keyword">for</span> i := <span class="keyword">range</span> list &#123;</span><br><span class="line">		list = <span class="built_in">append</span>(list, i)</span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Println(list)</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(list); i++ &#123;</span><br><span class="line">		list = <span class="built_in">append</span>(list, i)</span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Println(list)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><code>切片翻转排序</code></p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">reverse</span><span class="params">(nums []<span class="type">int</span>)</span></span> []<span class="type">int</span> &#123;</span><br><span class="line">	sort.Slice(nums, <span class="function"><span class="keyword">func</span><span class="params">(i, j <span class="type">int</span>)</span></span> <span class="type">bool</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> nums[i] &gt; nums[j]</span><br><span class="line">	&#125;)</span><br><span class="line">	<span class="keyword">return</span> nums</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
-  </entry>
-  <entry>
-    <title>背包问题</title>
-    <url>/2021/12/30/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/</url>
-    <content><![CDATA[<p>动态规划背包问题学习总结</p>
-]]></content>
-  </entry>
-  <entry>
     <title>软件备份</title>
     <url>/2021/07/07/%E8%BD%AF%E4%BB%B6%E5%A4%87%E4%BB%BD/</url>
     <content><![CDATA[<blockquote>
@@ -2208,6 +2202,12 @@
       <tags>
         <tag>软件</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>背包问题</title>
+    <url>/2021/12/30/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/</url>
+    <content><![CDATA[<p>动态规划背包问题学习总结</p>
+]]></content>
   </entry>
   <entry>
     <title>面试总结</title>
@@ -2330,57 +2330,58 @@
     <content><![CDATA[]]></content>
   </entry>
   <entry>
+    <title>categories</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[<p>试一试在这里写内容会发生什么</p>
+]]></content>
+  </entry>
+  <entry>
     <title>about</title>
     <url>/about/index.html</url>
-    <content><![CDATA[<h1 id="个人信息"><a href="#个人信息" class="headerlink" title="个人信息"></a>个人信息</h1><p>基本信息：岳杨/1996/男</p>
-<p>联系方式：17806283435（微信钉钉同号）<a href="mailto:&#89;&#117;&#x65;&#x59;&#52;&#x6e;&#57;&#x40;&#113;&#113;&#46;&#x63;&#x6f;&#109;">&#89;&#117;&#x65;&#x59;&#52;&#x6e;&#57;&#x40;&#113;&#113;&#46;&#x63;&#x6f;&#109;</a></p>
-<p>学历：统招本科（山东科技大学）</p>
-<p>工作年限：2年（19年毕业）</p>
-<p>期望岗位：Java研发工程师</p>
-<p>电子简历：<a href="http://8.141.63.144:8080/">YueYang_简历</a></p>
-<p>个人博客：<a href="http://8.141.63.144:8081/">YueYang_博客</a></p>
+    <content><![CDATA[<h2 id="个人信息"><a href="#个人信息" class="headerlink" title="个人信息"></a>个人信息</h2><p>基本信息：岳杨/1996/男</p>
+<p>联系方式：17806283435（微信同号）<a href="mailto:&#x6d;&#109;&#100;&#121;&#x75;&#101;&#x79;&#x61;&#x6e;&#x67;&#x40;&#103;&#109;&#97;&#x69;&#108;&#46;&#99;&#x6f;&#x6d;">&#x6d;&#109;&#100;&#121;&#x75;&#101;&#x79;&#x61;&#x6e;&#x67;&#x40;&#103;&#109;&#97;&#x69;&#108;&#46;&#99;&#x6f;&#x6d;</a></p>
+<p>籍贯：山东省威海市</p>
+<p>学历：统招本科 山东科技大学 计算机科学与技术专业</p>
+<p>工作年限：4年 19年毕业</p>
+<p>期望岗位：Go 研发工程师</p>
+<p>电子简历：<a href="https://yuey4n9.github.io/about/index">YueYang_简历</a></p>
+<p>个人博客：<a href="https://yuey4n9.github.io/">YueYang_博客</a></p>
 <h1 id="专业技能"><a href="#专业技能" class="headerlink" title="专业技能"></a>专业技能</h1><ul>
-<li>Java：<code>SpringBoot</code>，<code>SpringCloud</code>，<code>MyBatis</code>，</li>
-<li>DB：<code>MySQL</code>，<code>Redis</code>，<code>MongoDB</code>，<code>达梦</code></li>
-<li>安全架构：<code>Shiro</code>，<code>JWT</code></li>
-<li>其他组件：<code>Dubbo+ZooKeeper</code>，<code>RabbitMQ</code></li>
+<li>Go：<code>Go 1.20</code>,<code>gorutine</code>,<code>gin</code>,<code>gorm</code>,<code>etcd</code>,<code>migrate</code></li>
+<li>DB：<code>mysql</code>,<code>mongo</code>,<code>redis</code>,<code>达梦</code></li>
+<li>安全架构：<code>shiro</code>,<code>jwt</code></li>
+<li>其他：<code>docker</code>,<code>k8s</code></li>
 </ul>
-<h1 id="工作经历"><a href="#工作经历" class="headerlink" title="工作经历"></a>工作经历</h1><h2 id="北京泛钛客科技有限公司"><a href="#北京泛钛客科技有限公司" class="headerlink" title="北京泛钛客科技有限公司"></a>北京泛钛客科技有限公司</h2><p><strong>任职时间</strong>：2021.03.18至今</p>
-<p><strong>任职岗位</strong>：Java中级研发工程师</p>
-<h3 id="互联网金融贷款产品"><a href="#互联网金融贷款产品" class="headerlink" title="互联网金融贷款产品"></a>互联网金融贷款产品</h3><p><strong>项目描述</strong>：该项目是百度和中信银行合资开发的面向购车群体的金融贷款APP，多层网关与安全框架保证交易过程的信息安全，类似于微服务基于业务拆分成多个服务进行分布式部署。业务流程中对数据的分析，并结合对实时数据得出欺诈风险等级，实现对整体经销商和用户的安全保障。</p>
-<p><strong>技术架构</strong>：<code>SpringMVC</code>，<code>MySQL</code>，<code>Redis</code>，<code>MyBatis</code>，<code>Shiro</code>，<code>Dubbo+ZooKeeper</code>，<code>RabbitMQ</code></p>
-<p><strong>主要职责</strong>：</p>
-<ol>
-<li>主导后端开发，业务实现流程，推动项目代码规范化。</li>
-<li>多维度分析业务数据风险等级，提供数据风险预警和安全数据推送服务。</li>
-<li>对系统的高危漏洞群，提供了有效解决方案；对Dubbo2.5.3版本到Dubbo2.7.3进行预研升级策略，并解决版本升级过程中的问题，给整个升级流程提供了完整的升级策略。</li>
-<li>优化原有代码逻辑，使用逻辑代码方式避免了大量的数据库交互，减轻数据库压力；推动了组内对SQL以及表的注释规范。</li>
+<h1 id="工作经历"><a href="#工作经历" class="headerlink" title="工作经历"></a>工作经历</h1><h2 id="北京幂律智能科技有限公司"><a href="#北京幂律智能科技有限公司" class="headerlink" title="北京幂律智能科技有限公司"></a>北京幂律智能科技有限公司</h2><p>任职时间：2021 年 06 月至今</p>
+<p>任职岗位：Go 研发工程师</p>
+<h3 id="MeFlow-项目"><a href="#MeFlow-项目" class="headerlink" title="MeFlow 项目"></a>MeFlow 项目</h3><h4 id="项目描述"><a href="#项目描述" class="headerlink" title="项目描述"></a>项目描述</h4><p>MeFlow 项目是一个<code>gin</code>框架的 Web 服务，自研<code>gormbase</code>为 orm 框架，数据存储为 <code>mysql</code>、<code>mongodb</code> ，代码风格偏向 Go 社区，代码分层架构为 <code>DDD</code>。项目本身基于优秀的算法和智能能力在法律行业中处于龙头地位，有着较为成熟的需求迭代流程。团队有着较为成熟的协作模式，开发以基于项目需求进行迭代的敏捷开发模式。个人以内部框架研发、需求迭代、项目维护为基本的日常工作。</p>
+<h4 id="技术架构"><a href="#技术架构" class="headerlink" title="技术架构"></a>技术架构</h4><p><code>gin</code>,<code>gorm</code>,<code>grpc</code>,<code>mysql</code>,<code>mongodb</code>,<code>redis</code>,<code>docker</code>,<code>k8s</code></p>
+<h4 id="主要职责"><a href="#主要职责" class="headerlink" title="主要职责"></a>主要职责</h4><ol>
+<li>负责公司主要产品 MeFlow 的版本迭代过程中的需求分析、设计、开发、提测、上线的一整套流程工作，协调跨部门团队，包括但不限于产品、设计、测试、运维等，确保项目按时、高质量交付。</li>
+<li>持续优化产品和技术架构，改善产品性能、稳定性、可扩展性和安全性。推动团队技术栈升级和新技术的引入，提高团队技术水平和研发效率。</li>
+<li>建立和完善开发流程、标准、文档等相关管理制度，确保项目开发流程的规范化和标准化。</li>
+<li>负责技术难点攻关和解决方案的制定，协助团队成员解决技术问题。</li>
 </ol>
-<h2 id="北京中油龙慧科技信息分公司"><a href="#北京中油龙慧科技信息分公司" class="headerlink" title="北京中油龙慧科技信息分公司"></a>北京中油龙慧科技信息分公司</h2><p><strong>任职时间</strong>：2019.02.01至2021.03.17</p>
-<p><strong>任职岗位</strong>：Java初级研发工程师</p>
-<h3 id="二三维地理信息可视化平台"><a href="#二三维地理信息可视化平台" class="headerlink" title="二三维地理信息可视化平台"></a>二三维地理信息可视化平台</h3><p><strong>项目描述</strong>：针对石油管道业务开发的二三维视用一体话平台，高效、敏捷、简洁的展示管道运输整体状态以及其相关附属业务数据，将数据可视化以三维模型、动态感知警报、监控捕捉等技术呈现给用户。后台端的功能服务管理模块，支持自定义组件、功能模块拖拽、简单SQL拼接查询等功能实现后台管理人员的易用性。适用性方面支持多种数据库通用化处理，无论是国产化需求还是高性能高可用都给予所有功能的完整实现。</p>
-<p><strong>技术架构</strong>：<code>SpringBoot</code>，<code>MySQL</code>，<code>Oracle</code>，<code>达梦</code>，<code>Postgresql</code>，<code>Redis</code>，<code>JWT</code>，<code>LiquiBase</code></p>
-<p><strong>主要职责</strong>：</p>
-<ol>
-<li>负责所有业务数据与空间数据之间相关的数据整合工作，将关系型数据库中经纬度、航飞属性等数据字段高度封装，实现MongoDB的直接接入。</li>
-<li>集成LiquiBase作为数据库版本管理工具，阅读并修改源码包，原来不适配的达梦数据库最终也完成了整合，从而实现多种数据库通用化处理。</li>
-<li>推动组内对log4j日志的标准化输出，并搭建Jenkins实现项目自动化部署。</li>
-<li>组内缺乏专业的GIS后端工程师的情况下，主动学习GIS相关技术和三维场景切片缓存技术，通过缓存网格片以及细化网格片达到综合条件下网格数据查询效率极大提高，我提出的这项改进很大影响了GIS项目前后端的开发思路。</li>
-</ol>
-<h3 id="智慧城市一体化平台"><a href="#智慧城市一体化平台" class="headerlink" title="智慧城市一体化平台"></a>智慧城市一体化平台</h3><p><strong>项目描述</strong>：面向服务的全生命周期管理平台，面向服务管理模式将管道城市的数据一体化展示，通过按钮、拖拽、绘制流程图、勾选填选等用户行为，解决了大部分规则的管理和配置，包含用户的角色、部门、权限以及复杂的流程管理。平台扩展功能也具有实际社会意义，疫情期间制作了疫情填报功能，保障了巡检人员的安全。</p>
-<p><strong>技术架构</strong>：<code>SpringMVC</code>，<code>Oracle</code>，<code>Redis</code></p>
-<p><strong>主要职责</strong>：</p>
-<ol>
-<li>主导Web端的后端开发，优化多处代码逻辑，并优化了原来执行时间长的SQL，大幅提高了系统响应性能。</li>
-<li>负责巡检人员的调休换班模块，知识库管理模块，以及系统跳转的单点登录功能，并与之前系统进行跳转整合，最终达到单点登陆系统跳转的一致性。</li>
-<li>推动部门接口管理规范，继承Swagger来对后端接口统一管理和测试，大大提升后端和前端的沟通效率，长久性降低了接口维护成本。</li>
+<h2 id="北京泛钛客科技有限公司"><a href="#北京泛钛客科技有限公司" class="headerlink" title="北京泛钛客科技有限公司"></a>北京泛钛客科技有限公司</h2><p>任职时间：2021 年 03 月 至 2021 年 06 月</p>
+<p>任职岗位：Java 研发工程师</p>
+<p>离职原因：日常的开发模式为远程连接客户提供的开发机进行开发，开发体验上比较痛苦。</p>
+<h2 id="中油龙慧北京信息科技分公司"><a href="#中油龙慧北京信息科技分公司" class="headerlink" title="中油龙慧北京信息科技分公司"></a>中油龙慧北京信息科技分公司</h2><p>任职时间：2019 年 02 月 至 2021 年 03 月</p>
+<p>任职岗位：Java 研发工程师</p>
+<h3 id="地理信息可视化平台"><a href="#地理信息可视化平台" class="headerlink" title="地理信息可视化平台"></a>地理信息可视化平台</h3><h4 id="项目描述-1"><a href="#项目描述-1" class="headerlink" title="项目描述"></a>项目描述</h4><p>公司主营业务为地理信息系统，我参与的主要项目是 gis 项目。主要是对地理信息数据进行点位、线路、面积的计算和绘制，记录路线预测风险，并将计算数据可视化。</p>
+<h4 id="技术架构-1"><a href="#技术架构-1" class="headerlink" title="技术架构"></a>技术架构</h4><p><code>springboot</code>,<code>mybatis</code>,<code>多数据源</code>,<code>liquibase</code>,<code>rabbitmq</code></p>
+<h4 id="主要职责-1"><a href="#主要职责-1" class="headerlink" title="主要职责"></a>主要职责</h4><ol>
+<li>设计、开发和维护后端接口，确保其高效稳定地运行，并提供必要的技术支持和解决方案。</li>
+<li>研究并集成新兴技术或框架，以优化项目的性能和可扩展性。</li>
+<li>负责数据库设计、优化和维护，确保数据的完整性和安全性。</li>
+<li>管理项目的部署，确保其正确且及时上线，并负责项目后期的维护工作，及时修复问题，更新代码和文档。</li>
+<li>确保代码的质量和可维护性，并积极参与代码审查和改进。</li>
 </ol>
 <h1 id="个人介绍"><a href="#个人介绍" class="headerlink" title="个人介绍"></a>个人介绍</h1><ul>
-<li>熟悉Java基础知识，熟悉SpringBoot、MyBatis、Dubbo等Java开发中常用框架</li>
-<li>熟悉SQL语法，有一定SQL优化经验</li>
-<li>熟练使用各种IDE（IDEA、Eclipse）、版本管理工具（Git、SVN）、Jenkins等开发工具。</li>
-<li>掌握Linux常用命令，能完成日常的项目部署、维护工作</li>
-<li>执着于技术，日常就是维护博客、学习源码、学习技术</li>
+<li>熟悉 Go 基础知识, 了解日常的工具语言, 如 Python、shell 等，对 Go 的常见框架都有了解</li>
+<li>熟悉 sql、query 语法，有一定 mysql 优化经验</li>
+<li>熟练使用各种 IDE（idea、vim plus）、版本管理工具（Git）</li>
+<li>了解 linux 常用命令，能完成日常的项目部署、维护工作</li>
+<li>执着于技术，日常就是网上找好玩的工具、维护博客、学习源码</li>
 <li>做事认真，喜欢钻研，保持细心，热爱学习，性格要强，脾气良好，乐观幽默，小开心果</li>
 </ul>
 ]]></content>
@@ -2389,21 +2390,6 @@
     <title>留下你的脚印👣</title>
     <url>/guestbook/index.html</url>
     <content><![CDATA[<p>试一试在这里写内容又会发生什么</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>tags</title>
-    <url>/tags/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>Dubbo</title>
-    <url>/notes/Dubbo.html</url>
-    <content><![CDATA[<h2 id="Dubbo"><a href="#Dubbo" class="headerlink" title="Dubbo"></a>Dubbo</h2><h3 id="Dubbo是什么？"><a href="#Dubbo是什么？" class="headerlink" title="Dubbo是什么？"></a>Dubbo是什么？</h3><ul>
-<li>一款分布式服务框架</li>
-<li>高性能透明化RPC方案</li>
-<li>SOA服务治理方案</li>
-</ul>
 ]]></content>
   </entry>
   <entry>
@@ -2439,9 +2425,14 @@
 <figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> service <span class="keyword">struct</span> &#123;</span><br><span class="line">    ctx 				*context.AppContext	<span class="comment">// AppContext就简写成ctx</span></span><br><span class="line">    workflowDomain 		workflow.Domain		<span class="comment">// workflow长度适宜，使用全拼，且不允许写成workFlow</span></span><br><span class="line">    bcDomain 			bcd.Domain 			<span class="comment">// businesscategory过长，就简写成了bc</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
-    <title>MySQL</title>
-    <url>/notes/MySQL.html</url>
-    <content><![CDATA[<h2 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h2><h3 id="覆盖索引"><a href="#覆盖索引" class="headerlink" title="覆盖索引"></a>覆盖索引</h3>]]></content>
+    <title>Dubbo</title>
+    <url>/notes/Dubbo.html</url>
+    <content><![CDATA[<h2 id="Dubbo"><a href="#Dubbo" class="headerlink" title="Dubbo"></a>Dubbo</h2><h3 id="Dubbo是什么？"><a href="#Dubbo是什么？" class="headerlink" title="Dubbo是什么？"></a>Dubbo是什么？</h3><ul>
+<li>一款分布式服务框架</li>
+<li>高性能透明化RPC方案</li>
+<li>SOA服务治理方案</li>
+</ul>
+]]></content>
   </entry>
   <entry>
     <title>JVM</title>
@@ -2475,19 +2466,24 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Python学习笔记</title>
-    <url>/notes/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html</url>
-    <content><![CDATA[<h1 id=""><a href="#" class="headerlink" title=""></a></h1>]]></content>
-  </entry>
-  <entry>
     <title></title>
     <url>/notes/Mybatis%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
+    <title>MySQL</title>
+    <url>/notes/MySQL.html</url>
+    <content><![CDATA[<h2 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h2><h3 id="覆盖索引"><a href="#覆盖索引" class="headerlink" title="覆盖索引"></a>覆盖索引</h3>]]></content>
+  </entry>
+  <entry>
     <title>notes</title>
     <url>/notes/index.html</url>
     <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Python学习笔记</title>
+    <url>/notes/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html</url>
+    <content><![CDATA[<h1 id=""><a href="#" class="headerlink" title=""></a></h1>]]></content>
   </entry>
   <entry>
     <title></title>
@@ -2755,9 +2751,8 @@
 ]]></content>
   </entry>
   <entry>
-    <title>categories</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[<p>试一试在这里写内容会发生什么</p>
-]]></content>
+    <title>tags</title>
+    <url>/tags/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
 </search>
