@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/YueY4n9_LOGO.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/YueY4n9_LOGO.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/YueY4n9_LOGO.jpg">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;example.com&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Gemini&quot;,&quot;version&quot;:&quot;8.4.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;left&quot;,&quot;display&quot;:&quot;hide&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12},&quot;copycode&quot;:false,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:false,&quot;mediumzoom&quot;:false,&quot;lazyload&quot;:false,&quot;pangu&quot;:false,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:null,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:false,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;搜索...&quot;,&quot;empty&quot;:&quot;没有找到任何搜索结果：${query}&quot;,&quot;hits_time&quot;:&quot;找到 ${hits} 个搜索结果（用时 ${time} 毫秒）&quot;,&quot;hits&quot;:&quot;找到 ${hits} 个搜索结果&quot;},&quot;path&quot;:&quot;&#x2F;search.xml&quot;,&quot;localsearch&quot;:{&quot;enable&quot;:true,&quot;trigger&quot;:&quot;auto&quot;,&quot;top_n_per_article&quot;:1,&quot;unescape&quot;:false,&quot;preload&quot;:false}}</script>
+<meta name="description" content="整理了2021年5月面试Java中级研发工程师过程中，遇到的知识疏漏点和模糊点，以及面试过程中的面试题的详细解析，对于一些比较基础的问题只做了简单的记录，希望能对个人提升和习惯养成有所帮助">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试总结">
+<meta property="og:url" content="http://example.com/2021/05/31/%E9%9D%A2%E8%AF%95%E7%BB%8F%E9%AA%8C/index.html">
+<meta property="og:site_name" content="YueYang">
+<meta property="og:description" content="整理了2021年5月面试Java中级研发工程师过程中，遇到的知识疏漏点和模糊点，以及面试过程中的面试题的详细解析，对于一些比较基础的问题只做了简单的记录，希望能对个人提升和习惯养成有所帮助">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-05-31T07:07:04.000Z">
+<meta property="article:modified_time" content="2023-04-08T05:07:16.193Z">
+<meta property="article:author" content="YueY4n9">
+<meta property="article:tag" content="面试">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2021/05/31/%E9%9D%A2%E8%AF%95%E7%BB%8F%E9%AA%8C/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:false,&quot;isPost&quot;:true,&quot;lang&quot;:&quot;zh-CN&quot;,&quot;comments&quot;:true,&quot;permalink&quot;:&quot;http:&#x2F;&#x2F;example.com&#x2F;2021&#x2F;05&#x2F;31&#x2F;%E9%9D%A2%E8%AF%95%E7%BB%8F%E9%AA%8C&#x2F;&quot;,&quot;path&quot;:&quot;2021&#x2F;05&#x2F;31&#x2F;面试经验&#x2F;&quot;,&quot;title&quot;:&quot;面试总结&quot;}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">&quot;&quot;</script>
+<title>面试总结 | YueYang</title><script src="/js/config.js"></script>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">YueYang</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">岳杨的个人博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-首页"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-文章"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>文章</a></li>
+        <li class="menu-item menu-item-标签"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-分类"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-关于"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-留言"><a href="/guestbook/" rel="section"><i class="fa fa-tags fa-fw"></i>留言</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-UDP%E5%8C%BA%E5%88%AB"><span class="nav-number">1.</span> <span class="nav-text">TCP&#x2F;UDP区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Zookeeper%E6%98%AF%E4%BB%80%E4%B9%88%E6%A1%86%E6%9E%B6"><span class="nav-number">2.</span> <span class="nav-text">Zookeeper是什么框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dubbo%E4%B8%80%E8%88%AC%E7%94%A8%E4%BB%80%E4%B9%88%E6%B3%A8%E5%86%8C%E4%B8%AD%E5%BF%83%EF%BC%9F%E8%BF%98%E6%9C%89%E5%88%AB%E7%9A%84%E9%80%89%E6%8B%A9%E5%90%97%EF%BC%9F"><span class="nav-number">3.</span> <span class="nav-text">Dubbo一般用什么注册中心？还有别的选择吗？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E8%AF%B4Spring%E6%98%AF%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8%EF%BC%9F"><span class="nav-number">4.</span> <span class="nav-text">为什么说Spring是一个容器？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JVM%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E5%92%8C%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84"><span class="nav-number">5.</span> <span class="nav-text">JVM生命周期和体系结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ConcurrentHashMap%E4%B8%BA%E4%BB%80%E4%B9%88%E6%98%AFCAS-Synchronized%EF%BC%9F"><span class="nav-number">6.</span> <span class="nav-text">ConcurrentHashMap为什么是CAS+Synchronized？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MyBatis%E6%98%AF%E6%80%8E%E4%B9%88%E5%AE%9E%E7%8E%B0%E7%9A%84%EF%BC%9F%E4%B8%8D%E7%94%A8Spring%E6%80%8E%E4%B9%88%E9%9B%86%E6%88%90%EF%BC%9F"><span class="nav-number">7.</span> <span class="nav-text">MyBatis是怎么实现的？不用Spring怎么集成？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CAS%E4%BC%9A%E5%87%BA%E7%8E%B0%E4%BB%80%E4%B9%88%E9%97%AE%E9%A2%98%EF%BC%9F%E6%80%8E%E4%B9%88%E8%A7%A3%E5%86%B3%E7%9A%84%EF%BC%9F"><span class="nav-number">8.</span> <span class="nav-text">CAS会出现什么问题？怎么解决的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL%E5%92%8CRedis%E7%9A%84%E9%87%8D%E8%A6%81%E6%95%B0%E6%8D%AE%EF%BC%8C%E5%BF%85%E9%A1%BB%E5%AE%8C%E5%85%A8%E4%B8%80%E8%87%B4%EF%BC%8C%E8%BF%99%E4%B8%AA%E6%80%8E%E4%B9%88%E5%AE%9E%E7%8E%B0%EF%BC%9F"><span class="nav-number">9.</span> <span class="nav-text">MySQL和Redis的重要数据，必须完全一致，这个怎么实现？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MySQL%E6%98%AF%E5%8F%AF%E9%87%8D%E5%A4%8D%E8%AF%BB%E6%98%AF%E6%80%8E%E4%B9%88%E5%AE%9E%E7%8E%B0%E7%9A%84%EF%BC%9F"><span class="nav-number">10.</span> <span class="nav-text">MySQL是可重复读是怎么实现的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#springboot%E5%81%9A%E4%BA%86%E5%93%AA%E4%BA%9B%E4%BA%8B%EF%BC%9F%E6%B7%B1%E5%85%A5%E5%88%B0%E5%BA%95%E5%B1%82%E6%98%AF%E6%80%8E%E4%B9%88%E5%AE%9E%E7%8E%B0%E7%9A%84%EF%BC%9F"><span class="nav-number">11.</span> <span class="nav-text">springboot做了哪些事？深入到底层是怎么实现的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Redis%E7%9A%84Key%E8%BF%87%E6%9C%9F%E5%90%8E%E4%BC%9A%E7%AB%8B%E5%8D%B3%E5%88%A0%E9%99%A4%E4%B9%88%EF%BC%9F"><span class="nav-number">12.</span> <span class="nav-text">Redis的Key过期后会立即删除么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Redis%E7%9A%84%E9%9B%86%E7%BE%A4%E7%94%A8%E8%BF%87%E5%90%97%EF%BC%9F%E6%98%AF%E6%80%8E%E4%B9%88%E7%9A%84%E6%9E%B6%E6%9E%84%EF%BC%9F%E5%93%A8%E5%85%B5%E6%9C%BA%E5%88%B6%E5%91%A2%EF%BC%9F"><span class="nav-number">13.</span> <span class="nav-text">Redis的集群用过吗？是怎么的架构？哨兵机制呢？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%86%E5%B8%83%E5%BC%8F%E9%9B%86%E7%BE%A4%E4%B8%8B%E6%80%8E%E4%B9%88%E6%89%A7%E8%A1%8C%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1%EF%BC%9F"><span class="nav-number">14.</span> <span class="nav-text">分布式集群下怎么执行定时任务？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E5%88%86%E5%B8%83%E5%BC%8F%E8%A6%81%E7%94%A8RestTemplete%E8%80%8C%E4%B8%8D%E7%94%A8HttpUtils%EF%BC%9F"><span class="nav-number">15.</span> <span class="nav-text">为什么分布式要用RestTemplete而不用HttpUtils？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JWT%E7%9A%84%E6%95%B4%E4%BD%93%E6%B5%81%E7%A8%8B%E6%98%AF%E6%80%8E%E6%A0%B7%E7%9A%84%EF%BC%9F"><span class="nav-number">16.</span> <span class="nav-text">JWT的整体流程是怎样的？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#maven%E7%88%B6%E7%B1%BB%E4%BE%9D%E8%B5%96%E5%86%B2%E7%AA%81"><span class="nav-number">17.</span> <span class="nav-text">maven父类依赖冲突</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BA%BF%E5%9F%8E%E6%B1%A0%E5%8F%82%E6%95%B0%E3%80%81%E6%8B%92%E7%BB%9D%E7%AD%96%E7%95%A5%E3%80%81%E6%B5%81%E7%A8%8B"><span class="nav-number">18.</span> <span class="nav-text">线城池参数、拒绝策略、流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ConcurrentHashMap%E7%9A%84%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E5%9C%A8JDK1-7%E5%92%8CJDK1-8%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">19.</span> <span class="nav-text">ConcurrentHashMap的线程安全在JDK1.7和JDK1.8的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SpringMVC%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B%EF%BC%88%E9%9C%80%E8%A6%81%E4%BB%94%E7%BB%86%E7%A0%94%E7%A9%B6%E5%BA%95%E5%B1%82%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B%EF%BC%89"><span class="nav-number">20.</span> <span class="nav-text">SpringMVC工作流程（需要仔细研究底层执行流程）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%8A%A0%E8%BD%BD%E8%BF%87%E7%A8%8B"><span class="nav-number">21.</span> <span class="nav-text">类加载过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%86%E8%A7%A3%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE%E6%9C%BA%E5%88%B6%E5%90%97%EF%BC%9F"><span class="nav-number">22.</span> <span class="nav-text">了解双亲委派机制吗？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#spring%E5%92%8Cspringboot%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-number">23.</span> <span class="nav-text">spring和springboot的区别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%86%E8%A7%A3HashMap%E5%90%97%EF%BC%9F"><span class="nav-number">24.</span> <span class="nav-text">了解HashMap吗？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%82%A3%E6%83%B3%E7%94%A8%E7%BA%BF%E7%A8%8B%E5%AE%89%E5%85%A8%E7%9A%84Map%E7%94%A8%E4%BB%80%E4%B9%88%E5%91%A2%EF%BC%9F%EF%BC%88%E8%B8%A9%E8%BF%87%E5%9D%91%EF%BC%89"><span class="nav-number">25.</span> <span class="nav-text">那想用线程安全的Map用什么呢？（踩过坑）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%86%E8%A7%A3MySQL%E7%B4%A2%E5%BC%95%E5%90%97%EF%BC%9F"><span class="nav-number">26.</span> <span class="nav-text">了解MySQL索引吗？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E9%A2%98%EF%BC%9A%E6%95%B0%E7%BB%84%E4%B8%AD%E6%B1%82%E6%9C%80%E5%A4%A7%E5%B7%AE%E5%80%BC%EF%BC%88%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E5%A4%A7%E6%94%B6%E7%9B%8A%E9%97%AE%E9%A2%98%EF%BC%89"><span class="nav-number">27.</span> <span class="nav-text">算法题：数组中求最大差值（股票的最大收益问题）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E9%A2%98%EF%BC%9A%E8%AE%A1%E7%AE%97%E5%90%88%E6%B3%95%EF%BC%88%EF%BC%89%E7%9A%84%E6%9C%80%E5%A4%A7%E9%95%BF%E5%BA%A6"><span class="nav-number">28.</span> <span class="nav-text">算法题：计算合法（）的最大长度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E9%A2%98%EF%BC%9A%E5%AE%9E%E7%8E%B0LRU%E7%AE%97%E6%B3%95"><span class="nav-number">29.</span> <span class="nav-text">算法题：实现LRU算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E4%B8%80%E4%B8%AA%E9%97%A8%E7%A5%A8%E9%99%90%E6%97%B6%E9%94%80%E5%94%AE%E7%B3%BB%E7%BB%9F"><span class="nav-number">30.</span> <span class="nav-text">设计一个门票限时销售系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E9%A2%98%EF%BC%9A%E6%B1%82100%E4%BB%A5%E5%86%85%E8%B4%A8%E6%95%B0%E7%9A%84%E9%98%B6%E4%B9%98%E4%B9%8B%E5%92%8C"><span class="nav-number">31.</span> <span class="nav-text">算法题：求100以内质数的阶乘之和</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%99%BA%E5%8A%9B%E9%A2%98%EF%BC%9A23%E6%9E%9A%E7%A1%AC%E5%B8%81%E4%B8%AD10%E6%9E%9A%E6%98%AF%E6%9C%9D%E4%B8%8A%E7%9A%84%EF%BC%8C%E5%88%86%E4%B8%A4%E5%A0%86%E6%80%8E%E4%B9%88%E5%AE%9E%E7%8E%B0%E6%9C%9D%E4%B8%8A%E7%9A%84%E7%A1%AC%E5%B8%81%E4%B8%80%E6%A0%B7%E5%A4%9A"><span class="nav-number">32.</span> <span class="nav-text">智力题：23枚硬币中10枚是朝上的，分两堆怎么实现朝上的硬币一样多</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%81%E6%98%8E%E9%A2%98%EF%BC%9A%E4%B8%AD%E9%97%B4%E5%8F%AA%E9%9A%94%E4%B8%80%E4%B8%AA%E6%95%B0%E5%AD%97%E7%9A%84%E4%B8%A4%E4%B8%AA%E8%B4%A8%E6%95%B0%E6%95%B0%E8%A2%AB%E7%A7%B0%E4%B8%BA%E8%B4%A8%E6%95%B0%E5%AF%B9%EF%BC%8C%E6%AF%94%E5%A6%8217%E5%92%8C19%E3%80%82%E8%AF%81%E6%98%8E%E8%B4%A8%E6%95%B0%E5%AF%B9%E4%B9%8B%E9%97%B4%E7%9A%84%E6%95%B0%E5%AD%97%E6%80%BB%E8%83%BD%E8%A2%AB6%E6%95%B4%E9%99%A4"><span class="nav-number">33.</span> <span class="nav-text">证明题：中间只隔一个数字的两个质数数被称为质数对，比如17和19。证明质数对之间的数字总能被6整除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%91%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%9A%BE%E7%82%B9"><span class="nav-number">34.</span> <span class="nav-text">我在项目中遇到的难点</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="YueY4n9"
+      src="/images/YueY4n9_LOGO.jpg">
+  <p class="site-author-name" itemprop="name">YueY4n9</p>
+  <div class="site-description" itemprop="description">一只萌物的程序人生</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="sidebar-button site-overview-item animated"><i class="fa fa-comment"></i>
+    Chat
+  </a>
+  </div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/YueY4n9" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;YueY4n9" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2021/05/31/%E9%9D%A2%E8%AF%95%E7%BB%8F%E9%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/YueY4n9_LOGO.jpg">
+      <meta itemprop="name" content="YueY4n9">
+      <meta itemprop="description" content="一只萌物的程序人生">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YueYang">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          面试总结
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2021-05-31 15:07:04" itemprop="dateCreated datePublished" datetime="2021-05-31T15:07:04+08:00">2021-05-31</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2023-04-08 13:07:16" itemprop="dateModified" datetime="2023-04-08T13:07:16+08:00">2023-04-08</time>
+      </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2021/05/31/%E9%9D%A2%E8%AF%95%E7%BB%8F%E9%AA%8C/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/05/31/面试经验/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <blockquote>
+<p>  整理了2021年5月面试Java中级研发工程师过程中，遇到的知识疏漏点和模糊点，以及面试过程中的面试题的详细解析，对于一些比较基础的问题只做了简单的记录，希望能对个人提升和习惯养成有所帮助</p>
+</blockquote>
+<span id="more"></span>
+
+<blockquote>
+<p>  2021-07-22</p>
+</blockquote>
+<h3 id="TCP-UDP区别"><a href="#TCP-UDP区别" class="headerlink" title="TCP/UDP区别"></a>TCP/UDP区别</h3><p>TCP向上层提供面向连接的可靠服务 ，UDP向上层提供无连接不可靠服务</p>
+<p>虽然 UDP 并没有 TCP 传输来的准确，但是也能在很多实时性要求高的地方有所作为</p>
+<p>对数据准确性要求高，速度可以相对较慢的，可以选用TCP</p>
+<h3 id="Zookeeper是什么框架"><a href="#Zookeeper是什么框架" class="headerlink" title="Zookeeper是什么框架"></a>Zookeeper是什么框架</h3><p>Zookeeper是分布式系统协调服务的框架，也叫作服务注册中心</p>
+<h3 id="Dubbo一般用什么注册中心？还有别的选择吗？"><a href="#Dubbo一般用什么注册中心？还有别的选择吗？" class="headerlink" title="Dubbo一般用什么注册中心？还有别的选择吗？"></a>Dubbo一般用什么注册中心？还有别的选择吗？</h3><p>Dubbo一般使用Zookeeper，也可以使用Redis，consul，数据库</p>
+<h3 id="为什么说Spring是一个容器？"><a href="#为什么说Spring是一个容器？" class="headerlink" title="为什么说Spring是一个容器？"></a>为什么说Spring是一个容器？</h3><p>Spring的核心思想是更方便的管理Java Bean，有Spring创建的Bean放入一个Map中，这个Map就可以理解成装Bean的容器，也就是IOC容器。</p>
+<h3 id="JVM生命周期和体系结构"><a href="#JVM生命周期和体系结构" class="headerlink" title="JVM生命周期和体系结构"></a>JVM生命周期和体系结构</h3><p>JVM声明周期是跟随程序一起的，JVM开始运行时就是程序启动时，JVM停止运行程序也随之结束。</p>
+<p>JVM体系结构包含：类加载器、内存区、执行引擎、本地方法调用。</p>
+<blockquote>
+<p>2021-06-07</p>
+</blockquote>
+<h3 id="ConcurrentHashMap为什么是CAS-Synchronized？"><a href="#ConcurrentHashMap为什么是CAS-Synchronized？" class="headerlink" title="ConcurrentHashMap为什么是CAS+Synchronized？"></a>ConcurrentHashMap为什么是CAS+Synchronized？</h3><p>用CAS是为了减小锁的粒度，毕竟CAS是JUC下面使用最多的锁，用Synchronized是因为Synchronized可以不断优化，并且粒度也不高。</p>
+<h3 id="MyBatis是怎么实现的？不用Spring怎么集成？"><a href="#MyBatis是怎么实现的？不用Spring怎么集成？" class="headerlink" title="MyBatis是怎么实现的？不用Spring怎么集成？"></a>MyBatis是怎么实现的？不用Spring怎么集成？</h3><h3 id="CAS会出现什么问题？怎么解决的？"><a href="#CAS会出现什么问题？怎么解决的？" class="headerlink" title="CAS会出现什么问题？怎么解决的？"></a>CAS会出现什么问题？怎么解决的？</h3><p>ABA问题</p>
+<h3 id="MySQL和Redis的重要数据，必须完全一致，这个怎么实现？"><a href="#MySQL和Redis的重要数据，必须完全一致，这个怎么实现？" class="headerlink" title="MySQL和Redis的重要数据，必须完全一致，这个怎么实现？"></a>MySQL和Redis的重要数据，必须完全一致，这个怎么实现？</h3><h3 id="MySQL是可重复读是怎么实现的？"><a href="#MySQL是可重复读是怎么实现的？" class="headerlink" title="MySQL是可重复读是怎么实现的？"></a>MySQL是可重复读是怎么实现的？</h3><p>使用MVCC（多版本并发控制），每次SELECT之前会找到上一个数据版本，只读当前版本的数据。innoDB已经实现”秒级快照版本”</p>
+<h3 id="springboot做了哪些事？深入到底层是怎么实现的？"><a href="#springboot做了哪些事？深入到底层是怎么实现的？" class="headerlink" title="springboot做了哪些事？深入到底层是怎么实现的？"></a>springboot做了哪些事？深入到底层是怎么实现的？</h3><h3 id="Redis的Key过期后会立即删除么？"><a href="#Redis的Key过期后会立即删除么？" class="headerlink" title="Redis的Key过期后会立即删除么？"></a>Redis的Key过期后会立即删除么？</h3><p>不会的，三种删除策略：定时删除、惰性删除（？还有什么？原理是什么）</p>
+<h3 id="Redis的集群用过吗？是怎么的架构？哨兵机制呢？"><a href="#Redis的集群用过吗？是怎么的架构？哨兵机制呢？" class="headerlink" title="Redis的集群用过吗？是怎么的架构？哨兵机制呢？"></a>Redis的集群用过吗？是怎么的架构？哨兵机制呢？</h3><h3 id="分布式集群下怎么执行定时任务？"><a href="#分布式集群下怎么执行定时任务？" class="headerlink" title="分布式集群下怎么执行定时任务？"></a>分布式集群下怎么执行定时任务？</h3><h3 id="为什么分布式要用RestTemplete而不用HttpUtils？"><a href="#为什么分布式要用RestTemplete而不用HttpUtils？" class="headerlink" title="为什么分布式要用RestTemplete而不用HttpUtils？"></a>为什么分布式要用RestTemplete而不用HttpUtils？</h3><h3 id="JWT的整体流程是怎样的？"><a href="#JWT的整体流程是怎样的？" class="headerlink" title="JWT的整体流程是怎样的？"></a>JWT的整体流程是怎样的？</h3><p>MySQL锁<br>Redis集群</p>
+<blockquote>
+<p>2021-06-04</p>
+</blockquote>
+<h3 id="maven父类依赖冲突"><a href="#maven父类依赖冲突" class="headerlink" title="maven父类依赖冲突"></a>maven父类依赖冲突</h3><p>maven的依赖原则</p>
+<h3 id="线城池参数、拒绝策略、流程"><a href="#线城池参数、拒绝策略、流程" class="headerlink" title="线城池参数、拒绝策略、流程"></a>线城池参数、拒绝策略、流程</h3><p>7个参数：核心线程数、总线程数、存活时间、时间单位、阻塞队列、工厂、拒绝策略</p>
+<p>4个拒绝策略：拒绝并抛出异常、静默拒绝、移除队列中最前面的任务然后重新提交被拒绝的任务、由调用线程来执行该任务</p>
+<p>流程：先看核心线程是否满了，满了再看阻塞队列是否满了，满了再看总线程数是否满了，满了再走拒绝策略</p>
+<h3 id="ConcurrentHashMap的线程安全在JDK1-7和JDK1-8的区别"><a href="#ConcurrentHashMap的线程安全在JDK1-7和JDK1-8的区别" class="headerlink" title="ConcurrentHashMap的线程安全在JDK1.7和JDK1.8的区别"></a>ConcurrentHashMap的线程安全在JDK1.7和JDK1.8的区别</h3><p>JDK1.7：分段锁</p>
+<p>JDK1.8 :  Synchronized+CAS</p>
+<h3 id="SpringMVC工作流程（需要仔细研究底层执行流程）"><a href="#SpringMVC工作流程（需要仔细研究底层执行流程）" class="headerlink" title="SpringMVC工作流程（需要仔细研究底层执行流程）"></a>SpringMVC工作流程（需要仔细研究底层执行流程）</h3><ol>
+<li>客户端发送请求到前端控制器DispatcherServlet</li>
+<li>前端控制器DispatcherServlet根据URL来决定选择哪一个控制器Controller进行处理，并把请求委托给控制器</li>
+<li>控制器Controller接收请求后，将请求参数绑定为一个对象，这个对象叫命令对象，并进行验证。然后将命令对象委托给业务对象进行处理，处理完毕后返回一个ModelAndView</li>
+<li>前端控制器DispatcherServlet收回控制权，然后根据返回的逻辑视图名，选择相应的视图进行渲染，并把模型数据传入，以便渲染</li>
+<li>前端控制器DispatcherServlet再次收回控制权，将相应返回给用户</li>
+</ol>
+<h3 id="类加载过程"><a href="#类加载过程" class="headerlink" title="类加载过程"></a>类加载过程</h3><p>加载、验证、解析、准备、初始化</p>
+<h3 id="了解双亲委派机制吗？"><a href="#了解双亲委派机制吗？" class="headerlink" title="了解双亲委派机制吗？"></a>了解双亲委派机制吗？</h3><p>一个类加载器加载类时，会将请求委托交给父加载器去加载，只要父加载器无法完成这个加载请求时，子加载器才会自己尝试完成加载。</p>
+<p>好处：保证基础类环境的稳定运行</p>
+<blockquote>
+<p>2021-06-03</p>
+</blockquote>
+<h3 id="spring和springboot的区别"><a href="#spring和springboot的区别" class="headerlink" title="spring和springboot的区别"></a>spring和springboot的区别</h3><p>springboot就是spring的扩展，少了繁琐的配置，让开发、测试、部署方便了。</p>
+<blockquote>
+<p>2021-06-02</p>
+</blockquote>
+<h3 id="了解HashMap吗？"><a href="#了解HashMap吗？" class="headerlink" title="了解HashMap吗？"></a>了解HashMap吗？</h3><ul>
+<li>HashMap的数据结构（数组+链表/红黑树）</li>
+<li>哈希冲突的实现原理</li>
+<li>HashMap扩容机制</li>
+<li>线程不安全性</li>
+<li>HashMap为什么初始容量是2的4幂（16）：按位运算</li>
+</ul>
+<h3 id="那想用线程安全的Map用什么呢？（踩过坑）"><a href="#那想用线程安全的Map用什么呢？（踩过坑）" class="headerlink" title="那想用线程安全的Map用什么呢？（踩过坑）"></a>那想用线程安全的Map用什么呢？（踩过坑）</h3><p>我答的ConcurrentHashMap是线程安全的，并且把线程安全的机制详细的描述了一遍；但是我记忆里大学期间学过了一段设计，就是说ConcurrentHashMap也不是完全保证线程安全的，在事务下，也会发生线程不安全。当时对ConcurrentHashMap的理解也仅限于此；但今天细究了一下，ConcurrentHashMap是可以完全保证每次操作的线程安全问题的，但是事务的安全那就得另算了，需要考虑的就是事务的隔离级别了！这点希望大家不要和我一起进入这个误区。过段时间会详细写一下事务的隔离级别的专题文章。</p>
+<h3 id="了解MySQL索引吗？"><a href="#了解MySQL索引吗？" class="headerlink" title="了解MySQL索引吗？"></a>了解MySQL索引吗？</h3><ul>
+<li>索引的数据结构（B+树）</li>
+<li>B+树的自平衡（脑子清楚嘴笨）</li>
+<li>MySQL索引能存储的数据量</li>
+<li>事务的基本要素ACID</li>
+<li>事务并发问题：脏读、不可重复读、幻读</li>
+<li>事务的隔离级别（读未提交、不可重复读、重复读、串行化）</li>
+</ul>
+<h3 id="算法题：数组中求最大差值（股票的最大收益问题）"><a href="#算法题：数组中求最大差值（股票的最大收益问题）" class="headerlink" title="算法题：数组中求最大差值（股票的最大收益问题）"></a>算法题：数组中求最大差值（股票的最大收益问题）</h3><p>这题朴实无华的动态规划，2分钟解决了。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//    public static void main(String[] args) &#123;</span></span><br><span class="line"><span class="comment">//        int[] nums;</span></span><br><span class="line"><span class="comment">//        nums = new int[0];</span></span><br><span class="line"><span class="comment">//        System.out.println(question1(nums));</span></span><br><span class="line"><span class="comment">//        nums = new int[]&#123;1&#125;;</span></span><br><span class="line"><span class="comment">//        System.out.println(question1(nums));</span></span><br><span class="line"><span class="comment">//        nums = new int[]&#123;21, 12, 7, 3, 11, 20&#125;;</span></span><br><span class="line"><span class="comment">//        System.out.println(question1(nums));</span></span><br><span class="line"><span class="comment">//        nums = new int[]&#123;21, 20, 19, 18, 10&#125;;</span></span><br><span class="line"><span class="comment">//        System.out.println(question1(nums));</span></span><br><span class="line"><span class="comment">//        nums = new int[]&#123;22, 20, 20, 20, 10&#125;;</span></span><br><span class="line"><span class="comment">//        System.out.println(question1(nums));</span></span><br><span class="line"><span class="comment">//    &#125;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 动态规划实现, 如果按照题意求最大差值的话需要返回零和负数情况</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">question1</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> len = nums.length;</span><br><span class="line">        <span class="keyword">if</span> (len &lt; <span class="number">2</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> min = Math.min(nums[<span class="number">0</span>], nums[<span class="number">1</span>]);</span><br><span class="line">        <span class="keyword">int</span> max = nums[<span class="number">1</span>] - nums[<span class="number">0</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; len; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (nums[i] - min &gt; max) &#123;</span><br><span class="line">                max = nums[i] - min;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (nums[i] &lt; min) &#123;</span><br><span class="line">                min = nums[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> max;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="算法题：计算合法（）的最大长度"><a href="#算法题：计算合法（）的最大长度" class="headerlink" title="算法题：计算合法（）的最大长度"></a>算法题：计算合法<code>（）</code>的最大长度</h3><p>？？？这连中间都不穿插点加减号了？？？</p>
+<p>直接上代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//    public static void main(String[] args) &#123;</span></span><br><span class="line"><span class="comment">//        String str;</span></span><br><span class="line"><span class="comment">////        str = &quot;()()()()&quot;;</span></span><br><span class="line"><span class="comment">////        System.out.println(question2(str));</span></span><br><span class="line"><span class="comment">////        str = &quot;((((()()&quot;;</span></span><br><span class="line"><span class="comment">////        System.out.println(question2(str));</span></span><br><span class="line"><span class="comment">//        str = &quot;()(())&quot;;</span></span><br><span class="line"><span class="comment">//        System.out.println(question2(str));</span></span><br><span class="line"><span class="comment">//        str = &quot;(()))))())&quot;;</span></span><br><span class="line"><span class="comment">//        System.out.println(question2(str));</span></span><br><span class="line"><span class="comment">//        str = &quot;((((&quot;;</span></span><br><span class="line"><span class="comment">//        System.out.println(question2(str));</span></span><br><span class="line"><span class="comment">//        str = &quot;)))((()((((()((&quot;;</span></span><br><span class="line"><span class="comment">//        System.out.println(question2(str));</span></span><br><span class="line"><span class="comment">//        str = &quot;(*(*)*)*)(())&quot;;</span></span><br><span class="line"><span class="comment">//        System.out.println(question2(str));</span></span><br><span class="line"><span class="comment">//    &#125;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 栈使用的问题</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">question2</span><span class="params">(String str)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (<span class="keyword">null</span> == str)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        Stack&lt;Integer&gt; stack = <span class="keyword">new</span> Stack&lt;&gt;();</span><br><span class="line">        <span class="keyword">int</span> start = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; str.length(); i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="string">&#x27;(&#x27;</span> == str.charAt(i)) &#123;</span><br><span class="line">                stack.push(i);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (stack.isEmpty()) &#123;</span><br><span class="line">                    start = i + <span class="number">1</span>;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    stack.pop();</span><br><span class="line">                    <span class="keyword">if</span> (stack.isEmpty()) &#123;</span><br><span class="line">                        result = Math.max(result, i - start + <span class="number">1</span>);</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        result = Math.max(result, i - stack.peek());</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="算法题：实现LRU算法"><a href="#算法题：实现LRU算法" class="headerlink" title="算法题：实现LRU算法"></a>算法题：实现LRU算法</h3><p>这题我是最喜欢的^_^因为我脑子会，手不会写（我就想知道谁能记住LinkedHashMap里面的API啊），所以百度帮我做了，但想法我就是这样的。</p>
+<p>给大家讲一下实现吧，首先LRU就叫做Least Recently Used最少最近使用，就是把最老最久没碰过得数据给淘汰掉，刚好LinkedHashMap就已经做了按照访问顺序来实现节点排序，HashMap的put方法有一个实现，参数是accessOrder，当accessOrder=true时，访问节点和插入节点都会将当前节点放到链表最新处（如果是JDK1.6+那就是放到结尾去），那不就是LRU的想法么 ~ 那我直接用就好了（源码解析我7月份会贡献笔记）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * LRU算法：最少最近使用：利用LinkedHashMap实现了按访问顺序存储的特性来简单实现</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">LRUCache</span>&lt;<span class="title">K</span>, <span class="title">V</span>&gt; </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">float</span> loadFactor = <span class="number">0.75f</span>;</span><br><span class="line">    <span class="keyword">private</span> LinkedHashMap&lt;K, V&gt; map;</span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> initialCapacity;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">LRUCache</span><span class="params">(<span class="keyword">int</span> cacheSize)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.initialCapacity = cacheSize;</span><br><span class="line">        <span class="keyword">int</span> capacity = (<span class="keyword">int</span>) Math.ceil(cacheSize / loadFactor) + <span class="number">1</span>;</span><br><span class="line">        <span class="comment">// accessOrder=true是重点, 该参数为true是按照访问顺序插入到链表最新节点后, false是按照插入顺序存储</span></span><br><span class="line">        map = <span class="keyword">new</span> LinkedHashMap&lt;K, V&gt;(capacity, loadFactor, <span class="keyword">true</span>) &#123;</span><br><span class="line"></span><br><span class="line">            <span class="meta">@Override</span></span><br><span class="line">            <span class="function"><span class="keyword">protected</span> <span class="keyword">boolean</span> <span class="title">removeEldestEntry</span><span class="params">(Map.Entry eldest)</span> </span>&#123;</span><br><span class="line">                <span class="keyword">return</span> size() &gt; LRUCache.<span class="keyword">this</span>.initialCapacity;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> V <span class="title">get</span><span class="params">(K key)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> map.get(key);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">synchronized</span> <span class="keyword">void</span> <span class="title">put</span><span class="params">(K key, V value)</span> </span>&#123;</span><br><span class="line">        map.put(key, value);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="设计一个门票限时销售系统"><a href="#设计一个门票限时销售系统" class="headerlink" title="设计一个门票限时销售系统"></a>设计一个门票限时销售系统</h3><p>听到这个题目我直接懵圈了，what？我设计一个系统？</p>
+<p>提供系统架构图和业务流程图，what？画图？</p>
+<p>这个考的不是我的专业技能，是对总体把控的能力，但我觉得我现在还不是把精力去花费在把一个个专业知识整合的时候，我更应该做的是去精通和扎实每一个我熟悉的技术（听起来像是在给自己找理由，嘻嘻），所以这题我就简单答了答，做了一个微服务，订单和商品的并发操作使用Redis的分布式锁保证安全，然后限时功能也是就用Redis的设置存活时间来实现。</p>
+<blockquote>
+<p>2021-06-01</p>
+</blockquote>
+<h3 id="算法题：求100以内质数的阶乘之和"><a href="#算法题：求100以内质数的阶乘之和" class="headerlink" title="算法题：求100以内质数的阶乘之和"></a>算法题：求100以内质数的阶乘之和</h3><p>思路是先求100以内的阶乘，放到数组中，再对数组中的质数一一求阶乘，再累加；</p>
+<p>思路清晰，但编码过程中我发现了两个问题，一个就是10以上的阶乘其实是非常大的，那么他们的和很可能超过int和long的范围，所以尽可能使用其他更能长的数据结构来存储。果然，97的阶乘甚至都到达了</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 96192759682482119853328425949563698712343813919172976158104477319333745612481875498805879175589072651261284189679678167647067832320000000000000000000000</span></span><br></pre></td></tr></table></figure>
+
+<p>那么就先用BigDecimal来试试够不够，上我的代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 题目2</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">question2</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 保存质数结果集</span></span><br><span class="line">    List&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= <span class="number">100</span>; i++) &#123;</span><br><span class="line">        <span class="comment">// 判断当前数字是否为质数</span></span><br><span class="line">        <span class="keyword">if</span> (isPrimeNumber(i)) &#123;</span><br><span class="line">            <span class="comment">// 将质数添加到结果集</span></span><br><span class="line">            list.add(i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 打印质数结果集, 为question5参考</span></span><br><span class="line">    list.forEach(System.out::println);</span><br><span class="line">    <span class="comment">// 返回结果超出long长度, 使用BigDecimal保存最终结果和计算过程结果</span></span><br><span class="line">    BigDecimal result = <span class="keyword">new</span> BigDecimal(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> num : list) &#123;</span><br><span class="line">        <span class="comment">// 顺序添加BigDecimal类型的阶乘结果</span></span><br><span class="line">        result = result.add(getBigDecimalFactorial(num));</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(<span class="string">&quot;结果:&quot;</span> + result); </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 判断一个2-100的数字是否是质数</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">isPrimeNumber</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (num == <span class="number">2</span>) <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= Math.sqrt(num); i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (num % i == <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 计算一个1-100之间数字的阶乘</span></span><br><span class="line"><span class="comment"> * 返回结果超过long长度, 使用BigDecima保存过程结果</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> BigDecimal <span class="title">getBigDecimalFactorial</span><span class="params">(<span class="keyword">int</span> num)</span> </span>&#123;</span><br><span class="line">    BigDecimal result = <span class="keyword">new</span> BigDecimal(num);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt; num; i++) &#123;</span><br><span class="line">        result = result.multiply(<span class="keyword">new</span> BigDecimal(i));</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(num + <span class="string">&quot;的阶乘是&quot;</span> + result);</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>运气不错，BigDecimal就存下了。但如果是BigDecimal也存储不下的话，就用String来存吧，就是要重写一个加减乘除方法来实现就比较麻烦了。</p>
+<h3 id="智力题：23枚硬币中10枚是朝上的，分两堆怎么实现朝上的硬币一样多"><a href="#智力题：23枚硬币中10枚是朝上的，分两堆怎么实现朝上的硬币一样多" class="headerlink" title="智力题：23枚硬币中10枚是朝上的，分两堆怎么实现朝上的硬币一样多"></a>智力题：23枚硬币中10枚是朝上的，分两堆怎么实现朝上的硬币一样多</h3><p>这题我采用的数学的方式解决，也是需要转个弯就解决了。</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 设一堆中朝上硬币是x, 另一堆则是10-x</span></span><br><span class="line"><span class="section"># 那我需要做的令 x = 10-x</span></span><br><span class="line"><span class="section"># 那么问题就来了, 错误的逻辑是让 x = 5, 思考无果后换个方向</span></span><br><span class="line"><span class="section"># 如果还有一个10-x的变量, 那么尝试着解决交换变量种类可不可以</span></span><br><span class="line"><span class="section"># 百度：如果令一堆硬币是10, 翻转这10枚硬币, 就可以了（啊啊啊, 我的思路没错, 就差一点点）</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="证明题：中间只隔一个数字的两个质数数被称为质数对，比如17和19。证明质数对之间的数字总能被6整除"><a href="#证明题：中间只隔一个数字的两个质数数被称为质数对，比如17和19。证明质数对之间的数字总能被6整除" class="headerlink" title="证明题：中间只隔一个数字的两个质数数被称为质数对，比如17和19。证明质数对之间的数字总能被6整除"></a>证明题：中间只隔一个数字的两个质数数被称为质数对，比如17和19。证明质数对之间的数字总能被6整除</h3><p>这个话不多说了，我思路都在我的回答上了</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">question5</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="comment">// 1 3 中间这个数字是2, 这个数字需要大于6*********************************</span></span><br><span class="line">    <span class="comment">// 2 4 不可能2结尾, 因为所有2结尾的数字都可以被2整除</span></span><br><span class="line">    <span class="comment">// 3 5 不可能5结尾, 因为所有5结尾的大于6的数字都可以被5整除(15, 25, 35)</span></span><br><span class="line">    <span class="comment">// 4 6 不可能4结尾, 因为所有4结尾的数字都可以被2整除</span></span><br><span class="line">    <span class="comment">// 5 7 不可能5结尾, 因为所有5结尾的大于6的数字都可以被5整除(15, 25, 35)</span></span><br><span class="line">    <span class="comment">// 6 8 不可能6结尾, 因为所有6结尾的数字都可以被2整除</span></span><br><span class="line">    <span class="comment">// 7 9 中间这个数字是8, 这个数字需要大于6***************************************</span></span><br><span class="line">    <span class="comment">// 8 0 不可能8结尾, 因为所有8结尾的数字都可以被2整除</span></span><br><span class="line">    <span class="comment">// 9 1 中间这个数字是0, 这个数字需要大于6*********************************</span></span><br><span class="line">    <span class="comment">// 0 2 不可能0结尾, 因为所有0结尾的数字都可以被5整除</span></span><br><span class="line">    <span class="comment">// 根据星号“*****”行的分析可知</span></span><br><span class="line">    <span class="comment">// 根据我的上面这个分析, 只需要证明这个数字一定可以被2整除, 那么该命题就可以转换成去证明这个数字可以被3整除</span></span><br><span class="line">    <span class="comment">// 假设质数对数字为x, x-1, x+1分别是质数</span></span><br><span class="line">    <span class="comment">// 而且x-1和x+1都是大于6的质数, 那么x-1不可能被三整除, 要么余1, 要么余2, 同理可知x+2, 要么余1, 要么余2</span></span><br><span class="line">    <span class="comment">// 并且关键是x-1与x+1之间只差了2, 所以这两个质数的余数一定是一个余1, 一个余2</span></span><br><span class="line">    <span class="comment">// 那么假设x不可能被3整除, 那么一定余1或者余2, 无论如何都是x+1和x-1余1余2的条件矛盾</span></span><br><span class="line">    <span class="comment">// 所以x一定可以被3整除</span></span><br><span class="line">    <span class="comment">// 最后得到结论, 质数对之前的数字一定可以被6整除</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>百度的答案稍微复杂点，我是拆解了6，感觉更容易理解一些。</p>
+<blockquote>
+<p>2021-05-31</p>
+</blockquote>
+<h3 id="我在项目中遇到的难点"><a href="#我在项目中遇到的难点" class="headerlink" title="我在项目中遇到的难点"></a>我在项目中遇到的难点</h3><ul>
+<li>地图切片的分组缓存</li>
+<li>负责集成LiquiBase</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E9%9D%A2%E8%AF%95/" rel="tag"># 面试</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2021/05/31/SQL%E4%BC%98%E5%8C%96/" rel="prev" title="SQL优化笔记">
+                  <i class="fa fa-chevron-left"></i> SQL优化笔记
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2021/06/16/Golang/" rel="next" title="Golang">
+                  Golang <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  <script src="/js/comments.js"></script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">YueY4n9</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+  
+
+
+
+
+<script class="next-config" data-name="disqus" type="application/json">{&quot;enable&quot;:true,&quot;shortname&quot;:&quot;blog4go&quot;,&quot;count&quot;:true,&quot;i18n&quot;:{&quot;disqus&quot;:&quot;disqus&quot;}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>
+
+<!--单击显示文字-->
+<!-- <script type="text/javascript" src="/js/click_show_text.js"></script> -->
+<!--单击显示红心-->
+<script type="text/javascript" src="/js/love.js"></script>
+<script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="/js/canvas.min.js">
+</script>

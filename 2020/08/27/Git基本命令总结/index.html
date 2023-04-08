@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/YueY4n9_LOGO.jpg">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/YueY4n9_LOGO.jpg">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/YueY4n9_LOGO.jpg">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/all.min.css" integrity="sha256-2H3fkXt6FEmrReK448mDVGKb3WW2ZZw35gI7vqHOE4Y=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{&quot;hostname&quot;:&quot;example.com&quot;,&quot;root&quot;:&quot;&#x2F;&quot;,&quot;images&quot;:&quot;&#x2F;images&quot;,&quot;scheme&quot;:&quot;Gemini&quot;,&quot;version&quot;:&quot;8.4.0&quot;,&quot;exturl&quot;:false,&quot;sidebar&quot;:{&quot;position&quot;:&quot;left&quot;,&quot;display&quot;:&quot;hide&quot;,&quot;padding&quot;:18,&quot;offset&quot;:12},&quot;copycode&quot;:false,&quot;bookmark&quot;:{&quot;enable&quot;:false,&quot;color&quot;:&quot;#222&quot;,&quot;save&quot;:&quot;auto&quot;},&quot;fancybox&quot;:false,&quot;mediumzoom&quot;:false,&quot;lazyload&quot;:false,&quot;pangu&quot;:false,&quot;comments&quot;:{&quot;style&quot;:&quot;tabs&quot;,&quot;active&quot;:null,&quot;storage&quot;:true,&quot;lazyload&quot;:false,&quot;nav&quot;:null},&quot;motion&quot;:{&quot;enable&quot;:true,&quot;async&quot;:false,&quot;transition&quot;:{&quot;post_block&quot;:&quot;fadeIn&quot;,&quot;post_header&quot;:&quot;fadeInDown&quot;,&quot;post_body&quot;:&quot;fadeInDown&quot;,&quot;coll_header&quot;:&quot;fadeInLeft&quot;,&quot;sidebar&quot;:&quot;fadeInUp&quot;}},&quot;prism&quot;:false,&quot;i18n&quot;:{&quot;placeholder&quot;:&quot;搜索...&quot;,&quot;empty&quot;:&quot;没有找到任何搜索结果：${query}&quot;,&quot;hits_time&quot;:&quot;找到 ${hits} 个搜索结果（用时 ${time} 毫秒）&quot;,&quot;hits&quot;:&quot;找到 ${hits} 个搜索结果&quot;},&quot;path&quot;:&quot;&#x2F;search.xml&quot;,&quot;localsearch&quot;:{&quot;enable&quot;:true,&quot;trigger&quot;:&quot;auto&quot;,&quot;top_n_per_article&quot;:1,&quot;unescape&quot;:false,&quot;preload&quot;:false}}</script>
+<meta name="description" content="日常使用Git操作，随笔整理持续更新">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git基本命令总结">
+<meta property="og:url" content="http://example.com/2020/08/27/Git%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/index.html">
+<meta property="og:site_name" content="YueYang">
+<meta property="og:description" content="日常使用Git操作，随笔整理持续更新">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-08-27T08:42:54.000Z">
+<meta property="article:modified_time" content="2023-04-08T05:07:16.190Z">
+<meta property="article:author" content="YueY4n9">
+<meta property="article:tag" content="Git">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2020/08/27/Git%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{&quot;sidebar&quot;:&quot;&quot;,&quot;isHome&quot;:false,&quot;isPost&quot;:true,&quot;lang&quot;:&quot;zh-CN&quot;,&quot;comments&quot;:true,&quot;permalink&quot;:&quot;http:&#x2F;&#x2F;example.com&#x2F;2020&#x2F;08&#x2F;27&#x2F;Git%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93&#x2F;&quot;,&quot;path&quot;:&quot;2020&#x2F;08&#x2F;27&#x2F;Git基本命令总结&#x2F;&quot;,&quot;title&quot;:&quot;Git基本命令总结&quot;}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">&quot;&quot;</script>
+<title>Git基本命令总结 | YueYang</title><script src="/js/config.js"></script>
+  
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">YueYang</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">岳杨的个人博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu">
+        <li class="menu-item menu-item-首页"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li>
+        <li class="menu-item menu-item-文章"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>文章</a></li>
+        <li class="menu-item menu-item-标签"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li>
+        <li class="menu-item menu-item-分类"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li>
+        <li class="menu-item menu-item-关于"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+        <li class="menu-item menu-item-留言"><a href="/guestbook/" rel="section"><i class="fa fa-tags fa-fw"></i>留言</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="nav-number">1.</span> <span class="nav-text">基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E4%BB%93%E5%BA%93"><span class="nav-number">1.1.</span> <span class="nav-text">初始化仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%8B%E9%9A%86%E4%BB%A3%E7%A0%81"><span class="nav-number">1.2.</span> <span class="nav-text">克隆代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E5%B7%A5%E4%BD%9C%E5%8C%BA%E6%96%87%E4%BB%B6%E5%88%B0%E6%9A%82%E5%AD%98%E5%8C%BA"><span class="nav-number">1.3.</span> <span class="nav-text">添加工作区文件到暂存区</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%B7%A5%E4%BD%9C%E7%8A%B6%E6%80%81"><span class="nav-number">1.4.</span> <span class="nav-text">查看工作状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E4%BA%A4%E6%9A%82%E5%AD%98%E5%8C%BA%E6%96%87%E4%BB%B6%E5%88%B0%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93"><span class="nav-number">1.5.</span> <span class="nav-text">提交暂存区文件到本地仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80"><span class="nav-number">1.6.</span> <span class="nav-text">版本回退</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8B%89%E5%8F%96%E4%BB%A3%E7%A0%81"><span class="nav-number">1.7.</span> <span class="nav-text">拉取代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A8%E9%80%81%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="nav-number">1.8.</span> <span class="nav-text">推送本地仓库到远程仓库</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E8%BF%9C%E7%AB%AF%E5%88%86%E6%94%AF"><span class="nav-number">1.9.</span> <span class="nav-text">更新远端分支</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E6%94%AF%E6%93%8D%E4%BD%9C"><span class="nav-number">2.</span> <span class="nav-text">分支操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%9C%AC%E5%9C%B0%E6%89%80%E6%9C%89%E5%88%86%E6%94%AF"><span class="nav-number">2.1.</span> <span class="nav-text">查看本地所有分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%88%86%E6%94%AF"><span class="nav-number">2.2.</span> <span class="nav-text">创建分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%87%E6%8D%A2%E5%88%86%E6%94%AF"><span class="nav-number">2.3.</span> <span class="nav-text">切换分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%88%E5%B9%B6%E6%9F%90%E5%88%86%E6%94%AF%E5%88%B0%E5%BD%93%E5%89%8D%E5%88%86%E6%94%AF"><span class="nav-number">2.4.</span> <span class="nav-text">合并某分支到当前分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E6%9C%AC%E5%9C%B0%E5%88%86%E6%94%AF"><span class="nav-number">2.5.</span> <span class="nav-text">删除本地分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%87%8D%E6%96%B0%E5%AE%9A%E5%9F%BA%E6%93%8D%E4%BD%9C"><span class="nav-number">2.6.</span> <span class="nav-text">重新定基操作</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">常见问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81"><span class="nav-number">3.1.</span> <span class="nav-text">提交代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A7%A3%E5%86%B3%E5%86%B2%E7%AA%81"><span class="nav-number">3.2.</span> <span class="nav-text">解决冲突</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%86%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE%E6%8F%90%E4%BA%A4%E5%88%B0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%EF%BC%88%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E6%98%AF%E7%A9%BA%E9%A1%B9%E7%9B%AE%EF%BC%89"><span class="nav-number">3.3.</span> <span class="nav-text">将本地项目提交到远程仓库（远程仓库是空项目）</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="YueY4n9"
+      src="/images/YueY4n9_LOGO.jpg">
+  <p class="site-author-name" itemprop="name">YueY4n9</p>
+  <div class="site-description" itemprop="description">一只萌物的程序人生</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">18</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="sidebar-button site-overview-item animated"><i class="fa fa-comment"></i>
+    Chat
+  </a>
+  </div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/YueY4n9" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;YueY4n9" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i></a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/08/27/Git%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/YueY4n9_LOGO.jpg">
+      <meta itemprop="name" content="YueY4n9">
+      <meta itemprop="description" content="一只萌物的程序人生">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YueYang">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Git基本命令总结
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-08-27 16:42:54" itemprop="dateCreated datePublished" datetime="2020-08-27T16:42:54+08:00">2020-08-27</time>
+    </span>
+      <span class="post-meta-item">
+        <span class="post-meta-item-icon">
+          <i class="far fa-calendar-check"></i>
+        </span>
+        <span class="post-meta-item-text">更新于</span>
+        <time title="修改时间：2023-04-08 13:07:16" itemprop="dateModified" datetime="2023-04-08T13:07:16+08:00">2023-04-08</time>
+      </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus：</span>
+    
+    <a title="disqus" href="/2020/08/27/Git%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4%E6%80%BB%E7%BB%93/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2020/08/27/Git基本命令总结/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <blockquote>
+<p>  日常使用Git操作，随笔整理持续更新</p>
+</blockquote>
+<span id="more"></span>
+
+<h2 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h2><h3 id="初始化仓库"><a href="#初始化仓库" class="headerlink" title="初始化仓库"></a>初始化仓库</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init -- 在当前目录下初始化一个git仓库, 如果是基本项目开发基本用不到这个命令</span><br></pre></td></tr></table></figure>
+
+<h3 id="克隆代码"><a href="#克隆代码" class="headerlink" title="克隆代码"></a>克隆代码</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git colne &lt;url&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="添加工作区文件到暂存区"><a href="#添加工作区文件到暂存区" class="headerlink" title="添加工作区文件到暂存区"></a>添加工作区文件到暂存区</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add &lt;fileName&gt; -- 指定一个文件添加到暂存区</span><br><span class="line">git add . -- 常用, 将当前目录下的所有改动的文件添加到暂存区</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>  工作区：项目目录下除了<code>.git</code>文件夹以外的区域，简单来说就是你的项目文件区域</p>
+</blockquote>
+<h3 id="查看工作状态"><a href="#查看工作状态" class="headerlink" title="查看工作状态"></a>查看工作状态</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status -- 查看当前工作区和暂存区的文件状态</span><br></pre></td></tr></table></figure>
+
+<h3 id="提交暂存区文件到本地仓库"><a href="#提交暂存区文件到本地仓库" class="headerlink" title="提交暂存区文件到本地仓库"></a>提交暂存区文件到本地仓库</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;本次提交的描述内容&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset [--soft | --mixed | --hard ] [HEAD]-- 将暂存区的文件取消暂存</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>  <code>--mixed</code>为默认参数，重置暂存区的文件与上一次提交保持一致，工作区内容不变。可以理解成把工作区的文件和上次一提交的文件重新比对。效果上就像把暂存区的文件重新拿到工作区。</p>
+<p>  <code>--soft</code>为回退到上一个版本。</p>
+<p>  <code>--hard</code>为撤销工作区中所有未提交的内容，将暂存区和工作区都回到上一次版本，并删除之前的所有信息。就把这个参数理解成回到某个版本”最初的样子”。效果上就像时间回溯到了上一个版本提交之前，重新开发上一个版本一样。</p>
+</blockquote>
+<blockquote>
+<p>  其实<code>git reset</code>操作用好了还是挺有用的，比如你当前项目改了一堆没用的地方，你都不想要了，就可以：</p>
+<p>  <code>git reset --hard HEAR</code>将当前工作区和暂存区恢复成当前版本”最初的样子”，本地代码瞬间全没了！妙~~~啊！(\狗头)</p>
+</blockquote>
+<h3 id="拉取代码"><a href="#拉取代码" class="headerlink" title="拉取代码"></a>拉取代码</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></table></figure>
+
+<h3 id="推送本地仓库到远程仓库"><a href="#推送本地仓库到远程仓库" class="headerlink" title="推送本地仓库到远程仓库"></a>推送本地仓库到远程仓库</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git push &lt;远程主机名&gt; &lt;本地分支名&gt;:&lt;远程分支名&gt; -- 最原始的命令</span><br><span class="line">git push -- 常用, 将当前分支推送到远程绑定的对应分支</span><br></pre></td></tr></table></figure>
+
+<h3 id="更新远端分支"><a href="#更新远端分支" class="headerlink" title="更新远端分支"></a>更新远端分支</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote update origin -p</span><br></pre></td></tr></table></figure>
+
+<h2 id="分支操作"><a href="#分支操作" class="headerlink" title="分支操作"></a>分支操作</h2><h3 id="查看本地所有分支"><a href="#查看本地所有分支" class="headerlink" title="查看本地所有分支"></a>查看本地所有分支</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -a -- 展示的列表中*符号说明当前代码处于哪个分支</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>  有时候远端的分支刷新了，你本地获取分支列表发现，”啊哈，分支列表和远端对应不上！”。这时候不用慌，是因为这个列表是保存在本地的，并不是从远端实时获取的，你需要做的就是刷新这个保存在本地的列表与远端同步：</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote update origin -p -- 用远端来更新本地仓库</span><br></pre></td></tr></table></figure>
+
+<h3 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch &lt;name&gt; -- 从当前分支创建了名称为 dev 的分支</span><br></pre></td></tr></table></figure>
+
+<h3 id="切换分支"><a href="#切换分支" class="headerlink" title="切换分支"></a>切换分支</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout &lt;branchName&gt; -- 切换到本地目标分支</span><br><span class="line">git checkout -b &lt;newBranchName&gt; -- 从当前分支创建一个新分支并切换到新分支上</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>  <code>git checkout -b</code>操作可以在任一分支的任何状态执行，执行成功之后，会将所有操作复制到新的分支上，并且会切换到新分支，如果新分支提交了修改，则原有分支的操作会撤销掉。</p>
+</blockquote>
+<h3 id="合并某分支到当前分支"><a href="#合并某分支到当前分支" class="headerlink" title="合并某分支到当前分支"></a>合并某分支到当前分支</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge &lt;branchName&gt; -- 合并目标分支到当前分支</span><br></pre></td></tr></table></figure>
+
+<h3 id="删除本地分支"><a href="#删除本地分支" class="headerlink" title="删除本地分支"></a>删除本地分支</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d &lt;branchName&gt; -- 删除本地的目标分支</span><br></pre></td></tr></table></figure>
+
+<h3 id="重新定基操作"><a href="#重新定基操作" class="headerlink" title="重新定基操作"></a>重新定基操作</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git rebase &lt;branchName&gt; -- 以本地目标分支为基准，合并代码</span><br></pre></td></tr></table></figure>
+
+<p>首先，说明一下rebase的作用：将目标分支的开发呈现一条直线，没有其他分支合并进来的节点，展示起来比较清晰。</p>
+<p>那么能来点实际吗？——彳亍</p>
+<p>git rebase相关流程</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b [本地开发分支名] origin/[远程分支名] -- 以目标分支为基准创建新分支并关联远端分支</span><br><span class="line">....... -- 修改代码的操作</span><br><span class="line">git add . -- 添加所有本次修改的文件添加到暂存区</span><br><span class="line">git commit -m &quot;注释内容&quot; -- 提交代码，保存本地分支</span><br><span class="line">git checkout [主分支] -- 切换分支，这个分支是目标基点的分支，简单来说，就是把现在的代码变成从&quot;这个分支开始进行开发&quot;的分支</span><br><span class="line">git pull -- 拉取主分支代码，此时本地仓库主分支代码为最新代码，本地开发分支有所有修改的代码</span><br><span class="line">git checkout [本地开发分支] // 切回本地开发分支，准备rebase</span><br><span class="line">git rebase [主分支] -i HEAD~2 // 将当前分支合并提交到目标分支</span><br><span class="line">// rebase过程可能会出现冲突，解决冲突后继续rebase过程</span><br><span class="line">git rebase [主分支] --continue // 继续rebase过程</span><br><span class="line">git push // 推送远端</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>  当然，如果你不愿意在提交代码的时候进行<code>rebase</code>操作，你可以将<code>git commit</code>暂存操作换乘<code>git stash</code>暂存，这将使你的<code>rebase</code>过程变的无比顺利</p>
+</blockquote>
+<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="提交代码"><a href="#提交代码" class="headerlink" title="提交代码"></a>提交代码</h3><p>当进行了一个阶段的开发工作之后，就会需要对代码进行<code>提交</code>操作，推送到远端分支，这部分工作当然可以交给IDE来完成，不过我更推荐使用命令的形式，来更多的理解<code>git的工作原理</code></p>
+<blockquote>
+<p>  流程：暂存代码<code>-&gt;</code>提交到本地仓库<code>-&gt;</code>推送到远端分支</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 1. 暂存代码：所有变化提交到暂存区</span></span><br><span class="line">git add .</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 2. 提交到本地仓库，这步需要简介且明确的写出本次提交的所有内容</span></span><br><span class="line">git commit -m &quot;本次提交内容的注释说明&quot;</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 3. 推送到远端分支</span></span><br><span class="line">git push &lt;远程主机名&gt; &lt;本地分支名&gt;:&lt;远程分支名&gt; # 如果你看过了前面的内容后，应该可以轻松地简化这行命令</span><br></pre></td></tr></table></figure>
+
+<h3 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a>解决冲突</h3><p>如果你充分理解了分支操作的本质，就会对冲突的解决应对自如，这里还是给出拉取代码时出现代码冲突情况的解决办法：</p>
+<blockquote>
+<p>  流程：暂存(压栈)<code>-&gt;</code>拉取代码<code>-&gt;</code>释放代码（弹栈）<code>-&gt;</code>手动合并冲突代码</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 如果本地代码与线上代码有冲突，git pull 是会报错，如下：</span></span><br><span class="line"><span class="meta">#</span><span class="bash"> error: Your <span class="built_in">local</span> changes to <span class="string">&#x27;-----&#x27;</span> would be overwritten by merge. Aborting.Please, commit your changes or stash them before you can merge.</span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 那么接下来，将是你需要做的几步：</span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 1. 将本地代码暂存，将工作区代码恢复到上一个版本</span></span><br><span class="line">git stash</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 2. 拉取代码，将工作区代码更新为远端最新版本</span></span><br><span class="line">git pull</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 3. 释放代码，也就是弹栈，将之前暂存的代码取出</span></span><br><span class="line">git stash pop</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 4. 手动合并代码，如果使用ide工具进行，这项工作将变的更加容易</span></span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 5. 查看代码状态，会展示你这次合并代码过程中又对哪些文件进行了修改</span></span><br><span class="line">git status</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 6. 之后就是继续进行开发工作，再对新代码进行add、commit操作啦~^v^</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="将本地项目提交到远程仓库（远程仓库是空项目）"><a href="#将本地项目提交到远程仓库（远程仓库是空项目）" class="headerlink" title="将本地项目提交到远程仓库（远程仓库是空项目）"></a>将本地项目提交到远程仓库（远程仓库是空项目）</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 1. 先进入项目文件夹</span></span><br><span class="line">cd 当前项目的完整路径</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 2. 初始化这个目录变成git可以管理的仓库</span></span><br><span class="line">git init</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 3. 暂存并提交代码</span></span><br><span class="line">git add .</span><br><span class="line">git commit -m &quot;Init Project&quot;</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 4. 关联到远程库</span></span><br><span class="line">git remote add origin &lt;你的远程库地址&gt;</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 5. 获取远程库与本地同步合并（如果远程库不为空必须做这一步，否则后面的提交会失败）</span></span><br><span class="line">git pull origin master</span><br><span class="line"><span class="meta"></span></span><br><span class="line"><span class="meta">#</span><span class="bash"> 6. 把本地库的内容推送到远程，使用 git push命令，实际上是把当前分支master推送到远程。执行此命令后会要求输入用户名、密码，验证通过后即开始上传。</span></span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Git/" rel="tag"># Git</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/08/27/Mongo/" rel="prev" title="MongoDB笔记">
+                  <i class="fa fa-chevron-left"></i> MongoDB笔记
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/12/15/Dangling-meta-character-%E2%80%98-%E2%80%98-near-index-1%E5%BC%82%E5%B8%B8/" rel="next" title="Dangling meta character ‘+‘ near index 1异常">
+                  Dangling meta character ‘+‘ near index 1异常 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  <script src="/js/comments.js"></script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">YueY4n9</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+
+
+
+  
+
+
+
+
+<script class="next-config" data-name="disqus" type="application/json">{&quot;enable&quot;:true,&quot;shortname&quot;:&quot;blog4go&quot;,&quot;count&quot;:true,&quot;i18n&quot;:{&quot;disqus&quot;:&quot;disqus&quot;}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>
+
+<!--单击显示文字-->
+<!-- <script type="text/javascript" src="/js/click_show_text.js"></script> -->
+<!--单击显示红心-->
+<script type="text/javascript" src="/js/love.js"></script>
+<script type="text/javascript" color="0,0,255" opacity='0.7' zIndex="-2" count="99" src="/js/canvas.min.js">
+</script>
