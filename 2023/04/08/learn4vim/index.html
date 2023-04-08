@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 5.4.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/yueyang.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/yueyang.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/blue/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"yuey4n9.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.15.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="整理 Vim ide 的学习过程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="learn4vim">
+<meta property="og:url" content="https://yuey4n9.github.io/2023/04/08/learn4vim/index.html">
+<meta property="og:site_name" content="YueYang">
+<meta property="og:description" content="整理 Vim ide 的学习过程">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-04-08T09:11:53.000Z">
+<meta property="article:modified_time" content="2023-04-08T09:19:48.794Z">
+<meta property="article:author" content="YueY4n9">
+<meta property="article:tag" content="vim">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://yuey4n9.github.io/2023/04/08/learn4vim/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://yuey4n9.github.io/2023/04/08/learn4vim/","path":"2023/04/08/learn4vim/","title":"learn4vim"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>learn4vim | YueYang</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">YueYang</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">岳杨的个人博客</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Vim%E5%AD%A6%E4%B9%A0"><span class="nav-number">1.</span> <span class="nav-text">Vim学习</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="YueY4n9"
+      src="/images/yueyang.png">
+  <p class="site-author-name" itemprop="name">YueY4n9</p>
+  <div class="site-description" itemprop="description">一只萌物的程序人生</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="mailto:mmdyueyang@gmail.com" title="E-Mail → mailto:mmdyueyang@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://yuey4n9.github.io/2023/04/08/learn4vim/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/yueyang.png">
+      <meta itemprop="name" content="YueY4n9">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YueYang">
+      <meta itemprop="description" content="一只萌物的程序人生">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="learn4vim | YueYang">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          learn4vim
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-04-08 17:11:53 / 修改时间：17:19:48" itemprop="dateCreated datePublished" datetime="2023-04-08T17:11:53+08:00">2023-04-08</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <blockquote>
+<p>整理 Vim ide 的学习过程</p>
+</blockquote>
+<span id="more"></span>
+
+<h1 id="Vim学习"><a href="#Vim学习" class="headerlink" title="Vim学习"></a>Vim学习</h1><p>一般模式可用的按钮说明<br>移动光标</p>
+<p>「h、j、k、l」，分别控制光标左、下、上、右移一格<br>按「ctrl+b」屏幕往”后”移动一页<br> 按「ctrl+f」屏幕往”前”移动一页<br>「n<space>」光标向右移动n个字符<br>「Home」移动到这一行的最前面字符处:0数字，但不能用数字小键盘上的数字<br>「End」 移动到这一行的最后面字符处:$，我测试好像不行<br>「w」光标跳到下个字的开头<br>「e」光标跳到下个字的字尾<br>「H」 光标移动到这个屏幕的最上方那一行的第一个字符<br>「M」 光标移动到这个屏幕的中间那一行的第一个字符<br>「L」光标移动到这个屏幕的最下方那一行的第一个字符<br>「G」 移动到这个文件的最后一行<br>「nG」移动到这个文件的第n行(可配合:set nu)<br>「gg」 移动到这个文件的第一行，相当于1G<br>「n<Enter>」光标向下移动n行<br>查找与替换<br>「/word」 向光标向下寻找一个名称为word的字符串<br>「?word」 向光标向上寻找一个名称为word的字符串<br>「n」 代表重复前一个查找的动作<br>「N」 与n刚好相反，为「反向」进行行前一个查找动作<br>「:n1,n2s/word1/word2/g」 n1与n2为数字，在第n1与n2行之间查找word1 这个字符串，并将该字符串替换为word2<br>「:1,$s/word1/word2/g」 从第一行到最后一行查找word1字符串，并将该字符串替换为word2<br>「:1,$s/word1/word2/gc」 从第一行到最后一行查找word1字符串，并将该字符串替换为word2 ，且在替换前提示用户确认是否进行替换<br>删除、复制与粘贴<br>「x」 为向后删除一个字符 (相当于「del」键)<br>「X」 为向前删除一个字符(相当于「backspace」键)<br>「nx」 连续向后删除n个字符<br>「dd」 删除光标所在行<br>「ndd」 删除光标所在的向下n行<br>「d1G」 删除光标所在行到第一行的所有数据<br>「dG」 删除光标所在到最后一行的所有数据<br>「d$」 删除光标所在处，到该行的最后一个字符<br>「d0」 删除光标所在处，到该行的最前一个字符<br>「yy」 复制光标所在的那一行<br>「nyy」 复制光标所在的向下n列<br>「y1G」 复制光标所在行到第一行的所有数据<br>「yG」 复制光标所在行到最后一行的所有数据<br>「y0」 复制光标所在的那个字符到该行行首的所有数据<br>「y$」 复制光标所在的那个字符到该行行尾的所有数据<br>「p」将已复制的数据在光标下一行粘贴上<br>「P」 则为贴在光标的上一行<br>「u」 恢复前一个操作<br>「Ctrl+r」重做上一个操作<br>「.」 是重复前一个操作<br>一般模式切换到编辑模式的可用的按钮说明<br>「i, I」 进入编辑模式：</p>
+<ul>
+<li>i 为「从目前光标所在处插入」</li>
+<li>I 为「在目前所在行的第一个非空格符处开始插入」<br>「a, A」 进入编辑模式(Insert mode)：</li>
+<li>a 为「从目前光标所在的下一个字符处开始插入」</li>
+<li>A 为「从光标所在行的最后一个字符处开始插入」<br>「o, O」 进入编辑模式：</li>
+<li>o 为「在目前光标所在的下一行处插入新的一行」</li>
+<li>O 为在目前光标所在处的上一行插入新的一行<br>「r, R」 进入取代模式：</li>
+<li>r 只会取代光标所在的那一个字符一次</li>
+<li>R会一直取代光标所在的文字，直到按下 ESC 为止；<br>「Esc」 退出编辑模式，回到一般模式<br>一般模式切换到命令行模式可用的按钮说明<br>「:w」 保存编辑的内容<br>「:w!」强制写入该文件，但跟你对该文件的权限有关<br>「:q」 离开vi<br>「:q!」 不想保存修改强制离开<br>「:wq」 保存后离开<br>「:x」 保存后离开<br>「ZZ」 若文件没有更动，则不保存离开，若文件已经被更改过，则保存后离开<br>「:w filename」 将编辑的数据保存成另一个文件（类似另存）<br>「:r filename」 在编辑的数据中，读入另一个文件的数据。即将「filename」 这个文件的内容加到光标所在行后面。<br>「:n1,n2 w filename」 将n1到n2的内容保存成filename这个文件。<br>「:! command」暂时离开vi 到命令行模式下执行command的显示结果！例如 「:! ls /home」即可在 vi 当中察看/home底下以ls输出的文件信息！<br>「:set nu」 显示行号<br>「:set nonu」 与 set nu 相反，为取消行</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/vim/" rel="tag"><i class="fa fa-tag"></i> vim</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/04/08/%E3%80%8A%E4%BA%BA%E6%80%A7%E7%9A%84%E5%BC%B1%E7%82%B9%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="prev" title="《人性的弱点》读书笔记">
+                  <i class="fa fa-chevron-left"></i> 《人性的弱点》读书笔记
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/04/08/learn4linux/" rel="next" title="learn4linux">
+                  learn4linux <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa-solid fa-mouse-field"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">YueY4n9</span>
+</div>
+
+<!--
+-->
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+  <a href="https://github.com/YueY4n9" class="github-corner" title="在 GitHub 上关注我" aria-label="在 GitHub 上关注我" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+
+</body>
+</html>
