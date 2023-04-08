@@ -1,6 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>2021年终总结</title>
+    <url>/2022/01/06/2021%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</url>
+    <content><![CDATA[<h1 id="岳杨2021年终总结答辩"><a href="#岳杨2021年终总结答辩" class="headerlink" title="岳杨2021年终总结答辩"></a>岳杨2021年终总结答辩</h1><h3 id="整体概括"><a href="#整体概括" class="headerlink" title="整体概括"></a>整体概括</h3><p>我将描述<code>2021年6月21日</code>入职以来，<code>2021年12月31日</code>为截止日期的个人情况，包含个人工作业绩、学习到的经验、工作中思考的问题以及接下来一年的规划。</p>
+<hr>
+<p>答辩过程将会涉及以下内容：</p>
+<ol>
+<li>工作业绩：<ol>
+<li> 完成了哪些工作</li>
+<li> 取得了哪些成绩</li>
+<li> 目标计划与结果</li>
+</ol>
+</li>
+<li>个人成长<ol>
+<li> 有哪些收获</li>
+<li> 节约了哪些成本</li>
+<li> 哪些方面提升了效率</li>
+</ol>
+</li>
+<li>问题分析<ol>
+<li> 面临的哪些问题</li>
+<li> 有什么应对措施</li>
+</ol>
+</li>
+<li>未来计划<ol>
+<li> 下一步的安排</li>
+<li> 需要的资源支持</li>
+<li> 初步的评价指标</li>
+</ol>
+</li>
+</ol>
+<hr>
+<h3 id="详细描述"><a href="#详细描述" class="headerlink" title="详细描述"></a>详细描述</h3><h4 id="工作业绩"><a href="#工作业绩" class="headerlink" title="工作业绩"></a>工作业绩</h4><h5 id="完成了哪些工作"><a href="#完成了哪些工作" class="headerlink" title="完成了哪些工作"></a>完成了哪些工作</h5><p>这一年，我只参与了<code>MeFlow产品迭代</code>和<code>MeFlow三一项目</code>的开发和维护工作。</p>
+<p>MeFlow产品迭代过程中，这不到半年时间里我完成了如下迭代版本的方案设计和开发工作：</p>
+<p><code>模板库模块</code>、<code>审批模块</code>、<code>权限模块</code>、<code>单双屏比对</code>、<code>评审模块</code>、<code>人员选择器优化</code>、<code>字段池优化</code>、<code>工作台模块</code></p>
+<p>其中比较关键的模块有：审批模块、权限模块、评审模块、工作台模块。</p>
+<p>期间完成了MeFlow项目中代码命名规范化、ContractObj重构（和王旭）、文件比对和模板比对的优化等。</p>
+<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">*</span> ContractObj重构前使用相对较困难，有较多的重复代码，重构后比较好用，减少了大量的冗余代码。</span><br><span class="line"></span><br><span class="line"><span class="bullet">*</span> 比对优化前比对十分钟，优化后两三分钟。</span><br></pre></td></tr></table></figure>
+
+
+
+<p>MeFlow三一项目中，我参与了三一项目的需求研发和大部分维护工作，完成需求有以下：</p>
+<p><code>三一系统集成</code>、<code>页面改版需求</code>、<code>单点登录</code>、<code>外部发起审批版本</code>、<code>外部发起审批变更版本</code>、<code>三一GSP接口等需求的开发</code></p>
+<p><a href="https://powerlawai.feishu.cn/docs/doccnPBFJozuIJ9nDSDEXMaQUKR">三一待解决问题</a></p>
+<p>三一现阶段后端问题基本得到解决</p>
+<h5 id="取得了哪些成绩"><a href="#取得了哪些成绩" class="headerlink" title="取得了哪些成绩"></a>取得了哪些成绩</h5><p>MeFlow产品每次迭代版本都能及时上线，没有延期</p>
+<p>MeFlow三一项目的解决了几乎所有属于代码层面的问题</p>
+<p>MeFlow签约的客户越来越多，当然这个与大家的努力息息相关</p>
+<h5 id="目标计划与结果"><a href="#目标计划与结果" class="headerlink" title="目标计划与结果"></a>目标计划与结果</h5><ul>
+<li><p>  来到公司后的根本目标是提升公司的产品价值，衍生出来的小目标就是完成好需求、维护好项目、提升个人水平。目前来看需求完成情况为预期的<code>90%</code>，维护好项目为预期的<code>100%</code>，提升个人水平完成情况为预期的<code>67%</code>。</p>
+</li>
+<li><p>  需求完成与预期差距主要体现在：用现在的眼光去看之前的设计和逻辑，会发现之前完成需求只是满足了<code>基本满足需求</code>这一条件，与<code>高质量、高效的、安全的</code>目标还有差距，我觉得这需要通过时间沉淀来追赶这样的差距。</p>
+</li>
+<li><p>  提升个人水平与预期差距主要体现在学习过后没有形成书面记录，没有将自己学习到的分享给大家。</p>
+</li>
+</ul>
+<hr>
+<h4 id="个人成长"><a href="#个人成长" class="headerlink" title="个人成长"></a>个人成长</h4><ul>
+<li><p>  编程水平提升，知识面变宽变广</p>
+</li>
+<li><p>  各个开发工具的熟练使用：Charles，Telepresence</p>
+</li>
+<li><p>性格上：</p>
+<ul>
+<li>  保持着对程序设计的热情，使命感</li>
+<li>  责任心进一步提升，能够真正将程序设计当成自己的事情去认真对待</li>
+<li>  更加的细心，考虑的更加广泛、周到，比起刚到公司可以说是有较大提升</li>
+</ul>
+</li>
+<li><p>  能有效的输出开发过程中的文档和发版文档</p>
+</li>
+</ul>
+<hr>
+<h4 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h4><h5 id="面临的哪些问题和挑战"><a href="#面临的哪些问题和挑战" class="headerlink" title="面临的哪些问题和挑战"></a>面临的哪些问题和挑战</h5><ol>
+<li> 根据我2021年的程序开发的经历来看，面临较多的问题就是对需求分析的不够到位不够深刻，进而在设计和开发过程中种种疏漏，最终导致开发、联调、测试、上线的过程不够顺利，虽然最终能够按时上线，但经常需要加班加点的去赶进度修问题。</li>
+<li> 在与各方沟通的过程中，有时会出现一种相对绝对的言论，虽然已经在刻意的去避免，但是确实还是因为说话说的不对导致沟通不顺利。</li>
+<li> 目前项目交付总是以DL为期望去完成交付任务，并且接近DL时手忙脚乱，降低整体的效率。</li>
+<li> 没有给自己安排好时间，经常出现的问题就是多个时间线同时进行。</li>
+</ol>
+<h5 id="有什么应对措施"><a href="#有什么应对措施" class="headerlink" title="有什么应对措施"></a>有什么应对措施</h5><ol>
+<li> 首先，可以花费更多精力和心思去考虑一个产品需求，克服那种”不可见的产出容易懈怠”的心理。其次，能与产品团队和后端团队共同讨论后再做出相对更合理的技术选型和决策，将技术返讲及时的坚定地落实下去。</li>
+<li> 养成习惯来避免以一种绝对的语气或者态度去描述事物。</li>
+<li> 缩短项目交付周期，形成稳定的项目部署脚本。</li>
+</ol>
+<hr>
+<h4 id="未来计划"><a href="#未来计划" class="headerlink" title="未来计划"></a>未来计划</h4><h5 id="下一步的安排"><a href="#下一步的安排" class="headerlink" title="下一步的安排"></a>下一步的安排</h5><p>下一小步的安排是：能继续保持现有的活力，提高质量、提高效率的完成产品需求，维护好项目。</p>
+<p>未来一年的安排：</p>
+<ol>
+<li> 与MeFlow整个团队共同完成2022年公司OKR，且不以完成OKR为最终目标的进行不断创新和努力。</li>
+<li> 提升对程序设计的视野和深度，为幂律的产品提供更优秀的设计和更高质量的代码。</li>
+<li> 随着MeFlow承接项目越来越多，能够肩负起一部分项目的开发和维护工作，并以<code>客户第一，责任担当，创造价值</code>的价值观反馈于客户。</li>
+<li> 在个人学习成长的同时，优化自己的学习习惯，形成文档产出和知识分享，为小伙伴提供自己的学习分享：先预计三次（大概 __ ）。</li>
+<li> 对于自身，提升自身技能的深度与广度，对每一种技术每一类知识都能了解到位。</li>
+</ol>
+<p>擦神：整合一部分之前的代码，梳理之前的业务。</p>
+]]></content>
+  </entry>
+  <entry>
     <title>Dangling meta character ‘+‘ near index 1异常</title>
     <url>/2020/12/15/Dangling-meta-character-%E2%80%98-%E2%80%98-near-index-1%E5%BC%82%E5%B8%B8/</url>
     <content><![CDATA[<blockquote>
@@ -101,134 +198,6 @@
       <tags>
         <tag>Git</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>2021年终总结</title>
-    <url>/2022/01/06/2021%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/</url>
-    <content><![CDATA[<h1 id="岳杨2021年终总结答辩"><a href="#岳杨2021年终总结答辩" class="headerlink" title="岳杨2021年终总结答辩"></a>岳杨2021年终总结答辩</h1><h3 id="整体概括"><a href="#整体概括" class="headerlink" title="整体概括"></a>整体概括</h3><p>我将描述<code>2021年6月21日</code>入职以来，<code>2021年12月31日</code>为截止日期的个人情况，包含个人工作业绩、学习到的经验、工作中思考的问题以及接下来一年的规划。</p>
-<hr>
-<p>答辩过程将会涉及以下内容：</p>
-<ol>
-<li>工作业绩：<ol>
-<li> 完成了哪些工作</li>
-<li> 取得了哪些成绩</li>
-<li> 目标计划与结果</li>
-</ol>
-</li>
-<li>个人成长<ol>
-<li> 有哪些收获</li>
-<li> 节约了哪些成本</li>
-<li> 哪些方面提升了效率</li>
-</ol>
-</li>
-<li>问题分析<ol>
-<li> 面临的哪些问题</li>
-<li> 有什么应对措施</li>
-</ol>
-</li>
-<li>未来计划<ol>
-<li> 下一步的安排</li>
-<li> 需要的资源支持</li>
-<li> 初步的评价指标</li>
-</ol>
-</li>
-</ol>
-<hr>
-<h3 id="详细描述"><a href="#详细描述" class="headerlink" title="详细描述"></a>详细描述</h3><h4 id="工作业绩"><a href="#工作业绩" class="headerlink" title="工作业绩"></a>工作业绩</h4><h5 id="完成了哪些工作"><a href="#完成了哪些工作" class="headerlink" title="完成了哪些工作"></a>完成了哪些工作</h5><p>这一年，我只参与了<code>MeFlow产品迭代</code>和<code>MeFlow三一项目</code>的开发和维护工作。</p>
-<p>MeFlow产品迭代过程中，这不到半年时间里我完成了如下迭代版本的方案设计和开发工作：</p>
-<p><code>模板库模块</code>、<code>审批模块</code>、<code>权限模块</code>、<code>单双屏比对</code>、<code>评审模块</code>、<code>人员选择器优化</code>、<code>字段池优化</code>、<code>工作台模块</code></p>
-<p>其中比较关键的模块有：审批模块、权限模块、评审模块、工作台模块。</p>
-<p>期间完成了MeFlow项目中代码命名规范化、ContractObj重构（和王旭）、文件比对和模板比对的优化等。</p>
-<figure class="highlight markdown"><table><tr><td class="code"><pre><span class="line"><span class="bullet">*</span> ContractObj重构前使用相对较困难，有较多的重复代码，重构后比较好用，减少了大量的冗余代码。</span><br><span class="line"></span><br><span class="line"><span class="bullet">*</span> 比对优化前比对十分钟，优化后两三分钟。</span><br></pre></td></tr></table></figure>
-
-
-
-<p>MeFlow三一项目中，我参与了三一项目的需求研发和大部分维护工作，完成需求有以下：</p>
-<p><code>三一系统集成</code>、<code>页面改版需求</code>、<code>单点登录</code>、<code>外部发起审批版本</code>、<code>外部发起审批变更版本</code>、<code>三一GSP接口等需求的开发</code></p>
-<p><a href="https://powerlawai.feishu.cn/docs/doccnPBFJozuIJ9nDSDEXMaQUKR">三一待解决问题</a></p>
-<p>三一现阶段后端问题基本得到解决</p>
-<h5 id="取得了哪些成绩"><a href="#取得了哪些成绩" class="headerlink" title="取得了哪些成绩"></a>取得了哪些成绩</h5><p>MeFlow产品每次迭代版本都能及时上线，没有延期</p>
-<p>MeFlow三一项目的解决了几乎所有属于代码层面的问题</p>
-<p>MeFlow签约的客户越来越多，当然这个与大家的努力息息相关</p>
-<h5 id="目标计划与结果"><a href="#目标计划与结果" class="headerlink" title="目标计划与结果"></a>目标计划与结果</h5><ul>
-<li><p>  来到公司后的根本目标是提升公司的产品价值，衍生出来的小目标就是完成好需求、维护好项目、提升个人水平。目前来看需求完成情况为预期的<code>90%</code>，维护好项目为预期的<code>100%</code>，提升个人水平完成情况为预期的<code>67%</code>。</p>
-</li>
-<li><p>  需求完成与预期差距主要体现在：用现在的眼光去看之前的设计和逻辑，会发现之前完成需求只是满足了<code>基本满足需求</code>这一条件，与<code>高质量、高效的、安全的</code>目标还有差距，我觉得这需要通过时间沉淀来追赶这样的差距。</p>
-</li>
-<li><p>  提升个人水平与预期差距主要体现在学习过后没有形成书面记录，没有将自己学习到的分享给大家。</p>
-</li>
-</ul>
-<hr>
-<h4 id="个人成长"><a href="#个人成长" class="headerlink" title="个人成长"></a>个人成长</h4><ul>
-<li><p>  编程水平提升，知识面变宽变广</p>
-</li>
-<li><p>  各个开发工具的熟练使用：Charles，Telepresence</p>
-</li>
-<li><p>性格上：</p>
-<ul>
-<li>  保持着对程序设计的热情，使命感</li>
-<li>  责任心进一步提升，能够真正将程序设计当成自己的事情去认真对待</li>
-<li>  更加的细心，考虑的更加广泛、周到，比起刚到公司可以说是有较大提升</li>
-</ul>
-</li>
-<li><p>  能有效的输出开发过程中的文档和发版文档</p>
-</li>
-</ul>
-<hr>
-<h4 id="问题分析"><a href="#问题分析" class="headerlink" title="问题分析"></a>问题分析</h4><h5 id="面临的哪些问题和挑战"><a href="#面临的哪些问题和挑战" class="headerlink" title="面临的哪些问题和挑战"></a>面临的哪些问题和挑战</h5><ol>
-<li> 根据我2021年的程序开发的经历来看，面临较多的问题就是对需求分析的不够到位不够深刻，进而在设计和开发过程中种种疏漏，最终导致开发、联调、测试、上线的过程不够顺利，虽然最终能够按时上线，但经常需要加班加点的去赶进度修问题。</li>
-<li> 在与各方沟通的过程中，有时会出现一种相对绝对的言论，虽然已经在刻意的去避免，但是确实还是因为说话说的不对导致沟通不顺利。</li>
-<li> 目前项目交付总是以DL为期望去完成交付任务，并且接近DL时手忙脚乱，降低整体的效率。</li>
-<li> 没有给自己安排好时间，经常出现的问题就是多个时间线同时进行。</li>
-</ol>
-<h5 id="有什么应对措施"><a href="#有什么应对措施" class="headerlink" title="有什么应对措施"></a>有什么应对措施</h5><ol>
-<li> 首先，可以花费更多精力和心思去考虑一个产品需求，克服那种”不可见的产出容易懈怠”的心理。其次，能与产品团队和后端团队共同讨论后再做出相对更合理的技术选型和决策，将技术返讲及时的坚定地落实下去。</li>
-<li> 养成习惯来避免以一种绝对的语气或者态度去描述事物。</li>
-<li> 缩短项目交付周期，形成稳定的项目部署脚本。</li>
-</ol>
-<hr>
-<h4 id="未来计划"><a href="#未来计划" class="headerlink" title="未来计划"></a>未来计划</h4><h5 id="下一步的安排"><a href="#下一步的安排" class="headerlink" title="下一步的安排"></a>下一步的安排</h5><p>下一小步的安排是：能继续保持现有的活力，提高质量、提高效率的完成产品需求，维护好项目。</p>
-<p>未来一年的安排：</p>
-<ol>
-<li> 与MeFlow整个团队共同完成2022年公司OKR，且不以完成OKR为最终目标的进行不断创新和努力。</li>
-<li> 提升对程序设计的视野和深度，为幂律的产品提供更优秀的设计和更高质量的代码。</li>
-<li> 随着MeFlow承接项目越来越多，能够肩负起一部分项目的开发和维护工作，并以<code>客户第一，责任担当，创造价值</code>的价值观反馈于客户。</li>
-<li> 在个人学习成长的同时，优化自己的学习习惯，形成文档产出和知识分享，为小伙伴提供自己的学习分享：先预计三次（大概 __ ）。</li>
-<li> 对于自身，提升自身技能的深度与广度，对每一种技术每一类知识都能了解到位。</li>
-</ol>
-<p>擦神：整合一部分之前的代码，梳理之前的业务。</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>JAVA获取主机硬件唯一标识CPUID+MAC地址。</title>
-    <url>/2020/08/17/Java%E8%8E%B7%E5%8F%96%E7%A1%AC%E4%BB%B6%E5%94%AF%E4%B8%80%E6%A0%87%E8%AF%86CPUID+MAC%E5%9C%B0%E5%9D%80/</url>
-    <content><![CDATA[<blockquote>
-<p>  Java为表示主机的唯一性而做出的获取主机CPUID和MAC地址时所进行的操作，整体是为了解决不同主机能在访问服务器时能通过某个唯一标识来进行权限认证，以此达到控制权限的目的</p>
-</blockquote>
-<span id="more"></span>
-
-<h3 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h3><p>结合上一篇博文，我需要拿到一台主机的唯一标识，并且这个标识是不可修改的，经查阅发现，MAC地址虽然是唯一标识，但是可修改，所以不可采用。现在选取当前主机唯一标识——CPU序列，本篇说下LINUX系统和WINSOWS系统获取CPU序列，顺带说下MAC地址的方法。</p>
-<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>主要思路就是使用Runtime.getRuntime().exec()执行命令来获取参数。毕竟是Java代码，要考虑多个平台的问题，而且linux和windows系统的命令又不同，所以分出处理。不多说，直接上代码：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 获取当前系统CPU序列，可区分linux系统和windows系统</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">getCpuId</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">    String cpuId;</span><br><span class="line">    <span class="comment">// 获取当前操作系统名称</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">os</span> <span class="operator">=</span> System.getProperty(<span class="string">&quot;os.name&quot;</span>);</span><br><span class="line">    os = os.toUpperCase();</span><br><span class="line">    System.out.println(os);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// linux系统用Runtime.getRuntime().exec()执行 dmidecode -t processor 查询cpu序列</span></span><br><span class="line">    <span class="comment">// windows系统用 wmic cpu get ProcessorId 查看cpu序列</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="string">&quot;LINUX&quot;</span>.equals(os)) &#123;</span><br><span class="line">        cpuId = getLinuxCpuId(<span class="string">&quot;dmidecode -t processor | grep &#x27;ID&#x27;&quot;</span>, <span class="string">&quot;ID&quot;</span>, <span class="string">&quot;:&quot;</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        cpuId = getWindowsCpuId();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> cpuId.toUpperCase().replace(<span class="string">&quot; &quot;</span>, <span class="string">&quot;&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 获取linux系统CPU序列</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">getLinuxCpuId</span><span class="params">(String cmd, String record, String symbol)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">execResult</span> <span class="operator">=</span> executeLinuxCmd(cmd);</span><br><span class="line">    String[] infos = execResult.split(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span> (String info : infos) &#123;</span><br><span class="line">        info = info.trim();</span><br><span class="line">        <span class="keyword">if</span> (info.indexOf(record) != -<span class="number">1</span>) &#123;</span><br><span class="line">            info.replace(<span class="string">&quot; &quot;</span>, <span class="string">&quot;&quot;</span>);</span><br><span class="line">            String[] sn = info.split(symbol);</span><br><span class="line">            <span class="keyword">return</span> sn[<span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">executeLinuxCmd</span><span class="params">(String cmd)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">    <span class="type">Runtime</span> <span class="variable">run</span> <span class="operator">=</span> Runtime.getRuntime();</span><br><span class="line">    Process process;</span><br><span class="line">    process = run.exec(cmd);</span><br><span class="line">    <span class="type">InputStream</span> <span class="variable">in</span> <span class="operator">=</span> process.getInputStream();</span><br><span class="line">    <span class="type">BufferedReader</span> <span class="variable">bs</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(<span class="keyword">new</span> <span class="title class_">InputStreamReader</span>(in));</span><br><span class="line">    <span class="type">StringBuffer</span> <span class="variable">out</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>();</span><br><span class="line">    <span class="type">byte</span>[] b = <span class="keyword">new</span> <span class="title class_">byte</span>[<span class="number">8192</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> n; (n = in.read(b)) != -<span class="number">1</span>; ) &#123;</span><br><span class="line">        out.append(<span class="keyword">new</span> <span class="title class_">String</span>(b, <span class="number">0</span>, n));</span><br><span class="line">    &#125;</span><br><span class="line">    in.close();</span><br><span class="line">    process.destroy();</span><br><span class="line">    <span class="keyword">return</span> out.toString();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 获取windows系统CPU序列</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">getWindowsCpuId</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">    <span class="type">Process</span> <span class="variable">process</span> <span class="operator">=</span> Runtime.getRuntime().exec(</span><br><span class="line">            <span class="keyword">new</span> <span class="title class_">String</span>[]&#123;<span class="string">&quot;wmic&quot;</span>, <span class="string">&quot;cpu&quot;</span>, <span class="string">&quot;get&quot;</span>, <span class="string">&quot;ProcessorId&quot;</span>&#125;);</span><br><span class="line">    process.getOutputStream().close();</span><br><span class="line">    <span class="type">Scanner</span> <span class="variable">sc</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(process.getInputStream());</span><br><span class="line">    sc.next();</span><br><span class="line">    <span class="type">String</span> <span class="variable">serial</span> <span class="operator">=</span> sc.next();</span><br><span class="line">    <span class="keyword">return</span> serial;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-  </entry>
-  <entry>
-    <title>HttpServletRequest request 简单使用方法</title>
-    <url>/2020/08/18/HttpServletRequest-request-%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</url>
-    <content><![CDATA[<blockquote>
-<p>  Java底层调用Servlet中HttpServletRequest的原理和常用函数</p>
-</blockquote>
-<span id="more"></span>
-
-<h3 id="HttpServletRequest-详解"><a href="#HttpServletRequest-详解" class="headerlink" title="HttpServletRequest 详解"></a>HttpServletRequest 详解</h3><p>HttpServletRequest对象代表客户端的请求，当客户端通过HTTP协议访问服务器时，HTTP请求头中的所有信息都封装在这个对象中，通过这个对象提供的方法，可以获得客户端请求的所有信息。</p>
-<p>常用到的几个方法：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">request.getRequestURL() 返回全路径</span><br><span class="line">request.getRequestURI() 返回除去host（域名或者ip）部分的路径</span><br><span class="line">request.getContextPath() 返回工程名部分，如果工程映射为/，此处返回则为空</span><br><span class="line">request.getServletPath() 返回除去host和工程名部分的路径</span><br><span class="line"><span class="number">1234</span></span><br></pre></td></tr></table></figure>
-
-<p>例如获取验证码的情况：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">request.getRequestURL() is : http:<span class="comment">//localhost:8080/captchaImage</span></span><br><span class="line">request.getRequestURI() is : /captchaImage</span><br><span class="line">request.getContextPath() is : </span><br><span class="line">request.getServletPath() is : /captchaImage</span><br><span class="line"><span class="number">1234</span></span><br></pre></td></tr></table></figure>
-
-<p>例如返回图片文件：</p>
-<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">request.getRequestURL() is : http:<span class="comment">//localhost:8080/profile/avatar/2020/07/31/8f04b7aa-c799-405b-90b0-4cfe36d89f35.jpeg</span></span><br><span class="line">request.getRequestURI() is : /profile/avatar/<span class="number">2020</span>/<span class="number">07</span>/<span class="number">31</span>/8f04b7aa-c799-405b-90b0-4cfe36d89f35.jpeg</span><br><span class="line">request.getContextPath() is : </span><br><span class="line">request.getServletPath() is : /profile/avatar/<span class="number">2020</span>/<span class="number">07</span>/<span class="number">31</span>/8f04b7aa-c799-405b-90b0-4cfe36d89f35.jpeg</span><br><span class="line"><span class="number">1234</span></span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
     <title>Golang</title>
@@ -466,6 +435,96 @@
 ]]></content>
       <tags>
         <tag>Golang</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HttpServletRequest request 简单使用方法</title>
+    <url>/2020/08/18/HttpServletRequest-request-%E7%AE%80%E5%8D%95%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</url>
+    <content><![CDATA[<blockquote>
+<p>  Java底层调用Servlet中HttpServletRequest的原理和常用函数</p>
+</blockquote>
+<span id="more"></span>
+
+<h3 id="HttpServletRequest-详解"><a href="#HttpServletRequest-详解" class="headerlink" title="HttpServletRequest 详解"></a>HttpServletRequest 详解</h3><p>HttpServletRequest对象代表客户端的请求，当客户端通过HTTP协议访问服务器时，HTTP请求头中的所有信息都封装在这个对象中，通过这个对象提供的方法，可以获得客户端请求的所有信息。</p>
+<p>常用到的几个方法：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">request.getRequestURL() 返回全路径</span><br><span class="line">request.getRequestURI() 返回除去host（域名或者ip）部分的路径</span><br><span class="line">request.getContextPath() 返回工程名部分，如果工程映射为/，此处返回则为空</span><br><span class="line">request.getServletPath() 返回除去host和工程名部分的路径</span><br><span class="line"><span class="number">1234</span></span><br></pre></td></tr></table></figure>
+
+<p>例如获取验证码的情况：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">request.getRequestURL() is : http:<span class="comment">//localhost:8080/captchaImage</span></span><br><span class="line">request.getRequestURI() is : /captchaImage</span><br><span class="line">request.getContextPath() is : </span><br><span class="line">request.getServletPath() is : /captchaImage</span><br><span class="line"><span class="number">1234</span></span><br></pre></td></tr></table></figure>
+
+<p>例如返回图片文件：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line">request.getRequestURL() is : http:<span class="comment">//localhost:8080/profile/avatar/2020/07/31/8f04b7aa-c799-405b-90b0-4cfe36d89f35.jpeg</span></span><br><span class="line">request.getRequestURI() is : /profile/avatar/<span class="number">2020</span>/<span class="number">07</span>/<span class="number">31</span>/8f04b7aa-c799-405b-90b0-4cfe36d89f35.jpeg</span><br><span class="line">request.getContextPath() is : </span><br><span class="line">request.getServletPath() is : /profile/avatar/<span class="number">2020</span>/<span class="number">07</span>/<span class="number">31</span>/8f04b7aa-c799-405b-90b0-4cfe36d89f35.jpeg</span><br><span class="line"><span class="number">1234</span></span><br></pre></td></tr></table></figure>]]></content>
+  </entry>
+  <entry>
+    <title>JAVA获取主机硬件唯一标识CPUID+MAC地址。</title>
+    <url>/2020/08/17/Java%E8%8E%B7%E5%8F%96%E7%A1%AC%E4%BB%B6%E5%94%AF%E4%B8%80%E6%A0%87%E8%AF%86CPUID+MAC%E5%9C%B0%E5%9D%80/</url>
+    <content><![CDATA[<blockquote>
+<p>  Java为表示主机的唯一性而做出的获取主机CPUID和MAC地址时所进行的操作，整体是为了解决不同主机能在访问服务器时能通过某个唯一标识来进行权限认证，以此达到控制权限的目的</p>
+</blockquote>
+<span id="more"></span>
+
+<h3 id="初衷"><a href="#初衷" class="headerlink" title="初衷"></a>初衷</h3><p>结合上一篇博文，我需要拿到一台主机的唯一标识，并且这个标识是不可修改的，经查阅发现，MAC地址虽然是唯一标识，但是可修改，所以不可采用。现在选取当前主机唯一标识——CPU序列，本篇说下LINUX系统和WINSOWS系统获取CPU序列，顺带说下MAC地址的方法。</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>主要思路就是使用Runtime.getRuntime().exec()执行命令来获取参数。毕竟是Java代码，要考虑多个平台的问题，而且linux和windows系统的命令又不同，所以分出处理。不多说，直接上代码：</p>
+<figure class="highlight java"><table><tr><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 获取当前系统CPU序列，可区分linux系统和windows系统</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">getCpuId</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">    String cpuId;</span><br><span class="line">    <span class="comment">// 获取当前操作系统名称</span></span><br><span class="line">    <span class="type">String</span> <span class="variable">os</span> <span class="operator">=</span> System.getProperty(<span class="string">&quot;os.name&quot;</span>);</span><br><span class="line">    os = os.toUpperCase();</span><br><span class="line">    System.out.println(os);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// linux系统用Runtime.getRuntime().exec()执行 dmidecode -t processor 查询cpu序列</span></span><br><span class="line">    <span class="comment">// windows系统用 wmic cpu get ProcessorId 查看cpu序列</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="string">&quot;LINUX&quot;</span>.equals(os)) &#123;</span><br><span class="line">        cpuId = getLinuxCpuId(<span class="string">&quot;dmidecode -t processor | grep &#x27;ID&#x27;&quot;</span>, <span class="string">&quot;ID&quot;</span>, <span class="string">&quot;:&quot;</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        cpuId = getWindowsCpuId();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> cpuId.toUpperCase().replace(<span class="string">&quot; &quot;</span>, <span class="string">&quot;&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 获取linux系统CPU序列</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">getLinuxCpuId</span><span class="params">(String cmd, String record, String symbol)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">    <span class="type">String</span> <span class="variable">execResult</span> <span class="operator">=</span> executeLinuxCmd(cmd);</span><br><span class="line">    String[] infos = execResult.split(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">    <span class="keyword">for</span> (String info : infos) &#123;</span><br><span class="line">        info = info.trim();</span><br><span class="line">        <span class="keyword">if</span> (info.indexOf(record) != -<span class="number">1</span>) &#123;</span><br><span class="line">            info.replace(<span class="string">&quot; &quot;</span>, <span class="string">&quot;&quot;</span>);</span><br><span class="line">            String[] sn = info.split(symbol);</span><br><span class="line">            <span class="keyword">return</span> sn[<span class="number">1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">executeLinuxCmd</span><span class="params">(String cmd)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">    <span class="type">Runtime</span> <span class="variable">run</span> <span class="operator">=</span> Runtime.getRuntime();</span><br><span class="line">    Process process;</span><br><span class="line">    process = run.exec(cmd);</span><br><span class="line">    <span class="type">InputStream</span> <span class="variable">in</span> <span class="operator">=</span> process.getInputStream();</span><br><span class="line">    <span class="type">BufferedReader</span> <span class="variable">bs</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(<span class="keyword">new</span> <span class="title class_">InputStreamReader</span>(in));</span><br><span class="line">    <span class="type">StringBuffer</span> <span class="variable">out</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">StringBuffer</span>();</span><br><span class="line">    <span class="type">byte</span>[] b = <span class="keyword">new</span> <span class="title class_">byte</span>[<span class="number">8192</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> n; (n = in.read(b)) != -<span class="number">1</span>; ) &#123;</span><br><span class="line">        out.append(<span class="keyword">new</span> <span class="title class_">String</span>(b, <span class="number">0</span>, n));</span><br><span class="line">    &#125;</span><br><span class="line">    in.close();</span><br><span class="line">    process.destroy();</span><br><span class="line">    <span class="keyword">return</span> out.toString();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 获取windows系统CPU序列</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> String <span class="title function_">getWindowsCpuId</span><span class="params">()</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">    <span class="type">Process</span> <span class="variable">process</span> <span class="operator">=</span> Runtime.getRuntime().exec(</span><br><span class="line">            <span class="keyword">new</span> <span class="title class_">String</span>[]&#123;<span class="string">&quot;wmic&quot;</span>, <span class="string">&quot;cpu&quot;</span>, <span class="string">&quot;get&quot;</span>, <span class="string">&quot;ProcessorId&quot;</span>&#125;);</span><br><span class="line">    process.getOutputStream().close();</span><br><span class="line">    <span class="type">Scanner</span> <span class="variable">sc</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(process.getInputStream());</span><br><span class="line">    sc.next();</span><br><span class="line">    <span class="type">String</span> <span class="variable">serial</span> <span class="operator">=</span> sc.next();</span><br><span class="line">    <span class="keyword">return</span> serial;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
+    <title>MongoDB笔记</title>
+    <url>/2020/08/27/Mongo/</url>
+    <content><![CDATA[<blockquote>
+<p>  MongoDB的一些基本操作，只适用于日常开发，深入了解MongoDB请略过本文</p>
+</blockquote>
+<span id="more"></span>
+
+<h1 id="Mongo数据库操作"><a href="#Mongo数据库操作" class="headerlink" title="Mongo数据库操作"></a>Mongo数据库操作</h1><p>在学习Mongo之后因为没有系统的做过总结，就想在此写一篇比较系统比较全面的日常操作数据库的SQL操作总结。本文实时补充</p>
+<p>增</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="operator">/</span><span class="operator">/</span>添加语句</span><br><span class="line"></span><br><span class="line">db.COLLECTION_NAME.insert(document)</span><br><span class="line"></span><br><span class="line">db.data.insert(&#123;</span><br><span class="line">	title:<span class="string">&#x27;测试添加操作&#x27;</span>,</span><br><span class="line">	<span class="keyword">by</span>:<span class="string">&#x27;YueYang&#x27;</span>,</span><br><span class="line">	<span class="type">time</span>:<span class="string">&#x27;11:08&#x27;</span></span><br><span class="line">&#125;);</span><br><span class="line">WriteResult(&#123; &quot;nInserted&quot; : <span class="number">1</span>, &quot;writeConcernError&quot; : [ ] &#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>删</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="operator">/</span><span class="operator">/</span> 删除操作</span><br><span class="line"></span><br><span class="line">db.collection.remove(</span><br><span class="line">   <span class="operator">&lt;</span>query<span class="operator">&gt;</span>,</span><br><span class="line">   &#123;</span><br><span class="line">     justOne: <span class="operator">&lt;</span><span class="type">boolean</span><span class="operator">&gt;</span>,</span><br><span class="line">     writeConcern: <span class="operator">&lt;</span>document<span class="operator">&gt;</span></span><br><span class="line">   &#125;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">db.data.remove(&#123;</span><br><span class="line">	<span class="keyword">by</span>:<span class="string">&#x27;YueYang&#x27;</span></span><br><span class="line">&#125;);</span><br><span class="line">WriteResult(&#123; &quot;nRemoved&quot; : <span class="number">1</span>, &quot;writeConcernError&quot; : [ ] &#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>改</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="operator">/</span><span class="operator">/</span> 更改操作</span><br><span class="line"></span><br><span class="line">db.collection.update(</span><br><span class="line">   <span class="operator">&lt;</span>query<span class="operator">&gt;</span>,</span><br><span class="line">   <span class="operator">&lt;</span><span class="keyword">update</span><span class="operator">&gt;</span>,</span><br><span class="line">   &#123;</span><br><span class="line">     upsert: <span class="operator">&lt;</span><span class="type">boolean</span><span class="operator">&gt;</span>,</span><br><span class="line">     multi: <span class="operator">&lt;</span><span class="type">boolean</span><span class="operator">&gt;</span>,</span><br><span class="line">     writeConcern: <span class="operator">&lt;</span>document<span class="operator">&gt;</span></span><br><span class="line">   &#125;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">db.data.update(&#123;&quot;title&quot;:&quot;测试添加操作&quot;&#125;,&#123;$<span class="keyword">set</span>:&#123;&quot;title&quot;:&quot;测试更新操作&quot;&#125;&#125;);</span><br><span class="line"></span><br><span class="line">WriteResult(&#123;</span><br><span class="line">	&quot;nMatched&quot; : <span class="number">1</span>,</span><br><span class="line">	&quot;nUpserted&quot; : <span class="number">0</span>,</span><br><span class="line">	&quot;nModified&quot; : <span class="number">1</span>,</span><br><span class="line">	&quot;writeConcernError&quot; : [ ]</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">db.data.update(&#123;&quot;title&quot;:&quot;测试添加操作&quot;&#125;,&#123;$<span class="keyword">set</span>:&#123;&quot;title&quot;:&quot;测试更新操作&quot;&#125;&#125;,&#123;multi:<span class="literal">true</span>&#125;);</span><br><span class="line"></span><br><span class="line">WriteResult(&#123;</span><br><span class="line">	&quot;nMatched&quot; : <span class="number">2</span>,</span><br><span class="line">	&quot;nUpserted&quot; : <span class="number">0</span>,</span><br><span class="line">	&quot;nModified&quot; : <span class="number">2</span>,</span><br><span class="line">	&quot;writeConcernError&quot; : [ ]</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p>查</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="operator">/</span><span class="operator">/</span> 查询操作</span><br><span class="line"></span><br><span class="line">db.data.find(&#123;&quot;by&quot;:&quot;YueYang&quot;&#125;);</span><br><span class="line"></span><br><span class="line">_id            				title    	<span class="keyword">by</span>		<span class="type">time</span></span><br><span class="line"><span class="number">5</span>dafd24abc1b000007001bf7	测试更新操作	YueYang	<span class="number">11</span>:<span class="number">08</span></span><br><span class="line"><span class="number">5</span>dafd2e5bc1b000007001bf8	测试更新操作	YueYang	<span class="number">12</span>:<span class="number">10</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>条件查询</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">大于		 $gt</span><br><span class="line">小于		 $lt</span><br><span class="line">大于等于 	gte</span><br><span class="line">小于等于	$lte</span><br><span class="line">不等于		 $ne</span><br><span class="line">等于		  $eq</span><br><span class="line">包含于 	 $<span class="keyword">in</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">db.data.find(&#123;age: &#123;$gt : <span class="number">18</span>&#125;&#125;); <span class="comment">-- select * from data where age &gt; 18;</span></span><br></pre></td></tr></table></figure>
+
+<p>模糊查询</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">查询 title 包含&quot;测试&quot;字的文档：</span><br><span class="line">db.data.find(&#123;title:<span class="operator">/</span>测试<span class="operator">/</span>&#125;);</span><br><span class="line"></span><br><span class="line">查询 title 字段以&quot;教&quot;字开头的文档：</span><br><span class="line">db.data.find(&#123;title:<span class="operator">/</span><span class="operator">^</span>测试<span class="operator">/</span>&#125;);</span><br><span class="line"></span><br><span class="line">查询 titl e字段以&quot;教&quot;字结尾的文档：</span><br><span class="line">db.data.find(&#123;title:<span class="operator">/</span>教$<span class="operator">/</span>&#125;);</span><br></pre></td></tr></table></figure>
+
+<p>模糊查询查询字段掌握了正则表达式就很容易扩展出来啦~<br>三种正则表达式方式：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">&#123; <span class="operator">&lt;</span> field <span class="operator">&gt;</span>： &#123; $ regex ： <span class="operator">/</span> <span class="keyword">pattern</span> <span class="operator">/</span> ， $ options ： ‘’ &#125; &#125;</span><br><span class="line">&#123; <span class="operator">&lt;</span> field <span class="operator">&gt;</span>： &#123; $ regex ： ‘<span class="keyword">pattern</span>’ ， $ options ： ‘’ &#125; &#125;</span><br><span class="line">&#123; <span class="operator">&lt;</span> field <span class="operator">&gt;</span> ： &#123; $ regex ： <span class="operator">/</span> <span class="keyword">pattern</span> <span class="operator">/</span> <span class="operator">&lt;</span> options <span class="operator">&gt;</span> &#125; &#125;</span><br></pre></td></tr></table></figure>
+
+<p>排序</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="operator">/</span><span class="operator">/</span> 数据排序</span><br><span class="line"></span><br><span class="line">db.data.find().sort(&#123;title:<span class="number">1</span>&#125;); </span><br><span class="line"></span><br><span class="line"><span class="operator">/</span><span class="operator">/</span> 其中 <span class="number">1</span> 为升序排列，而 <span class="number">-1</span> 是用于降序排列</span><br></pre></td></tr></table></figure>
+
+<p>分组操作</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">db.data.aggregate([&#123;</span><br><span class="line">    $<span class="keyword">group</span>: &#123;</span><br><span class="line">        _id: &#123;</span><br><span class="line">            title: <span class="string">&#x27;$title&#x27;</span>,</span><br><span class="line">            <span class="keyword">by</span>: <span class="string">&#x27;$by&#x27;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        count: &#123;</span><br><span class="line">            $sum: <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;, &#123;</span><br><span class="line">    $<span class="keyword">match</span>: &#123;</span><br><span class="line">        count: &#123;</span><br><span class="line">            $gt: <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;]);</span><br><span class="line"></span><br><span class="line">$<span class="keyword">group</span></span><br><span class="line">将集合中的文档分组，可用于统计结果</span><br><span class="line">_id表示分组的依据，使用某个字段的格式为<span class="string">&#x27;$字段&#x27;</span>。</span><br><span class="line"></span><br><span class="line">$<span class="keyword">match</span></span><br><span class="line">用于过滤数据，只输出符合条件的文档</span><br></pre></td></tr></table></figure>
+
+<p>删除重复数据</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="operator">/</span><span class="operator">/</span> 前面写查询语句，对结果数据进行去重</span><br><span class="line">.forEach(<span class="keyword">function</span>(it) &#123;</span><br><span class="line">    it.dups.shift();</span><br><span class="line">    db.data.remove(&#123;</span><br><span class="line">        _id: &#123;</span><br><span class="line">            $<span class="keyword">in</span>: it.dups</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>问题：</p>
+<p>删除_id失败？</p>
+<p>对id直接进行remove删除失败，是因为id是ObjectId类型，而id是字符串类型，类型对应不上就会导致删除失败。</p>
+<p>解决方法就是把id转换成ObjectId：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">db.data.remove(&#123;_id:ObjectId(<span class="string">&#x27;1013&#x27;</span>)&#125;);</span><br></pre></td></tr></table></figure>
+
+]]></content>
+      <categories>
+        <category>笔记</category>
+      </categories>
+      <tags>
+        <tag>MongoDB</tag>
       </tags>
   </entry>
   <entry>
@@ -964,65 +1023,6 @@
       </categories>
       <tags>
         <tag>Redis</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>MongoDB笔记</title>
-    <url>/2020/08/27/Mongo/</url>
-    <content><![CDATA[<blockquote>
-<p>  MongoDB的一些基本操作，只适用于日常开发，深入了解MongoDB请略过本文</p>
-</blockquote>
-<span id="more"></span>
-
-<h1 id="Mongo数据库操作"><a href="#Mongo数据库操作" class="headerlink" title="Mongo数据库操作"></a>Mongo数据库操作</h1><p>在学习Mongo之后因为没有系统的做过总结，就想在此写一篇比较系统比较全面的日常操作数据库的SQL操作总结。本文实时补充</p>
-<p>增</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="operator">/</span><span class="operator">/</span>添加语句</span><br><span class="line"></span><br><span class="line">db.COLLECTION_NAME.insert(document)</span><br><span class="line"></span><br><span class="line">db.data.insert(&#123;</span><br><span class="line">	title:<span class="string">&#x27;测试添加操作&#x27;</span>,</span><br><span class="line">	<span class="keyword">by</span>:<span class="string">&#x27;YueYang&#x27;</span>,</span><br><span class="line">	<span class="type">time</span>:<span class="string">&#x27;11:08&#x27;</span></span><br><span class="line">&#125;);</span><br><span class="line">WriteResult(&#123; &quot;nInserted&quot; : <span class="number">1</span>, &quot;writeConcernError&quot; : [ ] &#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<p>删</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="operator">/</span><span class="operator">/</span> 删除操作</span><br><span class="line"></span><br><span class="line">db.collection.remove(</span><br><span class="line">   <span class="operator">&lt;</span>query<span class="operator">&gt;</span>,</span><br><span class="line">   &#123;</span><br><span class="line">     justOne: <span class="operator">&lt;</span><span class="type">boolean</span><span class="operator">&gt;</span>,</span><br><span class="line">     writeConcern: <span class="operator">&lt;</span>document<span class="operator">&gt;</span></span><br><span class="line">   &#125;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">db.data.remove(&#123;</span><br><span class="line">	<span class="keyword">by</span>:<span class="string">&#x27;YueYang&#x27;</span></span><br><span class="line">&#125;);</span><br><span class="line">WriteResult(&#123; &quot;nRemoved&quot; : <span class="number">1</span>, &quot;writeConcernError&quot; : [ ] &#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<p>改</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="operator">/</span><span class="operator">/</span> 更改操作</span><br><span class="line"></span><br><span class="line">db.collection.update(</span><br><span class="line">   <span class="operator">&lt;</span>query<span class="operator">&gt;</span>,</span><br><span class="line">   <span class="operator">&lt;</span><span class="keyword">update</span><span class="operator">&gt;</span>,</span><br><span class="line">   &#123;</span><br><span class="line">     upsert: <span class="operator">&lt;</span><span class="type">boolean</span><span class="operator">&gt;</span>,</span><br><span class="line">     multi: <span class="operator">&lt;</span><span class="type">boolean</span><span class="operator">&gt;</span>,</span><br><span class="line">     writeConcern: <span class="operator">&lt;</span>document<span class="operator">&gt;</span></span><br><span class="line">   &#125;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">db.data.update(&#123;&quot;title&quot;:&quot;测试添加操作&quot;&#125;,&#123;$<span class="keyword">set</span>:&#123;&quot;title&quot;:&quot;测试更新操作&quot;&#125;&#125;);</span><br><span class="line"></span><br><span class="line">WriteResult(&#123;</span><br><span class="line">	&quot;nMatched&quot; : <span class="number">1</span>,</span><br><span class="line">	&quot;nUpserted&quot; : <span class="number">0</span>,</span><br><span class="line">	&quot;nModified&quot; : <span class="number">1</span>,</span><br><span class="line">	&quot;writeConcernError&quot; : [ ]</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">db.data.update(&#123;&quot;title&quot;:&quot;测试添加操作&quot;&#125;,&#123;$<span class="keyword">set</span>:&#123;&quot;title&quot;:&quot;测试更新操作&quot;&#125;&#125;,&#123;multi:<span class="literal">true</span>&#125;);</span><br><span class="line"></span><br><span class="line">WriteResult(&#123;</span><br><span class="line">	&quot;nMatched&quot; : <span class="number">2</span>,</span><br><span class="line">	&quot;nUpserted&quot; : <span class="number">0</span>,</span><br><span class="line">	&quot;nModified&quot; : <span class="number">2</span>,</span><br><span class="line">	&quot;writeConcernError&quot; : [ ]</span><br><span class="line">&#125;)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
-<p>查</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="operator">/</span><span class="operator">/</span> 查询操作</span><br><span class="line"></span><br><span class="line">db.data.find(&#123;&quot;by&quot;:&quot;YueYang&quot;&#125;);</span><br><span class="line"></span><br><span class="line">_id            				title    	<span class="keyword">by</span>		<span class="type">time</span></span><br><span class="line"><span class="number">5</span>dafd24abc1b000007001bf7	测试更新操作	YueYang	<span class="number">11</span>:<span class="number">08</span></span><br><span class="line"><span class="number">5</span>dafd2e5bc1b000007001bf8	测试更新操作	YueYang	<span class="number">12</span>:<span class="number">10</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>条件查询</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">大于		 $gt</span><br><span class="line">小于		 $lt</span><br><span class="line">大于等于 	gte</span><br><span class="line">小于等于	$lte</span><br><span class="line">不等于		 $ne</span><br><span class="line">等于		  $eq</span><br><span class="line">包含于 	 $<span class="keyword">in</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">db.data.find(&#123;age: &#123;$gt : <span class="number">18</span>&#125;&#125;); <span class="comment">-- select * from data where age &gt; 18;</span></span><br></pre></td></tr></table></figure>
-
-<p>模糊查询</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">查询 title 包含&quot;测试&quot;字的文档：</span><br><span class="line">db.data.find(&#123;title:<span class="operator">/</span>测试<span class="operator">/</span>&#125;);</span><br><span class="line"></span><br><span class="line">查询 title 字段以&quot;教&quot;字开头的文档：</span><br><span class="line">db.data.find(&#123;title:<span class="operator">/</span><span class="operator">^</span>测试<span class="operator">/</span>&#125;);</span><br><span class="line"></span><br><span class="line">查询 titl e字段以&quot;教&quot;字结尾的文档：</span><br><span class="line">db.data.find(&#123;title:<span class="operator">/</span>教$<span class="operator">/</span>&#125;);</span><br></pre></td></tr></table></figure>
-
-<p>模糊查询查询字段掌握了正则表达式就很容易扩展出来啦~<br>三种正则表达式方式：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">&#123; <span class="operator">&lt;</span> field <span class="operator">&gt;</span>： &#123; $ regex ： <span class="operator">/</span> <span class="keyword">pattern</span> <span class="operator">/</span> ， $ options ： ‘’ &#125; &#125;</span><br><span class="line">&#123; <span class="operator">&lt;</span> field <span class="operator">&gt;</span>： &#123; $ regex ： ‘<span class="keyword">pattern</span>’ ， $ options ： ‘’ &#125; &#125;</span><br><span class="line">&#123; <span class="operator">&lt;</span> field <span class="operator">&gt;</span> ： &#123; $ regex ： <span class="operator">/</span> <span class="keyword">pattern</span> <span class="operator">/</span> <span class="operator">&lt;</span> options <span class="operator">&gt;</span> &#125; &#125;</span><br></pre></td></tr></table></figure>
-
-<p>排序</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="operator">/</span><span class="operator">/</span> 数据排序</span><br><span class="line"></span><br><span class="line">db.data.find().sort(&#123;title:<span class="number">1</span>&#125;); </span><br><span class="line"></span><br><span class="line"><span class="operator">/</span><span class="operator">/</span> 其中 <span class="number">1</span> 为升序排列，而 <span class="number">-1</span> 是用于降序排列</span><br></pre></td></tr></table></figure>
-
-<p>分组操作</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">db.data.aggregate([&#123;</span><br><span class="line">    $<span class="keyword">group</span>: &#123;</span><br><span class="line">        _id: &#123;</span><br><span class="line">            title: <span class="string">&#x27;$title&#x27;</span>,</span><br><span class="line">            <span class="keyword">by</span>: <span class="string">&#x27;$by&#x27;</span></span><br><span class="line">        &#125;,</span><br><span class="line">        count: &#123;</span><br><span class="line">            $sum: <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;, &#123;</span><br><span class="line">    $<span class="keyword">match</span>: &#123;</span><br><span class="line">        count: &#123;</span><br><span class="line">            $gt: <span class="number">1</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;]);</span><br><span class="line"></span><br><span class="line">$<span class="keyword">group</span></span><br><span class="line">将集合中的文档分组，可用于统计结果</span><br><span class="line">_id表示分组的依据，使用某个字段的格式为<span class="string">&#x27;$字段&#x27;</span>。</span><br><span class="line"></span><br><span class="line">$<span class="keyword">match</span></span><br><span class="line">用于过滤数据，只输出符合条件的文档</span><br></pre></td></tr></table></figure>
-
-<p>删除重复数据</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line"><span class="operator">/</span><span class="operator">/</span> 前面写查询语句，对结果数据进行去重</span><br><span class="line">.forEach(<span class="keyword">function</span>(it) &#123;</span><br><span class="line">    it.dups.shift();</span><br><span class="line">    db.data.remove(&#123;</span><br><span class="line">        _id: &#123;</span><br><span class="line">            $<span class="keyword">in</span>: it.dups</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>问题：</p>
-<p>删除_id失败？</p>
-<p>对id直接进行remove删除失败，是因为id是ObjectId类型，而id是字符串类型，类型对应不上就会导致删除失败。</p>
-<p>解决方法就是把id转换成ObjectId：</p>
-<figure class="highlight sql"><table><tr><td class="code"><pre><span class="line">db.data.remove(&#123;_id:ObjectId(<span class="string">&#x27;1013&#x27;</span>)&#125;);</span><br></pre></td></tr></table></figure>
-
-]]></content>
-      <categories>
-        <category>笔记</category>
-      </categories>
-      <tags>
-        <tag>MongoDB</tag>
       </tags>
   </entry>
   <entry>
@@ -1584,15 +1584,9 @@
       </tags>
   </entry>
   <entry>
-    <title>整理备份</title>
-    <url>/2021/12/30/%E6%95%B4%E7%90%86%E5%A4%87%E4%BB%BD/</url>
-    <content><![CDATA[<h5 id="20211230"><a href="#20211230" class="headerlink" title="20211230"></a>20211230</h5><p><code>range for 拷贝问题</code></p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">study</span><span class="params">()</span></span> &#123;</span><br><span class="line">	list := []<span class="type">int</span>&#123;<span class="number">1</span>, <span class="number">2</span>&#125;</span><br><span class="line">	<span class="keyword">for</span> i := <span class="keyword">range</span> list &#123;</span><br><span class="line">		list = <span class="built_in">append</span>(list, i)</span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Println(list)</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(list); i++ &#123;</span><br><span class="line">		list = <span class="built_in">append</span>(list, i)</span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Println(list)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><code>切片翻转排序</code></p>
-<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">reverse</span><span class="params">(nums []<span class="type">int</span>)</span></span> []<span class="type">int</span> &#123;</span><br><span class="line">	sort.Slice(nums, <span class="function"><span class="keyword">func</span><span class="params">(i, j <span class="type">int</span>)</span></span> <span class="type">bool</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> nums[i] &gt; nums[j]</span><br><span class="line">	&#125;)</span><br><span class="line">	<span class="keyword">return</span> nums</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-]]></content>
+    <title>代码整洁之道_读书笔记</title>
+    <url>/2022/02/01/%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>学习笔记</title>
@@ -2136,11 +2130,6 @@
       </tags>
   </entry>
   <entry>
-    <title>代码整洁之道_读书笔记</title>
-    <url>/2022/02/01/%E4%BB%A3%E7%A0%81%E6%95%B4%E6%B4%81%E4%B9%8B%E9%81%93-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>PerAuthorize注解</title>
     <url>/2020/08/14/%E6%B3%A8%E8%A7%A3PerAuthorize%E7%94%A8%E4%BD%9C%E6%8E%88%E6%9D%83%E6%97%B6%E7%9A%84%E4%BD%BF%E7%94%A8%E6%96%B9%E6%B3%95/</url>
     <content><![CDATA[<span id="more"></span>
@@ -2187,10 +2176,38 @@
 ]]></content>
   </entry>
   <entry>
+    <title>整理备份</title>
+    <url>/2021/12/30/%E6%95%B4%E7%90%86%E5%A4%87%E4%BB%BD/</url>
+    <content><![CDATA[<h5 id="20211230"><a href="#20211230" class="headerlink" title="20211230"></a>20211230</h5><p><code>range for 拷贝问题</code></p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">study</span><span class="params">()</span></span> &#123;</span><br><span class="line">	list := []<span class="type">int</span>&#123;<span class="number">1</span>, <span class="number">2</span>&#125;</span><br><span class="line">	<span class="keyword">for</span> i := <span class="keyword">range</span> list &#123;</span><br><span class="line">		list = <span class="built_in">append</span>(list, i)</span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Println(list)</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(list); i++ &#123;</span><br><span class="line">		list = <span class="built_in">append</span>(list, i)</span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Println(list)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><code>切片翻转排序</code></p>
+<figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">reverse</span><span class="params">(nums []<span class="type">int</span>)</span></span> []<span class="type">int</span> &#123;</span><br><span class="line">	sort.Slice(nums, <span class="function"><span class="keyword">func</span><span class="params">(i, j <span class="type">int</span>)</span></span> <span class="type">bool</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> nums[i] &gt; nums[j]</span><br><span class="line">	&#125;)</span><br><span class="line">	<span class="keyword">return</span> nums</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+]]></content>
+  </entry>
+  <entry>
     <title>背包问题</title>
     <url>/2021/12/30/%E8%83%8C%E5%8C%85%E9%97%AE%E9%A2%98/</url>
     <content><![CDATA[<p>动态规划背包问题学习总结</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>软件备份</title>
+    <url>/2021/07/07/%E8%BD%AF%E4%BB%B6%E5%A4%87%E4%BB%BD/</url>
+    <content><![CDATA[<blockquote>
+<p>  针对于MacOS、CentOS、Windows系统的软件安装教程备份，长期维护，建议收藏</p>
+</blockquote>
+<span id="more"></span>
+
+<h3 id="Git安装"><a href="#Git安装" class="headerlink" title="Git安装"></a><code>Git</code>安装</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">-- linux</span><br><span class="line">sudo dnf install git-all</span><br></pre></td></tr></table></figure>
+
+<h3 id="Ruby安装"><a href="#Ruby安装" class="headerlink" title="Ruby安装"></a><code>Ruby</code>安装</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">-- linux</span><br><span class="line">sudo yum install ruby</span><br></pre></td></tr></table></figure>
+
+<h3 id="HomeBrew安装"><a href="#HomeBrew安装" class="headerlink" title="HomeBrew安装"></a><code>HomeBrew</code>安装</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">-- linux</span><br><span class="line">/bin/bash -c &quot;$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;</span><br><span class="line">-- mac</span><br><span class="line">/bin/zsh -c &quot;$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;</span><br></pre></td></tr></table></figure>]]></content>
+      <tags>
+        <tag>软件</tag>
+      </tags>
   </entry>
   <entry>
     <title>面试总结</title>
@@ -2308,23 +2325,6 @@
       </tags>
   </entry>
   <entry>
-    <title>软件备份</title>
-    <url>/2021/07/07/%E8%BD%AF%E4%BB%B6%E5%A4%87%E4%BB%BD/</url>
-    <content><![CDATA[<blockquote>
-<p>  针对于MacOS、CentOS、Windows系统的软件安装教程备份，长期维护，建议收藏</p>
-</blockquote>
-<span id="more"></span>
-
-<h3 id="Git安装"><a href="#Git安装" class="headerlink" title="Git安装"></a><code>Git</code>安装</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">-- linux</span><br><span class="line">sudo dnf install git-all</span><br></pre></td></tr></table></figure>
-
-<h3 id="Ruby安装"><a href="#Ruby安装" class="headerlink" title="Ruby安装"></a><code>Ruby</code>安装</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">-- linux</span><br><span class="line">sudo yum install ruby</span><br></pre></td></tr></table></figure>
-
-<h3 id="HomeBrew安装"><a href="#HomeBrew安装" class="headerlink" title="HomeBrew安装"></a><code>HomeBrew</code>安装</h3><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">-- linux</span><br><span class="line">/bin/bash -c &quot;$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;</span><br><span class="line">-- mac</span><br><span class="line">/bin/zsh -c &quot;$(curl -fsSL https://gitee.com/cunkai/HomebrewCN/raw/master/Homebrew.sh)&quot;</span><br></pre></td></tr></table></figure>]]></content>
-      <tags>
-        <tag>软件</tag>
-      </tags>
-  </entry>
-  <entry>
     <title></title>
     <url>/README.html</url>
     <content><![CDATA[]]></content>
@@ -2333,7 +2333,7 @@
     <title>about</title>
     <url>/about/index.html</url>
     <content><![CDATA[<h1 id="个人信息"><a href="#个人信息" class="headerlink" title="个人信息"></a>个人信息</h1><p>基本信息：岳杨/1996/男</p>
-<p>联系方式：17806283435（微信钉钉同号）<a href="mailto:&#x59;&#x75;&#x65;&#89;&#x34;&#110;&#57;&#64;&#x71;&#113;&#x2e;&#99;&#x6f;&#109;">&#x59;&#x75;&#x65;&#89;&#x34;&#110;&#57;&#64;&#x71;&#113;&#x2e;&#99;&#x6f;&#109;</a></p>
+<p>联系方式：17806283435（微信钉钉同号）<a href="mailto:&#89;&#117;&#x65;&#x59;&#52;&#x6e;&#57;&#x40;&#113;&#113;&#46;&#x63;&#x6f;&#109;">&#89;&#117;&#x65;&#x59;&#52;&#x6e;&#57;&#x40;&#113;&#113;&#46;&#x63;&#x6f;&#109;</a></p>
 <p>学历：统招本科（山东科技大学）</p>
 <p>工作年限：2年（19年毕业）</p>
 <p>期望岗位：Java研发工程师</p>
@@ -2386,9 +2386,24 @@
 ]]></content>
   </entry>
   <entry>
-    <title>categories</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[<p>试一试在这里写内容会发生什么</p>
+    <title>留下你的脚印👣</title>
+    <url>/guestbook/index.html</url>
+    <content><![CDATA[<p>试一试在这里写内容又会发生什么</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>tags</title>
+    <url>/tags/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
+    <title>Dubbo</title>
+    <url>/notes/Dubbo.html</url>
+    <content><![CDATA[<h2 id="Dubbo"><a href="#Dubbo" class="headerlink" title="Dubbo"></a>Dubbo</h2><h3 id="Dubbo是什么？"><a href="#Dubbo是什么？" class="headerlink" title="Dubbo是什么？"></a>Dubbo是什么？</h3><ul>
+<li>一款分布式服务框架</li>
+<li>高性能透明化RPC方案</li>
+<li>SOA服务治理方案</li>
+</ul>
 ]]></content>
   </entry>
   <entry>
@@ -2424,6 +2439,11 @@
 <figure class="highlight go"><table><tr><td class="code"><pre><span class="line"><span class="keyword">type</span> service <span class="keyword">struct</span> &#123;</span><br><span class="line">    ctx 				*context.AppContext	<span class="comment">// AppContext就简写成ctx</span></span><br><span class="line">    workflowDomain 		workflow.Domain		<span class="comment">// workflow长度适宜，使用全拼，且不允许写成workFlow</span></span><br><span class="line">    bcDomain 			bcd.Domain 			<span class="comment">// businesscategory过长，就简写成了bc</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
   </entry>
   <entry>
+    <title>MySQL</title>
+    <url>/notes/MySQL.html</url>
+    <content><![CDATA[<h2 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h2><h3 id="覆盖索引"><a href="#覆盖索引" class="headerlink" title="覆盖索引"></a>覆盖索引</h3>]]></content>
+  </entry>
+  <entry>
     <title>JVM</title>
     <url>/notes/JVM.html</url>
     <content><![CDATA[<h3 id=""><a href="#" class="headerlink" title=""></a></h3><h3 id="如何判断对象可以被回收"><a href="#如何判断对象可以被回收" class="headerlink" title="如何判断对象可以被回收"></a>如何判断对象可以被回收</h3><ol>
@@ -2455,9 +2475,9 @@
 ]]></content>
   </entry>
   <entry>
-    <title>MySQL</title>
-    <url>/notes/MySQL.html</url>
-    <content><![CDATA[<h2 id="MySQL"><a href="#MySQL" class="headerlink" title="MySQL"></a>MySQL</h2><h3 id="覆盖索引"><a href="#覆盖索引" class="headerlink" title="覆盖索引"></a>覆盖索引</h3>]]></content>
+    <title>Python学习笔记</title>
+    <url>/notes/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html</url>
+    <content><![CDATA[<h1 id=""><a href="#" class="headerlink" title=""></a></h1>]]></content>
   </entry>
   <entry>
     <title></title>
@@ -2465,37 +2485,9 @@
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>Python学习笔记</title>
-    <url>/notes/Python%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0.html</url>
-    <content><![CDATA[<h1 id=""><a href="#" class="headerlink" title=""></a></h1>]]></content>
-  </entry>
-  <entry>
-    <title>Dubbo</title>
-    <url>/notes/Dubbo.html</url>
-    <content><![CDATA[<h2 id="Dubbo"><a href="#Dubbo" class="headerlink" title="Dubbo"></a>Dubbo</h2><h3 id="Dubbo是什么？"><a href="#Dubbo是什么？" class="headerlink" title="Dubbo是什么？"></a>Dubbo是什么？</h3><ul>
-<li>一款分布式服务框架</li>
-<li>高性能透明化RPC方案</li>
-<li>SOA服务治理方案</li>
-</ul>
-]]></content>
-  </entry>
-  <entry>
     <title>notes</title>
     <url>/notes/index.html</url>
     <content><![CDATA[]]></content>
-  </entry>
-  <entry>
-    <title>面试整理</title>
-    <url>/notes/%E9%9D%A2%E8%AF%95%E6%95%B4%E7%90%86.html</url>
-    <content><![CDATA[<h3 id="TCP-UDP区别"><a href="#TCP-UDP区别" class="headerlink" title="TCP/UDP区别"></a>TCP/UDP区别</h3><p>TCP向上层提供面向连接的可靠服务 ，UDP向上层提供无连接不可靠服务</p>
-<p>虽然 UDP 并没有 TCP 传输来的准确，但是也能在很多实时性要求高的地方有所作为</p>
-<p>对数据准确性要求高，速度可以相对较慢的，可以选用TCP</p>
-<h3 id="Zookeeper是什么框架"><a href="#Zookeeper是什么框架" class="headerlink" title="Zookeeper是什么框架"></a>Zookeeper是什么框架</h3><p>Zookeeper是分布式系统协调服务的框架，也叫作服务注册中心</p>
-<h3 id="Dubbo一般用什么注册中心？还有别的选择吗？"><a href="#Dubbo一般用什么注册中心？还有别的选择吗？" class="headerlink" title="Dubbo一般用什么注册中心？还有别的选择吗？"></a>Dubbo一般用什么注册中心？还有别的选择吗？</h3><p>Dubbo一般使用Zookeeper，也可以使用Redis，consul，数据库</p>
-<h3 id="为什么说Spring是一个容器？"><a href="#为什么说Spring是一个容器？" class="headerlink" title="为什么说Spring是一个容器？"></a>为什么说Spring是一个容器？</h3><p>Spring的核心思想是更方便的管理Java Bean，有Spring创建的Bean放入一个Map中，这个Map就可以理解成装Bean的容器，也就是IOC容器。</p>
-<h3 id="JVM生命周期和体系结构"><a href="#JVM生命周期和体系结构" class="headerlink" title="JVM生命周期和体系结构"></a>JVM生命周期和体系结构</h3><p>JVM声明周期是跟随程序一起的，JVM开始运行时就是程序启动时，JVM停止运行程序也随之结束。</p>
-<p>JVM体系结构包含：类加载器、内存区、执行引擎、本地方法调用。</p>
-]]></content>
   </entry>
   <entry>
     <title></title>
@@ -2750,14 +2742,22 @@
 <h5 id="20220124"><a href="#20220124" class="headerlink" title="20220124"></a>20220124</h5>]]></content>
   </entry>
   <entry>
-    <title>留下你的脚印👣</title>
-    <url>/guestbook/index.html</url>
-    <content><![CDATA[<p>试一试在这里写内容又会发生什么</p>
+    <title>面试整理</title>
+    <url>/notes/%E9%9D%A2%E8%AF%95%E6%95%B4%E7%90%86.html</url>
+    <content><![CDATA[<h3 id="TCP-UDP区别"><a href="#TCP-UDP区别" class="headerlink" title="TCP/UDP区别"></a>TCP/UDP区别</h3><p>TCP向上层提供面向连接的可靠服务 ，UDP向上层提供无连接不可靠服务</p>
+<p>虽然 UDP 并没有 TCP 传输来的准确，但是也能在很多实时性要求高的地方有所作为</p>
+<p>对数据准确性要求高，速度可以相对较慢的，可以选用TCP</p>
+<h3 id="Zookeeper是什么框架"><a href="#Zookeeper是什么框架" class="headerlink" title="Zookeeper是什么框架"></a>Zookeeper是什么框架</h3><p>Zookeeper是分布式系统协调服务的框架，也叫作服务注册中心</p>
+<h3 id="Dubbo一般用什么注册中心？还有别的选择吗？"><a href="#Dubbo一般用什么注册中心？还有别的选择吗？" class="headerlink" title="Dubbo一般用什么注册中心？还有别的选择吗？"></a>Dubbo一般用什么注册中心？还有别的选择吗？</h3><p>Dubbo一般使用Zookeeper，也可以使用Redis，consul，数据库</p>
+<h3 id="为什么说Spring是一个容器？"><a href="#为什么说Spring是一个容器？" class="headerlink" title="为什么说Spring是一个容器？"></a>为什么说Spring是一个容器？</h3><p>Spring的核心思想是更方便的管理Java Bean，有Spring创建的Bean放入一个Map中，这个Map就可以理解成装Bean的容器，也就是IOC容器。</p>
+<h3 id="JVM生命周期和体系结构"><a href="#JVM生命周期和体系结构" class="headerlink" title="JVM生命周期和体系结构"></a>JVM生命周期和体系结构</h3><p>JVM声明周期是跟随程序一起的，JVM开始运行时就是程序启动时，JVM停止运行程序也随之结束。</p>
+<p>JVM体系结构包含：类加载器、内存区、执行引擎、本地方法调用。</p>
 ]]></content>
   </entry>
   <entry>
-    <title>tags</title>
-    <url>/tags/index.html</url>
-    <content><![CDATA[]]></content>
+    <title>categories</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[<p>试一试在这里写内容会发生什么</p>
+]]></content>
   </entry>
 </search>
