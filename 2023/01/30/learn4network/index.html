@@ -21,28 +21,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"yuey4n9.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.15.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="整理 linux 的学习过程, 尝试通过单词全拼来理解命令含义">
+    <meta name="description" content="阅读《网络是怎么连接的》的阅读笔记, 目的是帮助阅读者更快的获得书中所有有价值的信息。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="learn4linux">
-<meta property="og:url" content="https://yuey4n9.github.io/2023/04/08/learn4linux/index.html">
+<meta property="og:title" content="learn4network">
+<meta property="og:url" content="https://yuey4n9.github.io/2023/01/30/learn4network/index.html">
 <meta property="og:site_name" content="YueYang">
-<meta property="og:description" content="整理 linux 的学习过程, 尝试通过单词全拼来理解命令含义">
+<meta property="og:description" content="阅读《网络是怎么连接的》的阅读笔记, 目的是帮助阅读者更快的获得书中所有有价值的信息。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-04-08T09:14:02.000Z">
-<meta property="article:modified_time" content="2023-04-08T09:34:51.045Z">
+<meta property="article:published_time" content="2023-01-30T02:12:05.000Z">
+<meta property="article:modified_time" content="2023-04-09T03:05:37.693Z">
 <meta property="article:author" content="YueY4n9">
-<meta property="article:tag" content="linux">
+<meta property="article:tag" content="network">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://yuey4n9.github.io/2023/04/08/learn4linux/">
+<link rel="canonical" href="https://yuey4n9.github.io/2023/01/30/learn4network/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://yuey4n9.github.io/2023/04/08/learn4linux/","path":"2023/04/08/learn4linux/","title":"learn4linux"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://yuey4n9.github.io/2023/01/30/learn4network/","path":"2023/01/30/learn4network/","title":"learn4network"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>learn4linux | YueYang</title>
+<title>learn4network | YueYang</title>
   
 
 
@@ -115,7 +115,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4"><span class="nav-number">1.</span> <span class="nav-text">命令</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="nav-number">1.</span> <span class="nav-text">计算机网络</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -141,7 +141,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -173,7 +173,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://yuey4n9.github.io/2023/04/08/learn4linux/">
+    <link itemprop="mainEntityOfPage" href="https://yuey4n9.github.io/2023/01/30/learn4network/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/yueyang.png">
@@ -186,12 +186,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="learn4linux | YueYang">
+      <meta itemprop="name" content="learn4network | YueYang">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          learn4linux
+          learn4network
         </h1>
 
         <div class="post-meta-container">
@@ -201,9 +201,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2023-04-08 17:14:02 / 修改时间：17:34:51" itemprop="dateCreated datePublished" datetime="2023-04-08T17:14:02+08:00">2023-04-08</time>
+      <time title="创建时间：2023-01-30 10:12:05" itemprop="dateCreated datePublished" datetime="2023-01-30T10:12:05+08:00">2023-01-30</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-04-09 11:05:37" itemprop="dateModified" datetime="2023-04-09T11:05:37+08:00">2023-04-09</time>
     </span>
 
   
@@ -217,147 +223,35 @@
     
     <div class="post-body" itemprop="articleBody">
         <blockquote>
-<p>整理 linux 的学习过程, 尝试通过单词全拼来理解命令含义</p>
+<p>阅读《网络是怎么连接的》的阅读笔记, 目的是帮助阅读者更快的获得书中所有有价值的信息。</p>
 </blockquote>
 <span id="more"></span>
 
-<h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><ol>
-<li>cal = CALendar calendar 日历</li>
-<li>cat = CATenate 链接 <code>该更多的情况是将文件内容输出以及合并多个文件内容</code></li>
-<li>cd = Change Directory 更改目录</li>
-<li>chgrp = CHange GRouP 改变组</li>
-<li>chmod = CHange MODe 改变模式</li>
-<li>chown = CHange OWNer 更改所有者</li>
-<li>chsh = CHange SHell 更改壳</li>
-<li>cmp = compare 比较</li>
-<li>cobra = Common Object Request Broker Architecture 公共对象请求代理体系结构</li>
-<li>comm = common 常见的</li>
-<li>cp = CoPy 复制</li>
-<li>cpio = CoPy In and Out 拷贝进出</li>
-<li>cpp = C Pre Processor C预处理器</li>
-<li>cron = Chronos 希腊文时间</li>
-<li>cups = Common Unix Printing System 打印系统</li>
-<li>cvs = Current Version System 当前系统的版本</li>
-<li>daemon = Disk And Execution MONitor 磁盘和执行监视器</li>
-<li>dc = Desk Calculator 桌上计算器</li>
-<li>dd = Disk Dump 磁盘转储</li>
-<li>df = Disk Free 无盘</li>
-<li>diff = DIFFerence 差异</li>
-<li>dmesg = diagnostic message 诊断信息</li>
-<li>du = Disk Usage 磁盘使用</li>
-<li>ed = editor 编辑</li>
-<li>egrep = Extended GREP 扩展的grep</li>
-<li>elf = Extensible Linking Format 可扩展链接格式</li>
-<li>elm = ELectronic Mai 电子邮箱</li>
-<li>emacs = Editor MACroS 编辑宏</li>
-<li>eval = EVALuate 评价</li>
-<li>ex = EXtended 扩展</li>
-<li>exec = EXECute 执行</li>
-<li>fd = file descriptors 文件描述符</li>
-<li>fg = ForeGround 前景</li>
-<li>fgrep = Fixed GREP 固定grep</li>
-<li>Fish = the Friendly Interactive SHell 友好互动的外壳</li>
-<li>file = file 查看文件类型，是否是二进制等</li>
-<li>fmt = format 格式</li>
-<li>fsck = File System ChecK 文件系统检查</li>
-<li>fstab = FileSystem TABle 文件系统表</li>
-<li>fvwm = F*** Virtual Window Manager f ***虚拟窗口管理器</li>
-<li>gawk = GNU AWK</li>
-<li>gcc = general public licence (GNU) compiler collection 编译程序会产生二进制a.out文件</li>
-<li>gpg = GNU Privacy Guard GNU隐私保护</li>
-<li>grep = Global search regular expression and print out line 全局搜索正则表达式和打印输出行</li>
-<li>groff = GNU troff</li>
-<li>hal = Hardware Abstraction Layer 硬件抽象层</li>
-<li>joe = Joe’s Own Editor 乔自己的编辑</li>
-<li>ksh = Korn SHell</li>
-<li>lame = Lame Ain’t an MP3 Encoder 瘸子不MP3编码器</li>
-<li>lex = LEXical analyser 词法分析器</li>
-<li>lisp = LISt Processing = Lots of Irritating Superfluous Parentheses 大量的刺激性多余的括号</li>
-<li>ln = LiNk</li>
-<li>lpr = Line PRint 行打印</li>
-<li>ls = list</li>
-<li>lsof = LiSt Open Files 列出打开的文件</li>
-<li>m4 = Macro processor Version 4 宏处理器版本4</li>
-<li>make = make</li>
-<li>man = MANual pages 手册页</li>
-<li>mawk = Mike Brennan’s AWK</li>
-<li>mc = Midnight Commander 午夜指挥官</li>
-<li>MIME = Multipurpose Internet Mail Extensions 多用途因特网邮件扩展</li>
-<li>mkfs = MaKe FileSystem 使文件系统</li>
-<li>mknod = MaKe NODe 使节点</li>
-<li>motd = Message of The Day 当天的信息</li>
-<li>mozilla = MOsaic GodZILLa</li>
-<li>mtab = Mount TABle 安装表</li>
-<li>mv = MoVe</li>
-<li>nano = Nano’s ANOther editor 纳米的另一个编辑</li>
-<li>nawk = New AWK</li>
-<li>nl = Number of Lines</li>
-<li>nm = names</li>
-<li>nohup = No HangUP</li>
-<li>nroff = New ROFF</li>
-<li>od = Octal Dump 该命令的名称由来</li>
-<li>passwd = PASSWorD</li>
-<li>pg = pager</li>
-<li>pico = PIne’s message COmposition editor 松的消息组合编辑器</li>
-<li>pine = “Program for Internet News &amp; Email” = “Pine is not Elm”</li>
-<li>ping = Packet InterNet Groper ping程序</li>
-<li>pirntcap = PRINTer CAPability 打印机的能力</li>
-<li>popd = POP Directory</li>
-<li>pr = pre</li>
-<li>printf = PRINT Formatted</li>
-<li>ps = Processes Status 过程状态</li>
-<li>pty = pseudo tty</li>
-<li>pushd = PUSH Directory</li>
-<li>pwd = Print Working Directory 打印工作目录</li>
-<li>rc = runcom = run command</li>
-<li>rev = REVerse</li>
-<li>rm = ReMove</li>
-<li>rn = Read News</li>
-<li>roff = RunOFF</li>
-<li>rpm = RPM Package Manager = RedHat Package Manager    RedHat软件包管理器</li>
-<li>rsh, rlogin, rvim中的r = Remote</li>
-<li>rxvt = ouR XVT</li>
-<li>seamoneky = 我</li>
-<li>sed = Stream EDitor</li>
-<li>seq = SEQuence</li>
-<li>shar = SHell ARchive</li>
-<li>slrn = S-Lang rn</li>
-<li>ssh = Secure SHell</li>
-<li>ssl = Secure Sockets Layer</li>
-<li>stty = Set TTY</li>
-<li>su = Substitute User 或 Switch User（前者较常见）</li>
-<li>sudo = superuser / substitue user do 在ubuntu下更倾向于superuser，因为它代表了root权限</li>
-<li>svn = SubVersioN</li>
-<li>tar = Tape ARchive</li>
-<li>tcsh = TENEX C shell</li>
-<li>tee = T (T形水管接口)</li>
-<li>telnet = TEminaL over Network</li>
-<li>termcap = terminal capability</li>
-<li>terminfo = terminal information</li>
-<li>tex = τέχνη的缩写，希腊文art</li>
-<li>tr = traslate</li>
-<li>troff = Typesetter new ROFF 照排机新Roff</li>
-<li>tsort = Topological SORT</li>
-<li>tty = TeleTypewriter</li>
-<li>twm = Tom’s Window Manager</li>
-<li>tz = TimeZone</li>
-<li>udev = Userspace DEV</li>
-<li>ulimit = User’s LIMIT</li>
-<li>umask = User’s MASK</li>
-<li>uniq = UNIQue</li>
-<li>vi = VIsual = Very Inconvenient 很不方便</li>
-<li>vim = Vi IMproved</li>
-<li>wall = write all</li>
-<li>wc = Word Count</li>
-<li>wine = WINE Is Not an Emulator 酒不是一个模拟器</li>
-<li>xargs = eXtended ARGuments 扩展参数</li>
-<li>xdm = X Display Manager X显示管理器</li>
-<li>xlfd = X Logical Font Description 逻辑字体描述</li>
-<li>xmms = X Multimedia System X多媒体系统</li>
-<li>xrdb = X Resources DataBase X资源数据库</li>
-<li>xwd = X Window Dump X窗口转储</li>
-<li>yacc = yet another compiler compiler 另一个编译器的编译器</li>
-<li>pwd = Print work diretory 打印工作目录<br>￼</li>
+<h1 id="计算机网络"><a href="#计算机网络" class="headerlink" title="计算机网络"></a>计算机网络</h1><p>名词介绍</p>
+<p>TCP：传输控制协议（TCP，Transmission Control Protocol）是一种面向连接的、可靠的、基于字节流的传输层通信协议，由IETF的RFC793定义。</p>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">为啥老是说 TCP/IP 协议呢?</span><br><span class="line">最早的TCP/IP协议原型设计相当于现在的TCP和IP合在一起的样子，后来才拆分成为TCP和IP两个协议。</span><br></pre></td></tr></table></figure>
+
+<p><code>UDP</code>：<code>User Datagram Protocol</code>的简称， 中文名是用户数据报协议，是OSI（Open System Interconnection，开放式系统互联）<br>参考模型中一种无连接的传输层协议，提供面向事务的简单不可靠信息传送服务，IETF-RFC-768是UDP的正式规范。UDP在IP报文的协议号是17。<br>UDP协议全称是用户数据报协议，在网络中它与TCP协议一样用于处理数据包，是一种无连接的协议。<br>在OSI模型中，在第四层——传输层，处于IP协议的上一层。UDP有不提供数据包分组、组装和不能对数据包进行排序的缺点，也就是说，当报文发送之后，是无法得知其是否安全完整到达的。UDP用来支持那些需要在计算机之间传输数据的网络应用。包括网络视频会议系统在内的众多的客户/服务器模式的网络应用都需要使用UDP协议。</p>
+<p><code>ICMP</code>：<code>Internal Control Message Protocol</code></p>
+<p><code>ARP</code>：<code>Address Resolution Protocol</code></p>
+<p><code>HTTP</code>：<code>Hyper Text Transfer Protocol</code>，超文本传输协议，是一个简单的请求-响应协议，它通常运行在TCP之上。它指定了客户端可能发送给服务器什么样的消息以及得到什么样的响应。请求和响应消息的头以ASCII形式给出；而[9]<br>消息内容则具有一个类似MIME的格式。这个简单模型是早期Web成功的有功之臣，因为它使开发和部署非常地直截了当。<br>以太网：计算机局域网技术，规定了包括物理层连线，电子信号和介质访问层协议的内容，是目前应用最广泛的局域网技术。</p>
+<p>MAC地址：Media Access Control Address，直译为媒体存取控制位址，也称为局域网地址（LAN<br>Address），以太网地址（Ethernet Address）或物理地址（Physical<br>Address），它是一个用来确认网路设备位置的位址。在OSI模型中，第三层网路层负责IP地址，第二层资料链结层则负责MAC位址。MAC地址用于在网络中唯一标示一个网卡，一台设备若有一或多个网卡，则每个网卡都需要并会有一个唯一的MAC地址。</p>
+<p>套接字：应用程序委托操作系统创建一个套接字，然后返回一个描述符。套接字相当于是网络请求的大门，会包含所对应的门牌号码（端口号）。描述符为协议栈所则建的套接字，因此应用程序发生网络请求时，会给操作系统的协议栈传递描述符、IP地址、端口号。然后描述符所指带的套接字就会向对应的IP端□发送数据。</p>
+<p>网络交换机：Network<br>switch，是一种网络硬件，通过报文交换接收和转发数据到目标设备，它能够在计算机网络上连接不同的设备。一般也简称为交换机。交换机是一种多端口的网桥，在数据链路层使用MAC地址转发数据。通过加入路由功能，一些交换机也可以在网络层转发数据，这种交换机一般被称为三层交换机或者多层交换机。以太网交换机是网络交换机最常见的形式。交换机的工作原理是根据IP包中的MAC地址和端口在自身的地址表中进行寻址，如果找不到，就在地址表中记录对应关系，并将包送给每一个端口。</p>
+<p>一、探索浏览器内部</p>
+<ol>
+<li>互联网的本质结构是由无数个局域网（子网）组成的</li>
+<li>怎么在网络中定位到目标计算机？<br>寻址！通过，IP地址可以定位到目标计算机。IP地址是由32位二进制数组成的，每8位为一组，即1个字节。要定位到网络中的某一台计算机，那么必须先定位到对应的网络，然后再在该子网中查找目标计算机。所以，IP地址结构由网络号和主机号组成，网络对应的是子网的地址，主机号对应的是子网中的目标主机。那么，32位的IP地址是如何区分网络号和主机号呢？子网掩码，就是用来界定网络号和主机号的，子网掩码中1对应的位是网络号，0对应的是主机号。注意，主机号中全为0表示整个子网，若全为1表示对整个子网中的主机发送数据包，即广播</li>
+<li>既然IP能定位到目标主机，为什么还需要域名？<br>因为，IP毕竟是一串难以记忆的数字，在使用中不方便，所以就出现了域名这东西。但是，仅通过域名在现在的网络中是没法定位到目标主机的，并不是不能采用域名定位目标主机，而是采用域名这种方式定位，速度太慢，IP只要查询4个字节就历史以了，而域名则要查询更多字节了，所以，域名是方便人用的，DNS服务器的出现就是了折衷解决这个问题的，既让人方便记忆，又能让路由器快速定位到目标</li>
+<li>浏览器通过解构URL地址生成请求信息，然后委托操作系统的协议栈发送请求信息，网卡设备把要发送的信息转换为电信号，服务器端的解构过程正好相反</li>
+<li>客户端和服务器的通信需要“通信管道”来传送数据，整个通信过程包括：创建套接字，建立连接，传送数据，断开连接。套接字就是通信数据的出入口</li>
+<li>PC客户端通过路由器连接，路由器后面连接的是运营商的网络，即接入网，这是连接互联网的入口。接入网连接着运营商的接入点，也就是离你们家最近的运营商的路由设备实体</li>
+</ol>
+<p>怎么理解 Socket 叫“套接字”？</p>
+<p>从用户在浏览器上输入网址开始，都发生了什么？</p>
+<ol>
+<li>浏览器解析网址</li>
+<li>浏览器根据网址的含义生成请求消息</li>
 </ol>
 
     </div>
@@ -368,18 +262,21 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/linux/" rel="tag"><i class="fa fa-tag"></i> linux</a>
+              <a href="/tags/network/" rel="tag"><i class="fa fa-tag"></i> network</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2023/04/08/learn4vim/" rel="prev" title="learn4vim">
+                <a href="/2022/10/01/learn4vim/" rel="prev" title="learn4vim">
                   <i class="fa fa-chevron-left"></i> learn4vim
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2023/02/03/%E3%80%8A%E4%BA%BA%E6%80%A7%E7%9A%84%E5%BC%B1%E7%82%B9%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="next" title="《人性的弱点》读书笔记">
+                  《人性的弱点》读书笔记 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>

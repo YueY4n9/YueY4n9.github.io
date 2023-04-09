@@ -21,25 +21,25 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"yuey4n9.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.15.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="整理 Vim ide 的学习过程">
+    <meta name="description" content="整理 vim ide 的新手学习过程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="learn4vim">
-<meta property="og:url" content="https://yuey4n9.github.io/2023/04/08/learn4vim/index.html">
+<meta property="og:url" content="https://yuey4n9.github.io/2022/10/01/learn4vim/index.html">
 <meta property="og:site_name" content="YueYang">
-<meta property="og:description" content="整理 Vim ide 的学习过程">
+<meta property="og:description" content="整理 vim ide 的新手学习过程">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-04-08T09:11:53.000Z">
-<meta property="article:modified_time" content="2023-04-08T09:19:48.794Z">
+<meta property="article:published_time" content="2022-10-01T01:00:00.000Z">
+<meta property="article:modified_time" content="2023-04-09T01:47:42.304Z">
 <meta property="article:author" content="YueY4n9">
 <meta property="article:tag" content="vim">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://yuey4n9.github.io/2023/04/08/learn4vim/">
+<link rel="canonical" href="https://yuey4n9.github.io/2022/10/01/learn4vim/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://yuey4n9.github.io/2023/04/08/learn4vim/","path":"2023/04/08/learn4vim/","title":"learn4vim"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://yuey4n9.github.io/2022/10/01/learn4vim/","path":"2022/10/01/learn4vim/","title":"learn4vim"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>learn4vim | YueYang</title>
@@ -115,7 +115,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Vim%E5%AD%A6%E4%B9%A0"><span class="nav-number">1.</span> <span class="nav-text">Vim学习</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#vim"><span class="nav-number">1.</span> <span class="nav-text">vim</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E8%88%AC%E6%A8%A1%E5%BC%8F%E5%8F%AF%E7%94%A8%E7%9A%84%E6%8C%89%E9%92%AE%E8%AF%B4%E6%98%8E"><span class="nav-number">1.1.</span> <span class="nav-text">一般模式可用的按钮说明</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A7%BB%E5%8A%A8%E5%85%89%E6%A0%87"><span class="nav-number">1.1.1.</span> <span class="nav-text">移动光标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E6%89%BE%E4%B8%8E%E6%9B%BF%E6%8D%A2"><span class="nav-number">1.1.2.</span> <span class="nav-text">查找与替换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E3%80%81%E5%A4%8D%E5%88%B6%E4%B8%8E%E7%B2%98%E8%B4%B4"><span class="nav-number">1.1.3.</span> <span class="nav-text">删除、复制与粘贴</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E8%88%AC%E6%A8%A1%E5%BC%8F%E5%88%87%E6%8D%A2%E5%88%B0%E7%BC%96%E8%BE%91%E6%A8%A1%E5%BC%8F%E7%9A%84%E5%8F%AF%E7%94%A8%E7%9A%84%E6%8C%89%E9%92%AE%E8%AF%B4%E6%98%8E"><span class="nav-number">1.2.</span> <span class="nav-text">一般模式切换到编辑模式的可用的按钮说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E8%88%AC%E6%A8%A1%E5%BC%8F%E5%88%87%E6%8D%A2%E5%88%B0%E5%91%BD%E4%BB%A4%E8%A1%8C%E6%A8%A1%E5%BC%8F%E5%8F%AF%E7%94%A8%E7%9A%84%E6%8C%89%E9%92%AE%E8%AF%B4%E6%98%8E"><span class="nav-number">1.3.</span> <span class="nav-text">一般模式切换到命令行模式可用的按钮说明</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vim-plugins"><span class="nav-number">2.</span> <span class="nav-text">vim plugins</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#nerdtree"><span class="nav-number">2.1.</span> <span class="nav-text">nerdtree</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -141,7 +141,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -173,7 +173,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://yuey4n9.github.io/2023/04/08/learn4vim/">
+    <link itemprop="mainEntityOfPage" href="https://yuey4n9.github.io/2022/10/01/learn4vim/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/yueyang.png">
@@ -201,9 +201,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2023-04-08 17:11:53 / 修改时间：17:19:48" itemprop="dateCreated datePublished" datetime="2023-04-08T17:11:53+08:00">2023-04-08</time>
+      <time title="创建时间：2022-10-01 09:00:00" itemprop="dateCreated datePublished" datetime="2022-10-01T09:00:00+08:00">2022-10-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-04-09 09:47:42" itemprop="dateModified" datetime="2023-04-09T09:47:42+08:00">2023-04-09</time>
     </span>
 
   
@@ -217,22 +223,26 @@
     
     <div class="post-body" itemprop="articleBody">
         <blockquote>
-<p>整理 Vim ide 的学习过程</p>
+<p>整理 vim ide 的新手学习过程</p>
 </blockquote>
 <span id="more"></span>
 
-<h1 id="Vim学习"><a href="#Vim学习" class="headerlink" title="Vim学习"></a>Vim学习</h1><p>一般模式可用的按钮说明<br>移动光标</p>
-<p>「h、j、k、l」，分别控制光标左、下、上、右移一格<br>按「ctrl+b」屏幕往”后”移动一页<br> 按「ctrl+f」屏幕往”前”移动一页<br>「n<space>」光标向右移动n个字符<br>「Home」移动到这一行的最前面字符处:0数字，但不能用数字小键盘上的数字<br>「End」 移动到这一行的最后面字符处:$，我测试好像不行<br>「w」光标跳到下个字的开头<br>「e」光标跳到下个字的字尾<br>「H」 光标移动到这个屏幕的最上方那一行的第一个字符<br>「M」 光标移动到这个屏幕的中间那一行的第一个字符<br>「L」光标移动到这个屏幕的最下方那一行的第一个字符<br>「G」 移动到这个文件的最后一行<br>「nG」移动到这个文件的第n行(可配合:set nu)<br>「gg」 移动到这个文件的第一行，相当于1G<br>「n<Enter>」光标向下移动n行<br>查找与替换<br>「/word」 向光标向下寻找一个名称为word的字符串<br>「?word」 向光标向上寻找一个名称为word的字符串<br>「n」 代表重复前一个查找的动作<br>「N」 与n刚好相反，为「反向」进行行前一个查找动作<br>「:n1,n2s/word1/word2/g」 n1与n2为数字，在第n1与n2行之间查找word1 这个字符串，并将该字符串替换为word2<br>「:1,$s/word1/word2/g」 从第一行到最后一行查找word1字符串，并将该字符串替换为word2<br>「:1,$s/word1/word2/gc」 从第一行到最后一行查找word1字符串，并将该字符串替换为word2 ，且在替换前提示用户确认是否进行替换<br>删除、复制与粘贴<br>「x」 为向后删除一个字符 (相当于「del」键)<br>「X」 为向前删除一个字符(相当于「backspace」键)<br>「nx」 连续向后删除n个字符<br>「dd」 删除光标所在行<br>「ndd」 删除光标所在的向下n行<br>「d1G」 删除光标所在行到第一行的所有数据<br>「dG」 删除光标所在到最后一行的所有数据<br>「d$」 删除光标所在处，到该行的最后一个字符<br>「d0」 删除光标所在处，到该行的最前一个字符<br>「yy」 复制光标所在的那一行<br>「nyy」 复制光标所在的向下n列<br>「y1G」 复制光标所在行到第一行的所有数据<br>「yG」 复制光标所在行到最后一行的所有数据<br>「y0」 复制光标所在的那个字符到该行行首的所有数据<br>「y$」 复制光标所在的那个字符到该行行尾的所有数据<br>「p」将已复制的数据在光标下一行粘贴上<br>「P」 则为贴在光标的上一行<br>「u」 恢复前一个操作<br>「Ctrl+r」重做上一个操作<br>「.」 是重复前一个操作<br>一般模式切换到编辑模式的可用的按钮说明<br>「i, I」 进入编辑模式：</p>
+<h1 id="vim"><a href="#vim" class="headerlink" title="vim"></a>vim</h1><h2 id="一般模式可用的按钮说明"><a href="#一般模式可用的按钮说明" class="headerlink" title="一般模式可用的按钮说明"></a>一般模式可用的按钮说明</h2><h3 id="移动光标"><a href="#移动光标" class="headerlink" title="移动光标"></a>移动光标</h3><p>「h、j、k、l」分别控制光标左、下、上、右移一格<br>「ctrl+b」屏幕往”后”移动一页<br>「ctrl+f」屏幕往”前”移动一页<br>「n<space>」光标向右移动n个字符<br>「Home」移动到这一行的最前面字符处:0数字，但不能用数字小键盘上的数字<br>「End」移动到这一行的最后面字符处:$，我测试好像不行<br>「w」光标跳到下个字的开头<br>「e」光标跳到下个字的字尾<br>「H」光标移动到这个屏幕的最上方那一行的第一个字符<br>「M」光标移动到这个屏幕的中间那一行的第一个字符<br>「L」光标移动到这个屏幕的最下方那一行的第一个字符<br>「G」移动到这个文件的最后一行<br>「nG」移动到这个文件的第n行(可配合:set nu)<br>「gg」移动到这个文件的第一行，相当于1G<br>「n<Enter>」光标向下移动n行</p>
+<h3 id="查找与替换"><a href="#查找与替换" class="headerlink" title="查找与替换"></a>查找与替换</h3><p>「/word」向光标向下寻找一个名称为word的字符串<br>「?word」向光标向上寻找一个名称为word的字符串<br>「n」代表重复前一个查找的动作<br>「N」与n刚好相反，为「反向」进行行前一个查找动作<br>「:n1,n2s/word1/word2/g」n1与n2为数字，在第n1与n2行之间查找word1 这个字符串，并将该字符串替换为word2<br>「:1,$s/word1/word2/g」从第一行到最后一行查找word1字符串，并将该字符串替换为word2<br>「:1,$s/word1/word2/gc」从第一行到最后一行查找word1字符串，并将该字符串替换为word2 ，且在替换前提示用户确认是否进行替换</p>
+<h3 id="删除、复制与粘贴"><a href="#删除、复制与粘贴" class="headerlink" title="删除、复制与粘贴"></a>删除、复制与粘贴</h3><p>「x」为向后删除一个字符 (相当于「del」键)<br>「X」为向前删除一个字符(相当于「backspace」键)<br>「nx」连续向后删除n个字符<br>「dd」删除光标所在行<br>「ndd」删除光标所在的向下n行<br>「d1G」删除光标所在行到第一行的所有数据<br>「dG」删除光标所在到最后一行的所有数据<br>「d$」删除光标所在处，到该行的最后一个字符<br>「d0」删除光标所在处，到该行的最前一个字符<br>「yy」复制光标所在的那一行<br>「nyy」复制光标所在的向下n列<br>「y1G」复制光标所在行到第一行的所有数据<br>「yG」复制光标所在行到最后一行的所有数据<br>「y0」复制光标所在的那个字符到该行行首的所有数据<br>「y$」复制光标所在的那个字符到该行行尾的所有数据<br>「p」将已复制的数据在光标下一行粘贴上<br>「P」则为贴在光标的上一行<br>「u」恢复前一个操作<br>「Ctrl+r」重做上一个操作<br>「.」是重复前一个操作</p>
+<h2 id="一般模式切换到编辑模式的可用的按钮说明"><a href="#一般模式切换到编辑模式的可用的按钮说明" class="headerlink" title="一般模式切换到编辑模式的可用的按钮说明"></a>一般模式切换到编辑模式的可用的按钮说明</h2><p>「i, I」进入编辑模式：</p>
 <ul>
 <li>i 为「从目前光标所在处插入」</li>
-<li>I 为「在目前所在行的第一个非空格符处开始插入」<br>「a, A」 进入编辑模式(Insert mode)：</li>
+<li>I 为「在目前所在行的第一个非空格符处开始插入」<br>「a, A」进入编辑模式(Insert mode)：</li>
 <li>a 为「从目前光标所在的下一个字符处开始插入」</li>
-<li>A 为「从光标所在行的最后一个字符处开始插入」<br>「o, O」 进入编辑模式：</li>
+<li>A 为「从光标所在行的最后一个字符处开始插入」<br>「o, O」进入编辑模式：</li>
 <li>o 为「在目前光标所在的下一行处插入新的一行」</li>
-<li>O 为在目前光标所在处的上一行插入新的一行<br>「r, R」 进入取代模式：</li>
+<li>O 为在目前光标所在处的上一行插入新的一行<br>「r, R」进入取代模式：</li>
 <li>r 只会取代光标所在的那一个字符一次</li>
-<li>R会一直取代光标所在的文字，直到按下 ESC 为止；<br>「Esc」 退出编辑模式，回到一般模式<br>一般模式切换到命令行模式可用的按钮说明<br>「:w」 保存编辑的内容<br>「:w!」强制写入该文件，但跟你对该文件的权限有关<br>「:q」 离开vi<br>「:q!」 不想保存修改强制离开<br>「:wq」 保存后离开<br>「:x」 保存后离开<br>「ZZ」 若文件没有更动，则不保存离开，若文件已经被更改过，则保存后离开<br>「:w filename」 将编辑的数据保存成另一个文件（类似另存）<br>「:r filename」 在编辑的数据中，读入另一个文件的数据。即将「filename」 这个文件的内容加到光标所在行后面。<br>「:n1,n2 w filename」 将n1到n2的内容保存成filename这个文件。<br>「:! command」暂时离开vi 到命令行模式下执行command的显示结果！例如 「:! ls /home」即可在 vi 当中察看/home底下以ls输出的文件信息！<br>「:set nu」 显示行号<br>「:set nonu」 与 set nu 相反，为取消行</li>
+<li>R会一直取代光标所在的文字，直到按下 ESC 为止；<br>「Esc」退出编辑模式，回到一般模式</li>
 </ul>
+<h2 id="一般模式切换到命令行模式可用的按钮说明"><a href="#一般模式切换到命令行模式可用的按钮说明" class="headerlink" title="一般模式切换到命令行模式可用的按钮说明"></a>一般模式切换到命令行模式可用的按钮说明</h2><p>「:w」保存编辑的内容<br>「:w!」强制写入该文件，但跟你对该文件的权限有关<br>「:q」离开vi<br>「:q!」不想保存修改强制离开<br>「:wq」保存后离开<br>「:x」保存后离开<br>「ZZ」若文件没有更动，则不保存离开，若文件已经被更改过，则保存后离开<br>「:w filename」将编辑的数据保存成另一个文件（类似另存）<br>「:r filename」在编辑的数据中，读入另一个文件的数据。即将「filename」这个文件的内容加到光标所在行后面。<br>「:n1,n2 w filename」将n1到n2的内容保存成filename这个文件。<br>「:! command」暂时离开vi 到命令行模式下执行command的显示结果！例如 「:! ls /home」即可在 vi 当中察看/home底下以ls输出的文件信息！<br>「:set nu」显示行号<br>「:set nonu」与 set nu 相反，为取消行</p>
+<h1 id="vim-plugins"><a href="#vim-plugins" class="headerlink" title="vim plugins"></a>vim plugins</h1><h2 id="nerdtree"><a href="#nerdtree" class="headerlink" title="nerdtree"></a>nerdtree</h2><p>「ctrl+w+r」切换当前窗口左右布局<br>「ctrl」+p 模糊搜索文件<br>「gT」切换到前一个tabgT<br>「gt」切换到后一个tab<br>「o」打开关闭文件或者目录，如果是文件的话，光标出现在打开的文件中<br>「O」打开结点下的所有目录<br>「X」合拢当前结点的所有目录<br>「x」合拢当前结点的父目录<br>「i」水平分割窗口打开文件<br>「s」纵向分割窗口打开文件<br>「u」打开上层目录<br>「t」在标签页中打开<br>「T」在后台标签页中打开<br>「p」到上层目录<br>「P」到根目录<br>「K」到同目录第一个节点<br>「J」到同目录最后一个节点<br>「m」显示文件系统菜单（添加、删除、移动操作）<br>「?」帮助<br>「:q」关闭</p>
 
     </div>
 
@@ -249,13 +259,13 @@
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2023/04/08/%E3%80%8A%E4%BA%BA%E6%80%A7%E7%9A%84%E5%BC%B1%E7%82%B9%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="prev" title="《人性的弱点》读书笔记">
-                  <i class="fa fa-chevron-left"></i> 《人性的弱点》读书笔记
+                <a href="/2022/05/01/learn4linux/" rel="prev" title="learn4linux">
+                  <i class="fa fa-chevron-left"></i> learn4linux
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2023/04/08/learn4linux/" rel="next" title="learn4linux">
-                  learn4linux <i class="fa fa-chevron-right"></i>
+                <a href="/2023/01/30/learn4network/" rel="next" title="learn4network">
+                  learn4network <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>

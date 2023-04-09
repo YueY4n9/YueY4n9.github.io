@@ -21,27 +21,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"yuey4n9.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.15.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="20211230range for 拷贝问题 1234567891011func study() &amp;#123;	list :&#x3D; []int&amp;#123;1, 2&amp;#125;	for i :&#x3D; range list &amp;#123;		list &#x3D; append(list, i)	&amp;#125;	fmt.Println(list)	for i :&#x3D; 0; i &lt; len(list); i++ &amp;#12">
+    <meta name="description" content="整理 linux 的学习过程, 尝试通过单词全拼来理解命令含义">
 <meta property="og:type" content="article">
-<meta property="og:title" content="整理备份">
-<meta property="og:url" content="https://yuey4n9.github.io/2021/12/30/%E6%95%B4%E7%90%86%E5%A4%87%E4%BB%BD/index.html">
+<meta property="og:title" content="learn4linux">
+<meta property="og:url" content="https://yuey4n9.github.io/2022/05/01/learn4linux/index.html">
 <meta property="og:site_name" content="YueYang">
-<meta property="og:description" content="20211230range for 拷贝问题 1234567891011func study() &amp;#123;	list :&#x3D; []int&amp;#123;1, 2&amp;#125;	for i :&#x3D; range list &amp;#123;		list &#x3D; append(list, i)	&amp;#125;	fmt.Println(list)	for i :&#x3D; 0; i &lt; len(list); i++ &amp;#12">
+<meta property="og:description" content="整理 linux 的学习过程, 尝试通过单词全拼来理解命令含义">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-12-30T08:26:36.000Z">
-<meta property="article:modified_time" content="2023-04-08T06:29:49.098Z">
+<meta property="article:published_time" content="2022-05-01T09:14:02.000Z">
+<meta property="article:modified_time" content="2023-04-09T01:47:42.300Z">
 <meta property="article:author" content="YueY4n9">
+<meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://yuey4n9.github.io/2021/12/30/%E6%95%B4%E7%90%86%E5%A4%87%E4%BB%BD/">
+<link rel="canonical" href="https://yuey4n9.github.io/2022/05/01/learn4linux/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://yuey4n9.github.io/2021/12/30/%E6%95%B4%E7%90%86%E5%A4%87%E4%BB%BD/","path":"2021/12/30/整理备份/","title":"整理备份"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://yuey4n9.github.io/2022/05/01/learn4linux/","path":"2022/05/01/learn4linux/","title":"learn4linux"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>整理备份 | YueYang</title>
+<title>learn4linux | YueYang</title>
   
 
 
@@ -114,7 +115,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#20211230"><span class="nav-number">1.</span> <span class="nav-text">20211230</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4"><span class="nav-number">1.</span> <span class="nav-text">命令</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -140,7 +141,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">13</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -172,7 +173,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://yuey4n9.github.io/2021/12/30/%E6%95%B4%E7%90%86%E5%A4%87%E4%BB%BD/">
+    <link itemprop="mainEntityOfPage" href="https://yuey4n9.github.io/2022/05/01/learn4linux/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/yueyang.png">
@@ -185,12 +186,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="整理备份 | YueYang">
+      <meta itemprop="name" content="learn4linux | YueYang">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          整理备份
+          learn4linux
         </h1>
 
         <div class="post-meta-container">
@@ -201,14 +202,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2021-12-30 16:26:36" itemprop="dateCreated datePublished" datetime="2021-12-30T16:26:36+08:00">2021-12-30</time>
+      <time title="创建时间：2022-05-01 17:14:02" itemprop="dateCreated datePublished" datetime="2022-05-01T17:14:02+08:00">2022-05-01</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-04-08 14:29:49" itemprop="dateModified" datetime="2023-04-08T14:29:49+08:00">2023-04-08</time>
+      <time title="修改时间：2023-04-09 09:47:42" itemprop="dateModified" datetime="2023-04-09T09:47:42+08:00">2023-04-09</time>
     </span>
 
   
@@ -221,12 +222,149 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h5 id="20211230"><a href="#20211230" class="headerlink" title="20211230"></a>20211230</h5><p><code>range for 拷贝问题</code></p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">study</span><span class="params">()</span></span> &#123;</span><br><span class="line">	list := []<span class="type">int</span>&#123;<span class="number">1</span>, <span class="number">2</span>&#125;</span><br><span class="line">	<span class="keyword">for</span> i := <span class="keyword">range</span> list &#123;</span><br><span class="line">		list = <span class="built_in">append</span>(list, i)</span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Println(list)</span><br><span class="line">	<span class="keyword">for</span> i := <span class="number">0</span>; i &lt; <span class="built_in">len</span>(list); i++ &#123;</span><br><span class="line">		list = <span class="built_in">append</span>(list, i)</span><br><span class="line">	&#125;</span><br><span class="line">	fmt.Println(list)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <blockquote>
+<p>整理 linux 的学习过程, 尝试通过单词全拼来理解命令含义</p>
+</blockquote>
+<span id="more"></span>
 
-<p><code>切片翻转排序</code></p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">reverse</span><span class="params">(nums []<span class="type">int</span>)</span></span> []<span class="type">int</span> &#123;</span><br><span class="line">	sort.Slice(nums, <span class="function"><span class="keyword">func</span><span class="params">(i, j <span class="type">int</span>)</span></span> <span class="type">bool</span> &#123;</span><br><span class="line">		<span class="keyword">return</span> nums[i] &gt; nums[j]</span><br><span class="line">	&#125;)</span><br><span class="line">	<span class="keyword">return</span> nums</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h1 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h1><ol>
+<li>cal = CALendar calendar 日历</li>
+<li>cat = CATenate 链接 <code>该更多的情况是将文件内容输出以及合并多个文件内容</code></li>
+<li>cd = Change Directory 更改目录</li>
+<li>chgrp = CHange GRouP 改变组</li>
+<li>chmod = CHange MODe 改变模式</li>
+<li>chown = CHange OWNer 更改所有者</li>
+<li>chsh = CHange SHell 更改壳</li>
+<li>cmp = compare 比较</li>
+<li>cobra = Common Object Request Broker Architecture 公共对象请求代理体系结构</li>
+<li>comm = common 常见的</li>
+<li>cp = CoPy 复制</li>
+<li>cpio = CoPy In and Out 拷贝进出</li>
+<li>cpp = C Pre Processor C预处理器</li>
+<li>cron = Chronos 希腊文时间</li>
+<li>cups = Common Unix Printing System 打印系统</li>
+<li>cvs = Current Version System 当前系统的版本</li>
+<li>daemon = Disk And Execution MONitor 磁盘和执行监视器</li>
+<li>dc = Desk Calculator 桌上计算器</li>
+<li>dd = Disk Dump 磁盘转储</li>
+<li>df = Disk Free 无盘</li>
+<li>diff = DIFFerence 差异</li>
+<li>dmesg = diagnostic message 诊断信息</li>
+<li>du = Disk Usage 磁盘使用</li>
+<li>ed = editor 编辑</li>
+<li>egrep = Extended GREP 扩展的grep</li>
+<li>elf = Extensible Linking Format 可扩展链接格式</li>
+<li>elm = ELectronic Mai 电子邮箱</li>
+<li>emacs = Editor MACroS 编辑宏</li>
+<li>eval = EVALuate 评价</li>
+<li>ex = EXtended 扩展</li>
+<li>exec = EXECute 执行</li>
+<li>fd = file descriptors 文件描述符</li>
+<li>fg = ForeGround 前景</li>
+<li>fgrep = Fixed GREP 固定grep</li>
+<li>Fish = the Friendly Interactive SHell 友好互动的外壳</li>
+<li>file = file 查看文件类型，是否是二进制等</li>
+<li>fmt = format 格式</li>
+<li>fsck = File System ChecK 文件系统检查</li>
+<li>fstab = FileSystem TABle 文件系统表</li>
+<li>fvwm = F*** Virtual Window Manager f ***虚拟窗口管理器</li>
+<li>gawk = GNU AWK</li>
+<li>gcc = general public licence (GNU) compiler collection 编译程序会产生二进制a.out文件</li>
+<li>gpg = GNU Privacy Guard GNU隐私保护</li>
+<li>grep = Global search regular expression and print out line 全局搜索正则表达式和打印输出行</li>
+<li>groff = GNU troff</li>
+<li>hal = Hardware Abstraction Layer 硬件抽象层</li>
+<li>joe = Joe’s Own Editor 乔自己的编辑</li>
+<li>ksh = Korn SHell</li>
+<li>lame = Lame Ain’t an MP3 Encoder 瘸子不MP3编码器</li>
+<li>lex = LEXical analyser 词法分析器</li>
+<li>lisp = LISt Processing = Lots of Irritating Superfluous Parentheses 大量的刺激性多余的括号</li>
+<li>ln = LiNk</li>
+<li>lpr = Line PRint 行打印</li>
+<li>ls = list</li>
+<li>lsof = LiSt Open Files 列出打开的文件</li>
+<li>m4 = Macro processor Version 4 宏处理器版本4</li>
+<li>make = make</li>
+<li>man = MANual pages 手册页</li>
+<li>mawk = Mike Brennan’s AWK</li>
+<li>mc = Midnight Commander 午夜指挥官</li>
+<li>MIME = Multipurpose Internet Mail Extensions 多用途因特网邮件扩展</li>
+<li>mkfs = MaKe FileSystem 使文件系统</li>
+<li>mknod = MaKe NODe 使节点</li>
+<li>motd = Message of The Day 当天的信息</li>
+<li>mozilla = MOsaic GodZILLa</li>
+<li>mtab = Mount TABle 安装表</li>
+<li>mv = MoVe</li>
+<li>nano = Nano’s ANOther editor 纳米的另一个编辑</li>
+<li>nawk = New AWK</li>
+<li>nl = Number of Lines</li>
+<li>nm = names</li>
+<li>nohup = No HangUP</li>
+<li>nroff = New ROFF</li>
+<li>od = Octal Dump 该命令的名称由来</li>
+<li>passwd = PASSWorD</li>
+<li>pg = pager</li>
+<li>pico = PIne’s message COmposition editor 松的消息组合编辑器</li>
+<li>pine = “Program for Internet News &amp; Email” = “Pine is not Elm”</li>
+<li>ping = Packet InterNet Groper ping程序</li>
+<li>pirntcap = PRINTer CAPability 打印机的能力</li>
+<li>popd = POP Directory</li>
+<li>pr = pre</li>
+<li>printf = PRINT Formatted</li>
+<li>ps = Processes Status 过程状态</li>
+<li>pty = pseudo tty</li>
+<li>pushd = PUSH Directory</li>
+<li>pwd = Print Working Directory 打印工作目录</li>
+<li>rc = runcom = run command</li>
+<li>rev = REVerse</li>
+<li>rm = ReMove</li>
+<li>rn = Read News</li>
+<li>roff = RunOFF</li>
+<li>rpm = RPM Package Manager = RedHat Package Manager    RedHat软件包管理器</li>
+<li>rsh, rlogin, rvim中的r = Remote</li>
+<li>rxvt = ouR XVT</li>
+<li>seamoneky = 我</li>
+<li>sed = Stream EDitor</li>
+<li>seq = SEQuence</li>
+<li>shar = SHell ARchive</li>
+<li>slrn = S-Lang rn</li>
+<li>ssh = Secure SHell</li>
+<li>ssl = Secure Sockets Layer</li>
+<li>stty = Set TTY</li>
+<li>su = Substitute User 或 Switch User（前者较常见）</li>
+<li>sudo = superuser / substitue user do 在ubuntu下更倾向于superuser，因为它代表了root权限</li>
+<li>svn = SubVersioN</li>
+<li>tar = Tape ARchive</li>
+<li>tcsh = TENEX C shell</li>
+<li>tee = T (T形水管接口)</li>
+<li>telnet = TEminaL over Network</li>
+<li>termcap = terminal capability</li>
+<li>terminfo = terminal information</li>
+<li>tex = τέχνη的缩写，希腊文art</li>
+<li>tr = traslate</li>
+<li>troff = Typesetter new ROFF 照排机新Roff</li>
+<li>tsort = Topological SORT</li>
+<li>tty = TeleTypewriter</li>
+<li>twm = Tom’s Window Manager</li>
+<li>tz = TimeZone</li>
+<li>udev = Userspace DEV</li>
+<li>ulimit = User’s LIMIT</li>
+<li>umask = User’s MASK</li>
+<li>uniq = UNIQue</li>
+<li>vi = VIsual = Very Inconvenient 很不方便</li>
+<li>vim = Vi IMproved</li>
+<li>wall = write all</li>
+<li>wc = Word Count</li>
+<li>wine = WINE Is Not an Emulator 酒不是一个模拟器</li>
+<li>xargs = eXtended ARGuments 扩展参数</li>
+<li>xdm = X Display Manager X显示管理器</li>
+<li>xlfd = X Logical Font Description 逻辑字体描述</li>
+<li>xmms = X Multimedia System X多媒体系统</li>
+<li>xrdb = X Resources DataBase X资源数据库</li>
+<li>xwd = X Window Dump X窗口转储</li>
+<li>yacc = yet another compiler compiler 另一个编译器的编译器</li>
+<li>pwd = Print work diretory 打印工作目录<br>￼</li>
+</ol>
 
     </div>
 
@@ -235,18 +373,21 @@
     
 
     <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/linux/" rel="tag"><i class="fa fa-tag"></i> linux</a>
+          </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2021/07/07/%E8%BD%AF%E4%BB%B6%E5%A4%87%E4%BB%BD/" rel="prev" title="软件备份">
-                  <i class="fa fa-chevron-left"></i> 软件备份
+                <a href="/2022/01/06/yearendsummary/" rel="prev" title="年终总结">
+                  <i class="fa fa-chevron-left"></i> 年终总结
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2022/01/06/2021%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/" rel="next" title="2021年终总结">
-                  2021年终总结 <i class="fa fa-chevron-right"></i>
+                <a href="/2022/10/01/learn4vim/" rel="next" title="learn4vim">
+                  learn4vim <i class="fa fa-chevron-right"></i>
                 </a>
             </div>
           </div>
