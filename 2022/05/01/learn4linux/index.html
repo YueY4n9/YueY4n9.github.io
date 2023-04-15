@@ -29,7 +29,7 @@
 <meta property="og:description" content="整理 linux 的学习过程, 尝试通过单词全拼来理解命令含义">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-05-01T09:14:02.000Z">
-<meta property="article:modified_time" content="2023-04-09T01:47:42.300Z">
+<meta property="article:modified_time" content="2023-04-15T09:06:12.006Z">
 <meta property="article:author" content="YueY4n9">
 <meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary">
@@ -209,7 +209,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-04-09 09:47:42" itemprop="dateModified" datetime="2023-04-09T09:47:42+08:00">2023-04-09</time>
+      <time title="修改时间：2023-04-15 17:06:12" itemprop="dateModified" datetime="2023-04-15T17:06:12+08:00">2023-04-15</time>
     </span>
 
   
@@ -239,50 +239,41 @@
 <li>cobra = Common Object Request Broker Architecture 公共对象请求代理体系结构</li>
 <li>comm = common 常见的</li>
 <li>cp = CoPy 复制</li>
-<li>cpio = CoPy In and Out 拷贝进出</li>
+<li>cpio = CoPy In and Out 拷贝进出<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">在当前目录以及所有子目录中查找文件, 并将它们放入名为 archive.cpio 的归档文件中</span></span><br><span class="line">find . -depth -print | cpio -ov &gt; archive.cpio</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">这个命令会从名为 archive.cpio 的归档文件中提取所有文件, 并解压到当前目录中</span></span><br><span class="line">cpio -idv &lt; archive.cpio</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">这个命令会列出名为 archive.cpio 的归档文件中包含的所有文件列表</span></span><br><span class="line">cpio -itv &lt; archive.cpio</span><br></pre></td></tr></table></figure></li>
 <li>cpp = C Pre Processor C预处理器</li>
-<li>cron = Chronos 希腊文时间</li>
-<li>cups = Common Unix Printing System 打印系统</li>
-<li>cvs = Current Version System 当前系统的版本</li>
+<li>cron = Chronos 希腊文时间, 用于执行定时任务<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cron 的配置文件为 /etc/crontab, 这个文件定义了系统级别的计划任务. 而每个用户都可以使用 crontab 命令来创建自己的计划任务表(也就是 crontab 文件), 这些任务只对该用户有效</span><br></pre></td></tr></table></figure></li>
 <li>daemon = Disk And Execution MONitor 磁盘和执行监视器</li>
-<li>dc = Desk Calculator 桌上计算器</li>
+<li>dc = Desk Calculator 桌上计算器(逆波兰式计算器)</li>
 <li>dd = Disk Dump 磁盘转储</li>
-<li>df = Disk Free 无盘</li>
-<li>diff = DIFFerence 差异</li>
-<li>dmesg = diagnostic message 诊断信息</li>
-<li>du = Disk Usage 磁盘使用</li>
+<li>df = Disk Free 无盘<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df -h # 选项表示以可读的方式输出结果, 易于阅读</span><br></pre></td></tr></table></figure></li>
+<li>diff = DIFFerence 差异<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">基本语法</span></span><br><span class="line">diff file1 file2</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">额外参数</span></span><br><span class="line">diff -c file1 file2 # 以上下文模式输出差异信息</span><br><span class="line">diff -u file1 file2 # 以合并模式输出差异信息</span><br><span class="line">diff -i file1 file2 # 忽略大小写进行比较</span><br><span class="line">diff -B file1 file2 # 忽略空格进行比较</span><br><span class="line">diff -w file1 file2 # 忽略所有空白字符进行比较</span><br></pre></td></tr></table></figure></li>
+<li>dmesg = Diagnostic MESsaGe 诊断信息, 显示内核环形缓冲区(kernel ring buffer)的信息</li>
+<li>du = Disk Usage 磁盘使用<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">du [-Aclnx] [-H | -L | -P] [-g | -h | -k | -m] [-a | -s | -d depth] [-B blocksize] [-I mask] [-t threshold] [file ...]</span><br><span class="line"></span><br><span class="line">下面对这些参数和选项进行一一解释：</span><br><span class="line">-A : 将大文件(超过2GB)的大小正确计算为1KB, 而不是512字节；</span><br><span class="line">-c : 显示指定文件或目录总共的大小；</span><br><span class="line">-l : 统计符号链接占据磁盘空间的大小, 而不是链接指向的文件的大小；</span><br><span class="line">-n : 不递归显示大小；</span><br><span class="line">-x : 显示当前文件系统的大小, 不会统计挂载在其上的其他文件系统的大小；</span><br><span class="line">-H : 递归处理命令行中指定的目录, 当遇到符号链接时, 直接使用链接所指向的文件的大小；</span><br><span class="line">-L : 与 -H 类似, 但是当遇到符号链接时, 直接计算链接本身的大小；</span><br><span class="line">-P : 与 -H 和 -L 相反, 不跟踪任何符号链接, 直接计算链接本身的大小；</span><br><span class="line">-g, -h, -k, -m : 以不同的大小单位显示输出结果(用于人类可读)</span><br><span class="line">-a : 显示所有文件和目录的大小；</span><br><span class="line">-s : 只显示目录总大小, 不显示各子目录和文件的大小；</span><br><span class="line">-d depth : 指定显示目录树的深度, 即子目录的最大层数；</span><br><span class="line">-B blocksize : 指定块大小, 以字节为单位；</span><br><span class="line">-I mask : 指定忽略某些文件或目录(按照 shell 的语法来进行匹配)；</span><br><span class="line">-t threshold : 只对大于或等于指定大小的文件和目录进行计算磁盘空间使用情况</span><br><span class="line"></span><br><span class="line">注意：在使用 du 命令时, 请谨慎选择文件或目录, 不要将它用于根目录 (&quot;/&quot;) 或 &quot;/home&quot; 等包含大量文件的目录, 否则可能会导致系统崩溃或性能下降</span><br></pre></td></tr></table></figure></li>
 <li>ed = editor 编辑</li>
 <li>egrep = Extended GREP 扩展的grep</li>
-<li>elf = Extensible Linking Format 可扩展链接格式</li>
-<li>elm = ELectronic Mai 电子邮箱</li>
-<li>emacs = Editor MACroS 编辑宏</li>
-<li>eval = EVALuate 评价</li>
-<li>ex = EXtended 扩展</li>
-<li>exec = EXECute 执行</li>
+<li>emacs = Editor MACroS 编辑宏, 一款强大的编辑器, 和 vim 并称两大最强编辑器</li>
+<li>eval = EVALuate 用于将命令行参数作为 shell 命令来执行<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mycmd=&quot;ls&quot; &amp;&amp; eval result=$mycmd &amp;&amp; echo $result</span><br></pre></td></tr></table></figure></li>
+<li>ex = EXtended 是一个文本编辑器, 是 vi 编辑器的前身. ex 编辑器相对来说比较老旧, 因为现在更常用的文本编辑器是 vi、nano、emacs 等</li>
+<li>exec = EXECute 执行<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">它用于执行一个命令并替换当前 shell 进程(即将当前进程替换为指定命令). <span class="built_in">exec</span> 命令通常在 shell 脚本中使用, 可以用于执行其他程序并将其输出/错误输出重新定向到脚本中。</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">具体来说, 当你执行 <span class="built_in">exec</span> 命令时, 它会首先关闭当前的 shell 进程, 然后创建一个新的进程来运行指定的命令, 这个新的进程将继承当前 shell 进程的环境变量和文件描述符等信息。因此, 通过 <span class="built_in">exec</span> 命令可以让脚本中的命令取代 shell 进程, 从而达到更高效的执行效果。</span></span><br></pre></td></tr></table></figure></li>
 <li>fd = file descriptors 文件描述符</li>
 <li>fg = ForeGround 前景</li>
-<li>fgrep = Fixed GREP 固定grep</li>
-<li>Fish = the Friendly Interactive SHell 友好互动的外壳</li>
-<li>file = file 查看文件类型，是否是二进制等</li>
-<li>fmt = format 格式</li>
+<li>fgrep = Fixed GREP 固定grep(非正则表达式匹配)</li>
+<li>fish = the Friendly Interactive SHell 是一款现代化的、用户友好的命令行 Shell</li>
+<li>file = file 查看文件类型, 是否是二进制等</li>
+<li>fmt = format 格式化文件</li>
 <li>fsck = File System ChecK 文件系统检查</li>
 <li>fstab = FileSystem TABle 文件系统表</li>
-<li>fvwm = F*** Virtual Window Manager f ***虚拟窗口管理器</li>
-<li>gawk = GNU AWK</li>
-<li>gcc = general public licence (GNU) compiler collection 编译程序会产生二进制a.out文件</li>
-<li>gpg = GNU Privacy Guard GNU隐私保护</li>
-<li>grep = Global search regular expression and print out line 全局搜索正则表达式和打印输出行</li>
-<li>groff = GNU troff</li>
-<li>hal = Hardware Abstraction Layer 硬件抽象层</li>
-<li>joe = Joe’s Own Editor 乔自己的编辑</li>
-<li>ksh = Korn SHell</li>
-<li>lame = Lame Ain’t an MP3 Encoder 瘸子不MP3编码器</li>
+<li>fvwm = Feeble Virtual Window Manager 虚拟窗口管理器, 是一个基于X Window System的轻量级窗口管理器</li>
+<li>gawk = GNU AWK, 是 <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/GNU">GNU</a> 计划下的 awk 工具的实现, 是一个高级文本处理工具, 通常用于对大型文本文件进行搜索、过滤和转换等操作</li>
+<li>gcc = GNU compiler collection 是 GNU 编译器套装的缩写，是一个基于自由软件的编译器系统</li>
+<li>gpg = GNU Privacy Guard GNU 隐私保护</li>
+<li>grep = Global Regular Expression Print 全局正则表达式打印</li>
+<li>ksh = Korn SHell 是一个Unix和Linux系统上的命令行解释器和编程语言。它是由David Korn开发的，旨在提供一种功能更强大的shell，用于代替传统的Bourne shell和C shell。</li>
 <li>lex = LEXical analyser 词法分析器</li>
-<li>lisp = LISt Processing = Lots of Irritating Superfluous Parentheses 大量的刺激性多余的括号</li>
 <li>ln = LiNk</li>
 <li>lpr = Line PRint 行打印</li>
-<li>ls = list</li>
-<li>lsof = LiSt Open Files 列出打开的文件</li>
+<li>ls = list 列出当前或指定目录下的文件和目录<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">ls -l # 以长格式列出文件和目录信息，包括文件类型、权限、拥有者、大小、日期等</span><br><span class="line">ls -a # 列出所有文件和目录，包括 . 开头的隐藏文件和目录</span><br><span class="line">ls -h # 以易读的方式显示文件和目录的大小</span><br><span class="line">ls -t # 按修改时间排序，最近修改的文件或目录先显示</span><br><span class="line">ls -r # 反向排序，从后往前排列</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">$ <span class="built_in">which</span> <span class="built_in">ls</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="built_in">ls</span>: aliased to <span class="built_in">ls</span> -G</span></span><br></pre></td></tr></table></figure></li>
+<li>lsof = LiSt Open Files 列出打开的文件, 并显示哪些进程打开了这些文件<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">lsof -p 100     # 显示指定 PID 的进程打开的文件信息。</span><br><span class="line">lsof -u yueyang # 显示指定用户打开的文件信息</span><br><span class="line">lsof -c name    # 列出指定进程名字的进程打开的所有文件</span><br><span class="line">lsof -i         # 列出所有网络连接相关的文件</span><br><span class="line">lsof -n         # 不进行DNS解析，直接使用IP地址</span><br></pre></td></tr></table></figure></li>
 <li>m4 = Macro processor Version 4 宏处理器版本4</li>
 <li>make = make</li>
 <li>man = MANual pages 手册页</li>
@@ -331,8 +322,8 @@
 <li>ssh = Secure SHell</li>
 <li>ssl = Secure Sockets Layer</li>
 <li>stty = Set TTY</li>
-<li>su = Substitute User 或 Switch User（前者较常见）</li>
-<li>sudo = superuser / substitue user do 在ubuntu下更倾向于superuser，因为它代表了root权限</li>
+<li>su = Substitute User 或 Switch User(前者较常见)</li>
+<li>sudo = superuser / substitue user do 在ubuntu下更倾向于superuser, 因为它代表了root权限</li>
 <li>svn = SubVersioN</li>
 <li>tar = Tape ARchive</li>
 <li>tcsh = TENEX C shell</li>
@@ -340,8 +331,8 @@
 <li>telnet = TEminaL over Network</li>
 <li>termcap = terminal capability</li>
 <li>terminfo = terminal information</li>
-<li>tex = τέχνη的缩写，希腊文art</li>
-<li>tr = traslate</li>
+<li>tex = τέχνη的缩写, 希腊文art</li>
+<li>tr = translate</li>
 <li>troff = Typesetter new ROFF 照排机新Roff</li>
 <li>tsort = Topological SORT</li>
 <li>tty = TeleTypewriter</li>
