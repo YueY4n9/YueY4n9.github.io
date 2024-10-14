@@ -1,3 +1,26 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Posts on 卷毛的博客</title><link>https://yuey4n9.github.io/posts/</link><description>Recent content in Posts on 卷毛的博客</description><generator>Hugo -- 0.135.0</generator><language>zh-CN</language><lastBuildDate>Wed, 16 Jun 2021 22:18:18 +0800</lastBuildDate><atom:link href="https://yuey4n9.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Learn4go</title><link>https://yuey4n9.github.io/posts/learn4go/</link><pubDate>Wed, 16 Jun 2021 22:18:18 +0800</pubDate><guid>https://yuey4n9.github.io/posts/learn4go/</guid><description>&lt;blockquote>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Posts on 卷毛的博客</title><link>https://yuey4n9.github.io/posts/</link><description>Recent content in Posts on 卷毛的博客</description><generator>Hugo -- 0.135.0</generator><language>zh-CN</language><lastBuildDate>Thu, 10 Oct 2024 14:56:54 +0800</lastBuildDate><atom:link href="https://yuey4n9.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Learn4mongo</title><link>https://yuey4n9.github.io/posts/learn4mongo/</link><pubDate>Thu, 10 Oct 2024 14:56:54 +0800</pubDate><guid>https://yuey4n9.github.io/posts/learn4mongo/</guid><description>&lt;hr>
+&lt;p>title: learn4mongo
+date: 2020-08-27 16:29:24
+categories:&lt;/p>
+&lt;ul>
+&lt;li>笔记
+tags:
+&lt;ul>
+&lt;li>mongo&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;hr>
+&lt;blockquote>
+&lt;p>MongoDB的一些基本操作，只适用于日常开发，深入了解MongoDB请略过本文&lt;/p>
+&lt;/blockquote></description></item><item><title>Learn4vim</title><link>https://yuey4n9.github.io/posts/learn4vim/</link><pubDate>Sat, 01 Oct 2022 14:56:19 +0800</pubDate><guid>https://yuey4n9.github.io/posts/learn4vim/</guid><description>&lt;blockquote>
+&lt;p>整理 vim ide 的新手学习过程&lt;/p>
+&lt;/blockquote></description></item><item><title>Learn4linux</title><link>https://yuey4n9.github.io/posts/learn4linux/</link><pubDate>Sun, 01 May 2022 17:14:02 +0800</pubDate><guid>https://yuey4n9.github.io/posts/learn4linux/</guid><description>&lt;blockquote>
+&lt;p>整理 linux 的学习过程, 尝试通过单词全拼来理解命令含义&lt;/p>
+&lt;/blockquote></description></item><item><title>Learn4go</title><link>https://yuey4n9.github.io/posts/learn4go/</link><pubDate>Wed, 16 Jun 2021 22:18:18 +0800</pubDate><guid>https://yuey4n9.github.io/posts/learn4go/</guid><description>&lt;blockquote>
 &lt;p>本文目的是记录我从 Java 开发转 Golang 开发的学习经历，分享一下学习过程来帮助想要 Java 转 Golang 的朋友一起进步一起学习！&lt;/p>
+&lt;/blockquote></description></item><item><title>Learn4mysql</title><link>https://yuey4n9.github.io/posts/learn4mysql/</link><pubDate>Mon, 31 May 2021 14:56:42 +0800</pubDate><guid>https://yuey4n9.github.io/posts/learn4mysql/</guid><description/></item><item><title>Learn4redis</title><link>https://yuey4n9.github.io/posts/learn4redis/</link><pubDate>Wed, 26 May 2021 14:56:06 +0800</pubDate><guid>https://yuey4n9.github.io/posts/learn4redis/</guid><description>&lt;blockquote>
+&lt;p>整理Redis整体且全面的知识架构，一片文章了解Redis大部分基础应用&lt;/p>
+&lt;/blockquote></description></item><item><title>Learn4git</title><link>https://yuey4n9.github.io/posts/learn4git/</link><pubDate>Thu, 27 Aug 2020 16:42:54 +0800</pubDate><guid>https://yuey4n9.github.io/posts/learn4git/</guid><description>&lt;blockquote>
+&lt;p>日常使用Git操作，随笔整理持续更新&lt;/p>
 &lt;/blockquote></description></item></channel></rss>
